@@ -1,0 +1,58 @@
+Ishaan Goyal
++1 (217) 202-0293 | ishaan6@illinois.edu | Personal Website | LinkedIn | GitHub
+202 E. Green Champaign, IL 61820
+Education
+University of Illinois Urbana-Champaign Bachelor of Science in Computer Science (James Scholar Honors Program) Relevant Coursework
+Urbana - Champaign, IL
+May 2026
+Data Structures (CS 225), Computer Architecture (CS 233), Systems Programming (CS 341), Calculus I, II, III (MATH
+221, 231, 241), Linear Algebra (MATH 257), Discrete Mathematics (CS 173), Probability & Statistics (CS 361 ), Numerical
+Methods (CS 357).
+Experience
+Software Developer Intern Sep 2024 - Dec 2024
+Jinship (Disruption Lab) Remote
+• Led the design and implementation of a feedback system for Jinship, improving data collection efficiency and
+enhancing user experience across key chatbot workflows.
+• Optimized client-side code, integrating graph-based recommendations and precomputed embeddings,
+resulting in a 25% improvement in response times and feature functionality.
+• Transformed raw metadata into actionable insights by creating visualization tools and integrating them into the
+Jinship UI, enabling better decision-making for stakeholders.
+• Tracked user engagement, performance, and satisfaction metrics, enhancing chatbot success evaluation and
+informing future development strategies.
+Software Developer Sep 2023 - Dec 2023
+Illinois Space Society Urbana, Illinois
+• Reengineered ISS flight monitoring system, transforming Flask-based codebase into high-performance React
+application with code splitting, lazy loading, yielding 70% improvement in site performance, lighthouse
+scores.
+• Orchestrated UI/UX redesign using Figma, collaborating with 3-member team to craft intuitive, responsive interface,
+resulting in 30% increase in user engagement across devices.
+• Implemented D3.js to create responsive, data-driven visualizations of complex rocket dynamics, improving 3D model
+and GPS tracking accuracy by 40% through enhanced data representation and live updates.
+Founder Dec 2021 - Feb 2023
+NFT Reality Jaipur, India
+• Spearheaded development by founding, managing 10-member international team, leveraging diverse range of
+tools to rapidly launch VR-based NFT marketplace using third-party software.
+• Executed UI/UX design principles in collaboration with international team, integrating Unity-based VR
+interactions, 3D designs to forge intuitive, immersive user experience.
+• Expanded project reach by cultivating community of 700+ members, onboarding 500+ NFT artists from various
+countries, resulting in repository of 50,000+ distinct NFTs.
+Projects
+Hephaestus | Next.js, TypeScript, LangChain, OpenAPI, WebSockets, ShadCN, AWS Feb 2025
+• Architected a custom AI context and shared memory layer, enabling agents to persist knowledge across
+interactions, solving the challenge of context loss in LLM-based workflows.
+• Designed and implemented an OpenAPI-standardized tool schema, allowing users to define AI-powered tools
+in a structured format, making tool integrations 100% modular and scalable.
+• Crafted an intuitive and visually appealing UI with ShadCN, leveraging its accessible component library to
+enhance UX, achieving a 60% faster UI development cycle.
+• Developed a real-time execution streaming system using WebSockets, allowing seamless LLM message
+streaming with minimal latency, reducing agent response times by 50%.
+• Implemented an optimized JSON parsing layer to intelligently extract and process workflow initiation
+commands, enabling instant UI updates and enhancing debugging efficiency.
+Docnest | React, TypeScript, Tailwind, Node.js, Express, WebSocket, PostgreSQL, Prisma, AWS, CRDT Aug 2024
+• Deployed real-time text collaboration platform in one week with collaborative editing, document management,
+in-document chat, responsive UI.
+• Configured AWS EC2, Ubuntu, SSH, Nginx reverse proxy, enhancing application security, performance.
+• Incorporated Yjs CRDT framework, enabling real-time collaboration with eventual consistency, reducing sync
+conflicts, improving user experience.
+• Architected custom WebSocket layer, optimizing Yjs updates, accelerating synchronization by 60% and
+establishing high concurrency support.

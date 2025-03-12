@@ -1,0 +1,14 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 0H100V100H0V0Z" fill="none"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H1V100H0V0Z" fill="currentColor"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M99 0H100V100H99V0Z" fill="currentColor"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H100V1H0V0Z" fill="currentColor"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M0 99H100V100H0V99Z" fill="currentColor"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M25 0H26V100H25V0Z" fill="currentColor"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M50 0H51V100H50V0Z" fill="currentColor"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M75 0H76V100H75V0Z" fill="currentColor"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M0 25H100V26H0V25Z" fill="currentColor"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M0 50H100V51H0V50Z" fill="currentColor"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M0 75H100V76H0V75Z" fill="currentColor"/>
+</svg>
+
