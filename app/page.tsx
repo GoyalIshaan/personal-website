@@ -21,7 +21,7 @@ export default function Home() {
           <div>
             <h2 className="text-3xl font-bold tracking-tight mb-4">About Me</h2>
             <p className="text-muted-foreground mb-6">
-              I am a sophomore studying Computer Science at the University of
+              I'm a sophomore studying Computer Science at the University of
               Illinois Urbana-Champaign as part of the James Scholar Honors
               Program. I'm passionate about software development, creating
               impactful technology solutions, and solving complex problems.
