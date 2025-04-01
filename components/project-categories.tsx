@@ -60,16 +60,6 @@ const projects = [
     category: "webdev",
   },
   {
-    id: 3,
-    title: "Jinship Feedback System",
-    description:
-      "Led the design and implementation of a feedback system for Jinship, improving data collection efficiency and enhancing user experience across key chatbot workflows.",
-    tags: ["React", "TypeScript", "Data Visualization", "UI/UX"],
-    image: "/placeholder.svg?height=300&width=500",
-    githubUrl: "#",
-    category: "ai",
-  },
-  {
     id: 7,
     title: "Custom Unix Shell",
     description:
@@ -106,17 +96,6 @@ const projects = [
     category: "lowlevel",
   },
   {
-    id: 4,
-    title: "ISS Flight Monitoring System",
-    description:
-      "Reengineered ISS flight monitoring system, transforming Flask-based codebase into high-performance React application with code splitting, lazy loading, yielding 70% improvement in site performance.",
-    tags: ["React", "Flask", "D3.js", "UI/UX"],
-    image: "/placeholder.svg?height=300&width=500",
-    githubUrl: "#",
-    demoUrl: "#",
-    category: "webdev",
-  },
-  {
     id: 11,
     title: "WorldWise",
     description:
@@ -126,6 +105,16 @@ const projects = [
     githubUrl: "https://github.com/GoyalIshaan/WorldWise",
     demoUrl: "#",
     category: "webdev",
+  },
+  {
+    id: 12,
+    title: "Itch Decoder",
+    description:
+      "A specialized tool for decoding and analyzing itch.io game files. Built with Python and C++, featuring efficient binary parsing, file format detection, and comprehensive metadata extraction.",
+    tags: ["Python", "C++", "Binary Parsing", "File Analysis"],
+    image: "/placeholder.svg?height=300&width=500",
+    githubUrl: "https://github.com/GoyalIshaan/itch-decoder",
+    category: "lowlevel",
   },
 ];
 

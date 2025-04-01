@@ -71,156 +71,79 @@ export default function Home() {
           Skills & Technologies
         </h2>
 
-        <Tabs defaultValue="competencies" className="max-w-4xl mx-auto">
-          <TabsList className="grid grid-cols-4 mb-8 overflow-auto">
-            <TabsTrigger value="competencies">Core Skills</TabsTrigger>
+        <Tabs defaultValue="core" className="w-full">
+          <TabsList className="grid w-full grid-cols-5">
+            <TabsTrigger value="core">Core Skills</TabsTrigger>
             <TabsTrigger value="languages">Languages</TabsTrigger>
-            <TabsTrigger value="domains">Domains</TabsTrigger>
-            <TabsTrigger value="tools">Tools & Learning</TabsTrigger>
+            <TabsTrigger value="tech">Technologies</TabsTrigger>
+            <TabsTrigger value="tools">Tools</TabsTrigger>
+            <TabsTrigger value="soft">Soft Skills</TabsTrigger>
           </TabsList>
-
-          <TabsContent value="competencies" className="space-y-4">
-            <div className="flex flex-wrap gap-3">
-              <SkillBadge name="Full-Stack Development" level={90} />
-              <SkillBadge name="MERN Stack" level={85} />
-              <SkillBadge name="PERN Stack" level={85} />
-              <SkillBadge name="RESTful APIs" level={90} />
-              <SkillBadge name="Object-Oriented Programming" level={85} />
-              <SkillBadge name="Functional Programming" level={80} />
-              <SkillBadge name="Responsive Web Design" level={90} />
-              <SkillBadge name="Cloud Computing" level={75} />
-              <SkillBadge name="Version Control" level={90} />
-              <SkillBadge name="Leadership" level={85} />
-              <SkillBadge name="Design" level={80} />
-              <SkillBadge name="Team Collaboration" level={90} />
-              <SkillBadge name="System Architecture" level={80} />
-              <SkillBadge name="Effective Communication" level={85} />
-              <SkillBadge name="Innovation" level={85} />
-              <SkillBadge name="Flexibility" level={90} />
-              <SkillBadge name="Perseverance" level={95} />
+          <TabsContent value="core" className="space-y-4">
+            <div className="flex flex-wrap gap-2">
+              <SkillBadge name="Full-Stack Development" level={95} />
+              <SkillBadge name="MERN" level={95} />
+              <SkillBadge name="Systems Programming" level={95} />
+              <SkillBadge name="Interpreters" level={95} />
+              <SkillBadge name="WebSockets" level={95} />
+              <SkillBadge name="CRDT" level={95} />
+              <SkillBadge name="Yjs" level={95} />
+              <SkillBadge name="D3.js" level={95} />
+              <SkillBadge name="Data Visualization" level={95} />
+              <SkillBadge name="UI/UX Design" level={95} />
+              <SkillBadge name="Markdown" level={95} />
+              <SkillBadge name="GRPC" level={95} />
             </div>
           </TabsContent>
-
           <TabsContent value="languages" className="space-y-4">
-            <div className="flex flex-wrap gap-3">
-              <SkillBadge name="JavaScript" level={90} />
+            <div className="flex flex-wrap gap-2">
+              <SkillBadge name="JavaScript" level={95} />
               <SkillBadge name="TypeScript" level={95} />
-              <SkillBadge name="Java" level={80} />
               <SkillBadge name="Python" level={95} />
               <SkillBadge name="C" level={95} />
               <SkillBadge name="C++" level={95} />
-              <SkillBadge name="SQL (PostgreSQL)" level={80} />
+              <SkillBadge name="Go" level={95} />
               <SkillBadge name="HTML" level={95} />
-              <SkillBadge name="CSS" level={90} />
-              <SkillBadge name="Go" level={55} />
-              <SkillBadge name="Rust" level={50} />
+              <SkillBadge name="CSS" level={95} />
+              <SkillBadge name="SQL" level={95} />
             </div>
           </TabsContent>
-
-          <TabsContent value="domains" className="space-y-8">
-            <div>
-              <h3 className="text-lg font-semibold mb-3">Frontend</h3>
-              <div className="flex flex-wrap gap-3">
-                <SkillBadge name="React" level={90} />
-                <SkillBadge name="Vite" level={85} />
-                <SkillBadge name="Tailwind" level={90} />
-                <SkillBadge name="ShadCn" level={85} />
-                <SkillBadge name="Framer Motion" level={75} />
-                <SkillBadge name="Material-UI" level={80} />
-                <SkillBadge name="Responsive Design" level={90} />
-                <SkillBadge name="Next.js" level={85} />
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-3">Backend</h3>
-              <div className="flex flex-wrap gap-3">
-                <SkillBadge name="Node.js" level={85} />
-                <SkillBadge name="Express" level={85} />
-                <SkillBadge name="MongoDB" level={80} />
-                <SkillBadge name="PostgreSQL" level={80} />
-                <SkillBadge name="Mongoose" level={80} />
-                <SkillBadge name="JWT" level={85} />
-                <SkillBadge name="Prisma ORM" level={80} />
-                <SkillBadge name="WebSocket" level={75} />
-                <SkillBadge name="Hono" level={70} />
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-3">
-                AI & Machine Learning
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                <SkillBadge name="TensorFlow" level={45} />
-                <SkillBadge name="PyTorch" level={40} />
-                <SkillBadge name="LangChain" level={60} />
-                <SkillBadge name="OpenAI API" level={75} />
-                <SkillBadge name="Data Visualization" level={70} />
-                <SkillBadge name="Python Libraries" level={75} />
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-3">Blockchain & VR</h3>
-              <div className="flex flex-wrap gap-3">
-                <SkillBadge name="Blockchain Development" level={50} />
-                <SkillBadge name="Unity" level={65} />
-                <SkillBadge name="VR Interactions" level={60} />
-                <SkillBadge name="3D Design" level={55} />
-                <SkillBadge name="Smart Contracts" level={45} />
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-3">
-                Low-Level & Systems
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                <SkillBadge name="Linux" level={75} />
-                <SkillBadge name="TCP" level={70} />
-                <SkillBadge name="Memory Management" level={75} />
-                <SkillBadge name="Process Management" level={70} />
-                <SkillBadge name="Systems Programming" level={75} />
-                <SkillBadge name="Compiler Design" level={65} />
-              </div>
+          <TabsContent value="tech" className="space-y-4">
+            <div className="flex flex-wrap gap-2">
+              <SkillBadge name="React" level={95} />
+              <SkillBadge name="Next.js" level={95} />
+              <SkillBadge name="Vite" level={95} />
+              <SkillBadge name="Tailwind CSS" level={95} />
+              <SkillBadge name="ShadCN" level={95} />
+              <SkillBadge name="Node.js" level={95} />
+              <SkillBadge name="Express" level={95} />
+              <SkillBadge name="MongoDB" level={95} />
+              <SkillBadge name="PostgreSQL" level={95} />
+              <SkillBadge name="Git" level={95} />
+              <SkillBadge name="Docker" level={95} />
+              <SkillBadge name="AWS" level={95} />
+              <SkillBadge name="Linux" level={95} />
+              <SkillBadge name="Unity" level={95} />
+              <SkillBadge name="VR" level={95} />
+              <SkillBadge name="TensorFlow" level={95} />
+              <SkillBadge name="PyTorch" level={95} />
+              <SkillBadge name="LangChain" level={95} />
             </div>
           </TabsContent>
-
-          <TabsContent value="tools" className="space-y-8">
-            <div>
-              <h3 className="text-lg font-semibold mb-3">Developer Tools</h3>
-              <div className="flex flex-wrap gap-3">
-                <SkillBadge name="Git" level={90} />
-                <SkillBadge name="AWS" level={75} />
-                <SkillBadge name="Cloudflare Edge Functions" level={70} />
-                <SkillBadge name="Postman" level={85} />
-                <SkillBadge name="VS Code" level={95} />
-                <SkillBadge name="PyCharm" level={80} />
-                <SkillBadge name="IntelliJ" level={80} />
-                <SkillBadge name="Firebase" level={80} />
-                <SkillBadge name="Docker" level={70} />
-                <SkillBadge name="Zod" level={80} />
-                <SkillBadge name="Cloudflare Workers" level={75} />
-                <SkillBadge name="Yjs" level={75} />
-                <SkillBadge name="CRDT" level={70} />
-                <SkillBadge name="PayPal" level={65} />
-              </div>
+          <TabsContent value="tools" className="space-y-4">
+            <div className="flex flex-wrap gap-2">
+              <SkillBadge name="GitHub" level={95} />
+              <SkillBadge name="Cloudflare Edge Functions" level={95} />
             </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-3">Open to Learn</h3>
-              <div className="flex flex-wrap gap-3">
-                <SkillBadge name="GraphQL" level={50} />
-                <SkillBadge name="Spring Boot" level={40} />
-                <SkillBadge name="Redis" level={45} />
-                <SkillBadge name="Apache Kafka" level={35} />
-                <SkillBadge name="Kubernetes" level={40} />
-                <SkillBadge name="Microservices" level={55} />
-                <SkillBadge name="AWS Lambda" level={50} />
-                <SkillBadge name="Azure Functions" level={40} />
-                <SkillBadge name="Game Development" level={45} />
-              </div>
+          </TabsContent>
+          <TabsContent value="soft" className="space-y-4">
+            <div className="flex flex-wrap gap-2">
+              <SkillBadge name="Leadership" level={95} />
+              <SkillBadge name="Team Collaboration" level={95} />
+              <SkillBadge name="Problem Solving" level={95} />
+              <SkillBadge name="Effective Communication" level={95} />
+              <SkillBadge name="Project Management" level={95} />
+              <SkillBadge name="Technical Documentation" level={95} />
             </div>
           </TabsContent>
         </Tabs>
