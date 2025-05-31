@@ -8,9 +8,9 @@ import type { Metadata } from "next";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ishaan Goyal | Computer Science Student at UIUC",
+  title: "Ishaan Goyal",
   description:
-    "Personal website of Ishaan Goyal, a sophomore studying Computer Science at the University of Illinois Urbana-Champaign.",
+    "Personal website of Ishaan Goyal, a rising junior studying Computer Science at the University of Illinois Urbana-Champaign.",
   generator: "v0.dev",
   icons: {
     icon: "/favicon.svg",
