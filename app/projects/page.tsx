@@ -28,6 +28,15 @@ const projects = [
     category: "Web Dev",
   },
   {
+    title: "Aether - AIEmail Client",
+    description:
+      "An AI-first email client with a local LLM for maximum security, data sovereignty, and lightning-fast operations.",
+    tech: ["React", "TypeScript", "LLM", "Email"],
+    code: "https://github.com/GoyalIshaan/aether",
+    demo: null,
+    category: "Web Dev",
+  },
+  {
     title: "Custom Programming Language Interpreter",
     description:
       "Built a complete interpreter in Go for a custom programming language, including lexer, parser, and evaluator. Implemented features such as first-class functions, closures, and a REPL.",
@@ -59,8 +68,8 @@ const projects = [
     description:
       "A streamlined note-taking application with markdown support, real-time collaboration features, and intuitive organization tools.",
     tech: ["TypeScript", "React", "Markdown"],
-    code: "#",
-    demo: null,
+    code: "https://github.com/GoyalIshaan/quickmark",
+    demo: "https://quickmark-one.vercel.app/",
     category: "Web Dev",
   },
   {
