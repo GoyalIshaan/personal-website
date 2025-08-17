@@ -1,148 +1,226 @@
-import Link from "next/link";
 import GitHubActivity from "@/components/GitHubActivity";
+import BlurFade from "@/components/magicui/blur-fade";
+import BlurFadeText from "@/components/magicui/blur-fade-text";
+import { ProjectCard } from "@/components/project-card";
+import { ResumeCard } from "@/components/resume-card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { DATA } from "@/data/resume";
+import Link from "next/link";
+import Markdown from "react-markdown";
 
-export default function Home() {
+const BLUR_FADE_DELAY = 0.04;
+
+export default function Page() {
   return (
-    <main className="min-h-screen bg-white text-black flex flex-col items-center px-4 py-16">
-      {/* Profile Picture and Name */}
-      <div className="flex flex-col items-center mb-10">
-        <img
-          src="/pfp.jpg"
-          alt="Ishaan Goyal"
-          className="w-32 h-32 rounded-full mb-6 border border-gray-200 shadow-sm object-cover"
-        />
-        <h1 className="text-4xl font-extrabold mb-2 text-center">
-          Hey, I'm Ishaan
-        </h1>
-        <p className="text-lg text-center max-w-xl mb-4">
-          I'm a CS student @ UIUC, passionate about building impactful
-          technology and solving complex problems. I love working across the
-          stack, from real-time web apps to AI-powered tools.
-        </p>
-        <div className="flex gap-6 mt-2">
-          <Link
-            href="mailto:ishaan6@illinois.edu"
-            className="underline hover:text-blue-600"
-          >
-            Email
-          </Link>
-          <Link
-            href="https://www.linkedin.com/in/ishaan-goyal/"
-            className="underline hover:text-blue-600"
-            target="_blank"
-          >
-            LinkedIn
-          </Link>
-          <Link
-            href="https://github.com/GoyalIshaan"
-            className="underline hover:text-blue-600"
-            target="_blank"
-          >
-            GitHub
-          </Link>
-          <Link
-            href="https://x.com/IshaanGoyal05"
-            className="underline hover:text-blue-600"
-            target="_blank"
-          >
-            Twitter
-          </Link>
+    <main className="flex flex-col min-h-[100dvh] space-y-10">
+      <section id="hero">
+        <div className="mx-auto w-full max-w-2xl space-y-8">
+          <div className="gap-2 flex justify-between">
+            <div className="flex-col flex flex-1 space-y-1.5">
+              <BlurFadeText
+                delay={BLUR_FADE_DELAY}
+                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
+                yOffset={8}
+                text={`Hi, I'm ${DATA.name.split(" ")[0]} 👋`}
+              />
+              <BlurFadeText
+                className="max-w-[600px] md:text-xl"
+                delay={BLUR_FADE_DELAY}
+                text={DATA.description}
+              />
+            </div>
+            <BlurFade delay={BLUR_FADE_DELAY}>
+              <Avatar className="size-28 border">
+                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
+                <AvatarFallback>{DATA.initials}</AvatarFallback>
+              </Avatar>
+            </BlurFade>
+          </div>
         </div>
-      </div>
-
-      {/* Experience */}
-      <section className="w-full max-w-2xl mb-12">
-        <h2 className="text-2xl font-bold mb-4">Experience</h2>
-        <ul className="list-disc pl-6 space-y-2">
-          <li>
-            <span className="font-semibold">
-              Giest VR Metaverse, Gies School of Business (UIUC)
-            </span>{" "}
-            (Jan 2025 - May 2025): Developed and designed a VR-based platform to
-            help teach students in a virtual environment. Focused on environment
-            design and reducing latency for real-time conversations with an
-            avatar of a renowned UIUC business professor.
-          </li>
-          <li>
-            <span className="font-semibold">
-              Software Developer Intern, Jinship (Disruption Lab)
-            </span>{" "}
-            (Sep 2024 - Dec 2024): Led feedback system design, improved chatbot
-            workflows, and optimized client-side code for 25% faster responses.
-          </li>
-          <li>
-            <span className="font-semibold">
-              Software Developer, Illinois Space Society
-            </span>{" "}
-            (Sep 2023 - Dec 2023): Rebuilt flight monitoring system in React,
-            boosting performance by 70% and leading a UI/UX redesign.
-          </li>
-          <li>
-            <span className="font-semibold">Founder, NFT Reality</span> (Dec
-            2021 - Feb 2023): Launched a VR-based NFT marketplace, managed a
-            10-member team, and built a community of 700+ members.
-          </li>
-        </ul>
       </section>
-
-      {/* Projects */}
-      <section className="w-full max-w-2xl mb-4">
-        <h2 className="text-2xl font-bold mb-4">Projects</h2>
-        <ul className="list-disc pl-6 space-y-6">
-          <li>
-            <span className="font-semibold">Hephaestus</span>: AI context/memory
-            layer for LLM agents, modular OpenAPI tool schema, and real-time
-            execution streaming. (Next.js, TypeScript, LangChain, AWS)
-          </li>
-          <li>
-            <span className="font-semibold">Docnest</span>: Real-time
-            collaborative text editor with Yjs CRDT, custom WebSocket layer, and
-            AWS deployment. (React, TypeScript, Node.js)
-          </li>
-          <li>
-            <span className="font-semibold">
-              Nasdaq ITCH Market Data Decoder
-            </span>
-            : High-throughput binary decoder for Nasdaq ITCH 5.0 protocol (650K
-            msgs/sec, 1.68µs latency), with zero-copy parsing, profiling, and
-            CSV export. (C++, mmap, Makefile, perf, valgrind, CSV)
-          </li>
-        </ul>
+      <section id="research">
+        <div className="flex min-h-0 flex-col gap-y-1">
+          <BlurFade delay={BLUR_FADE_DELAY * 3}>
+            <h2 className="text-xl font-bold">Research</h2>
+          </BlurFade>
+          {DATA.research.map((research, id) => (
+            <BlurFade
+              key={research.company}
+              delay={BLUR_FADE_DELAY * 3.2 + id * 0.05}
+            >
+              <ResumeCard
+                key={research.company}
+                logoUrl={research.logoUrl}
+                altText={research.company}
+                title={research.company}
+                subtitle={research.title}
+                href={research.href}
+                badges={research.badges}
+                period={`${research.start} - ${research.end ?? "Present"}`}
+                description={research.description}
+              />
+            </BlurFade>
+          ))}
+        </div>
       </section>
-      <div className="w-full max-w-2xl mb-12 flex justify-center">
-        <Link
-          href="/projects"
-          className="text-sm underline text-gray-500 hover:text-blue-600"
-        >
-          See more projects →
-        </Link>
-      </div>
-
-      {/* GitHub Activity Graph */}
-      <section className="w-full max-w-2xl mb-12 flex flex-col items-center">
-        <h2 className="text-2xl font-bold mb-4">GitHub Activity</h2>
-        <GitHubActivity />
+      <section id="work">
+        <div className="flex min-h-0 flex-col gap-y-1">
+          <BlurFade delay={BLUR_FADE_DELAY * 4}>
+            <h2 className="text-xl font-bold">Work Experience</h2>
+          </BlurFade>
+          {DATA.work.map((work, id) => (
+            <BlurFade
+              key={work.company}
+              delay={BLUR_FADE_DELAY * 4.2 + id * 0.05}
+            >
+              <ResumeCard
+                key={work.company}
+                logoUrl={work.logoUrl}
+                altText={work.company}
+                title={work.company}
+                subtitle={work.title}
+                href={work.href}
+                badges={work.badges}
+                period={`${work.start} - ${work.end ?? "Present"}`}
+                description={work.description}
+              />
+            </BlurFade>
+          ))}
+        </div>
       </section>
-
-      {/* Education */}
-      <section className="w-full max-w-2xl mb-12">
-        <h2 className="text-2xl font-bold mb-4">Education</h2>
-        <p className="mb-1">
-          <span className="font-semibold">
-            University of Illinois Urbana-Champaign
-          </span>{" "}
-          (BS in Computer Science, James Scholar Honors Program, May 2026)
-        </p>
-        <p className="text-sm text-gray-600">
-          Relevant coursework: Data Structures, Computer Architecture, Systems
-          Programming, Linear Algebra, Discrete Math, Probability & Statistics.
-        </p>
+      <section id="education">
+        <div className="flex min-h-0 flex-col gap-y-1">
+          <BlurFade delay={BLUR_FADE_DELAY * 5}>
+            <h2 className="text-xl font-bold">Education</h2>
+          </BlurFade>
+          {DATA.education.map((education, id) => (
+            <BlurFade
+              key={education.school}
+              delay={BLUR_FADE_DELAY * 5.2 + id * 0.05}
+            >
+              <ResumeCard
+                key={education.school}
+                href={education.href}
+                logoUrl={education.logoUrl}
+                altText={education.school}
+                title={education.school}
+                subtitle={education.degree}
+                period={`${education.start} - ${education.end}`}
+              />
+            </BlurFade>
+          ))}
+        </div>
       </section>
-
-      {/* Footer */}
-      <footer className="mt-16 text-center text-gray-400 text-sm">
-        © {new Date().getFullYear()} Ishaan Goyal
-      </footer>
+      <section id="skills">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <BlurFade delay={BLUR_FADE_DELAY * 6}>
+            <h2 className="text-xl font-bold">Skills</h2>
+          </BlurFade>
+          <div className="flex flex-wrap gap-1">
+            {DATA.skills.map((skill, id) => (
+              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 6.2 + id * 0.05}>
+                <Badge key={skill}>{skill}</Badge>
+              </BlurFade>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section id="projects">
+        <div className="space-y-12 w-full py-12">
+          <BlurFade delay={BLUR_FADE_DELAY * 7}>
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                  My Projects
+                </div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  Check out my latest work
+                </h2>
+                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  I&apos;ve worked on a variety of projects, from simple
+                  websites to complex web applications. Here are a few of my
+                  favorites.
+                </p>
+              </div>
+            </div>
+          </BlurFade>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+            {DATA.projects.map((project, id) => (
+              <BlurFade
+                key={project.title}
+                delay={BLUR_FADE_DELAY * 8 + id * 0.05}
+              >
+                <ProjectCard
+                  href={project.href}
+                  key={project.title}
+                  title={project.title}
+                  description={project.description}
+                  dates={project.dates}
+                  tags={project.technologies}
+                  image={project.image}
+                  video={project.video}
+                  links={project.links}
+                />
+              </BlurFade>
+            ))}
+          </div>
+          <BlurFade delay={BLUR_FADE_DELAY * 9}>
+            <div className="flex justify-center">
+              <Link href="/projects">
+                <Button className="px-8 text-lg">View All Projects</Button>
+              </Link>
+            </div>
+          </BlurFade>
+        </div>
+      </section>
+      <section id="github-activity">
+        <div className="space-y-12 w-full">
+          <BlurFade delay={BLUR_FADE_DELAY * 10}>
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  I like building things
+                </h2>
+                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Here&apos;s my GitHub commit activity showing my consistent
+                  coding and building habits. Each green square represents
+                  contributions to various projects, from web apps to AI tools.
+                </p>
+              </div>
+            </div>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY * 11}>
+            <GitHubActivity />
+          </BlurFade>
+        </div>
+      </section>
+      <section id="contact">
+        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
+          <BlurFade delay={BLUR_FADE_DELAY * 12}>
+            <div className="space-y-3">
+              <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                Contact
+              </div>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                Get in Touch
+              </h2>
+              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Want to chat? Just shoot me a dm{" "}
+                <Link
+                  href={DATA.contact.social.X.url}
+                  className="text-blue-500 hover:underline"
+                >
+                  with a direct question on twitter
+                </Link>{" "}
+                and I&apos;ll respond whenever I can. I will ignore all
+                soliciting.
+              </p>
+            </div>
+          </BlurFade>
+        </div>
+      </section>
     </main>
   );
 }
