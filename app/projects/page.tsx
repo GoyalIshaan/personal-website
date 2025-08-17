@@ -64,7 +64,7 @@ const projects = [
     links: [
       {
         type: "Source",
-        href: "https://github.com/GoyalIshaan/market-data-pipeline",
+        href: "https://gitlab.engr.illinois.edu/ie421_high_frequency_trading_spring_2025/ie421_hft_spring_2025_group_14/group_14_project",
         icon: <Icons.github className="size-3" />,
       },
     ],
@@ -218,25 +218,6 @@ const projects = [
     category: "Low Level",
   },
   {
-    title: "Itch Decoder",
-    href: "#",
-    dates: "2024",
-    active: true,
-    description:
-      "A specialized tool for decoding and analyzing Itch.io game files. Built with Python and C++, featuring efficient binary parsing, file format detection, and visualization tools.",
-    technologies: ["Python", "C++", "Binary Parsing"],
-    links: [
-      {
-        type: "Source",
-        href: "https://github.com/GoyalIshaan/itch-decoder",
-        icon: <Icons.github className="size-3" />,
-      },
-    ],
-    image: "/default.jpg",
-    video: "",
-    category: "Low Level",
-  },
-  {
     title: "Nasdaq ITCH Market Data Decoder",
     href: "#",
     dates: "2024",
@@ -244,7 +225,13 @@ const projects = [
     description:
       "High-throughput binary decoder for Nasdaq ITCH 5.0 protocol (650K msgs/sec, 1.68µs latency), with zero-copy parsing, profiling, and CSV export.",
     technologies: ["C++", "mmap", "Makefile", "perf", "valgrind", "CSV"],
-    links: [],
+    links: [
+      {
+        type: "Source",
+        href: "https://github.com/GoyalIshaan/itch-decoder",
+        icon: <Icons.github className="size-3" />,
+      },
+    ],
     image: "/default.jpg",
     video: "",
     category: "HFT",

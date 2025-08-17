@@ -199,7 +199,7 @@ export const DATA = {
       links: [
         {
           type: "Source",
-          href: "https://github.com/ishaan/market-data-pipeline",
+          href: "https://gitlab.engr.illinois.edu/ie421_high_frequency_trading_spring_2025/ie421_hft_spring_2025_group_14/group_14_project",
           icon: <Icons.github className="size-3" />,
         },
       ],
