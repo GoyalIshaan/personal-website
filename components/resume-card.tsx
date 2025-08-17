@@ -2,10 +2,11 @@
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { ChevronRightIcon } from "lucide-react";
+import { ChevronRightIcon, ExternalLinkIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -35,6 +36,19 @@ export const ResumeCard = ({
     if (description) {
       e.preventDefault();
       setIsExpanded(!isExpanded);
+    } else if (href && href !== "#") {
+      // If there's an external link, prevent default navigation
+      e.preventDefault();
+    }
+  };
+
+  const handleExternalLink = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (href && href !== "#") {
+      window.open(href, "_blank");
     }
   };
 
@@ -88,8 +102,21 @@ export const ResumeCard = ({
                 </div>
               )}
             </div>
-            <div className="text-xs text-muted-foreground sm:text-right whitespace-nowrap">
-              {period}
+            <div className="flex flex-col items-end gap-2">
+              <div className="text-xs text-muted-foreground whitespace-nowrap">
+                {period}
+              </div>
+              {href && href !== "#" && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="text-xs h-6 px-2"
+                  onClick={handleExternalLink}
+                >
+                  <ExternalLinkIcon className="size-3 mr-1" />
+                  View
+                </Button>
+              )}
             </div>
           </div>
           {description && (

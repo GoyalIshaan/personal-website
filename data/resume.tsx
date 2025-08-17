@@ -116,13 +116,13 @@ export const DATA = {
   research: [
     {
       company: "ADAPT Lab, UIUC",
-      href: "https://adaptlab.illinois.edu/",
+      href: "https://arxiv.org/pdf/2507.20055",
       badges: [
-        "ConstraintFlow DSL",
+        "Neural Network Certification",
+        "Compiler Optimization",
         "JIT",
         "Caching",
         "GPU Architecture",
-        "Compiler Optimization",
       ],
       location: "Champaign, IL",
       title: "Compiler Researcher",
@@ -130,7 +130,7 @@ export const DATA = {
       start: "May 2025",
       end: "Present",
       description:
-        "Optimized ConstraintFlow DSL compiler for neural network verification, refactoring core passes and creating 15+ diagrams. Engineered multi-level caching and JIT compilation accelerating operations by 45×. Built profiling instrumentation across 20+ compilation stages, eliminating bottlenecks to reduce compile-time by 30%.",
+        "Optimized ConstraintFlow DSL compiler for neural network verification, refactoring core passes and creating 15+ diagrams. Engineered multi-level caching and JIT compilation accelerating operations by 45×. Built profiling instrumentation across 20+ compilation stages, eliminating bottlenecks to reduce compile-time by 30%. Co-authored published research paper on 'A Tensor-Based Compiler and a Runtime for Neuron-Level DNN Certifier Specifications' introducing novel compiler framework for DNN verification.",
     },
   ],
   education: [
