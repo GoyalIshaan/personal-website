@@ -2,115 +2,158 @@
 
 import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import React, { PropsWithChildren, useRef } from "react";
+import React, {
+  forwardRef,
+  useCallback,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+} from "react";
 
-export interface DockProps extends VariantProps<typeof dockVariants> {
-  className?: string;
+export interface DockProps
+  extends VariantProps<typeof dockVariants>,
+    React.HTMLAttributes<HTMLDivElement> {
   magnification?: number;
   distance?: number;
-  children: React.ReactNode;
 }
 
+const DEFAULT_SIZE = 44;
 const DEFAULT_MAGNIFICATION = 60;
 const DEFAULT_DISTANCE = 140;
 
 const dockVariants = cva(
-  "mx-auto w-max h-full p-2 flex items-end rounded-full border"
+  "mx-auto flex h-full w-max items-end rounded-full border p-2",
 );
 
-const Dock = React.forwardRef<HTMLDivElement, DockProps>(
+const Dock = forwardRef<HTMLDivElement, DockProps>(
   (
     {
       className,
       children,
       magnification = DEFAULT_MAGNIFICATION,
       distance = DEFAULT_DISTANCE,
+      onPointerMove,
+      onPointerLeave,
       ...props
     },
-    ref
+    forwardedRef,
   ) => {
-    const mousex = useMotionValue(Infinity);
+    const dockRef = useRef<HTMLDivElement>(null);
+    const animationFrame = useRef<number | null>(null);
+    const canMagnify = useRef(false);
 
-    const renderChildren = () => {
-      return React.Children.map(children, (child: any) => {
-        if (React.isValidElement(child)) {
-          return React.cloneElement(child, {
-            mousex,
-            magnification,
-            distance,
-          } as DockIconProps);
-        }
-        return child;
-      });
-    };
+    useImperativeHandle(forwardedRef, () => dockRef.current as HTMLDivElement);
+
+    useEffect(() => {
+      const pointerQuery = window.matchMedia(
+        "(hover: hover) and (pointer: fine)",
+      );
+      const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const updateSupport = () => {
+        canMagnify.current = pointerQuery.matches && !motionQuery.matches;
+      };
+
+      updateSupport();
+      pointerQuery.addEventListener("change", updateSupport);
+      motionQuery.addEventListener("change", updateSupport);
+
+      return () => {
+        pointerQuery.removeEventListener("change", updateSupport);
+        motionQuery.removeEventListener("change", updateSupport);
+      };
+    }, []);
+
+    useEffect(
+      () => () => {
+        if (animationFrame.current !== null)
+          cancelAnimationFrame(animationFrame.current);
+      },
+      [],
+    );
+
+    const resetIcons = useCallback(() => {
+      dockRef.current
+        ?.querySelectorAll<HTMLElement>("[data-dock-icon]")
+        .forEach((icon) => icon.style.setProperty("--dock-scale", "1"));
+    }, []);
+
+    const updateIcons = useCallback(
+      (pointerX: number) => {
+        dockRef.current
+          ?.querySelectorAll<HTMLElement>("[data-dock-icon]")
+          .forEach((icon) => {
+            const bounds = icon.getBoundingClientRect();
+            const delta = Math.abs(pointerX - (bounds.left + bounds.width / 2));
+            const proximity = Math.max(0, 1 - delta / distance);
+            const scale =
+              1 + (magnification / DEFAULT_SIZE - 1) * proximity * proximity;
+            icon.style.setProperty("--dock-scale", scale.toFixed(3));
+          });
+      },
+      [distance, magnification],
+    );
 
     return (
-      <motion.div
-        ref={ref}
-        onMouseMove={(e) => mousex.set(e.pageX)}
-        onMouseLeave={() => mousex.set(Infinity)}
-        {...props}
+      <div
+        ref={dockRef}
+        onPointerMove={(event) => {
+          onPointerMove?.(event);
+          if (!canMagnify.current) return;
+          if (animationFrame.current !== null)
+            cancelAnimationFrame(animationFrame.current);
+          animationFrame.current = requestAnimationFrame(() =>
+            updateIcons(event.clientX),
+          );
+        }}
+        onPointerLeave={(event) => {
+          onPointerLeave?.(event);
+          if (animationFrame.current !== null)
+            cancelAnimationFrame(animationFrame.current);
+          resetIcons();
+        }}
         className={cn(dockVariants({ className }))}
+        {...props}
       >
-        {renderChildren()}
-      </motion.div>
+        {children}
+      </div>
     );
-  }
+  },
 );
 
 Dock.displayName = "Dock";
 
-export interface DockIconProps {
+type DockIconStyle = React.CSSProperties & { "--dock-scale"?: string };
+
+export interface DockIconProps extends React.HTMLAttributes<HTMLDivElement> {
   size?: number;
-  magnification?: number;
-  distance?: number;
-  mousex?: any;
-  className?: string;
-  children?: React.ReactNode;
-  props?: PropsWithChildren;
 }
 
 const DockIcon = ({
-  size,
-  magnification = DEFAULT_MAGNIFICATION,
-  distance = DEFAULT_DISTANCE,
-  mousex,
+  size = DEFAULT_SIZE,
   className,
   children,
+  style,
   ...props
 }: DockIconProps) => {
-  const ref = useRef<HTMLDivElement>(null);
-
-  const distanceCalc = useTransform(mousex, (val: number) => {
-    const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
-    return val - bounds.x - bounds.width / 2;
-  });
-
-  let widthSync = useTransform(
-    distanceCalc,
-    [-distance, 0, distance],
-    [40, magnification, 40]
-  );
-
-  let width = useSpring(widthSync, {
-    mass: 0.1,
-    stiffness: 150,
-    damping: 12,
-  });
+  const iconStyle: DockIconStyle = {
+    ...style,
+    width: size,
+    height: size,
+    "--dock-scale": "1",
+  };
 
   return (
-    <motion.div
-      ref={ref}
-      style={{ width }}
+    <div
+      data-dock-icon=""
+      style={iconStyle}
       className={cn(
-        "flex aspect-square cursor-pointer items-center justify-center rounded-full",
-        className
+        "relative z-0 flex shrink-0 scale-[var(--dock-scale)] cursor-pointer items-center justify-center rounded-full transition-transform duration-150 ease-out hover:z-10 focus-within:z-10 motion-reduce:transform-none motion-reduce:transition-none",
+        className,
       )}
       {...props}
     >
       {children}
-    </motion.div>
+    </div>
   );
 };
 
