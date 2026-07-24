@@ -61,19 +61,6 @@ export default function Page() {
           </BlurFade>
 
           <BlurFade delay={BLUR_FADE_DELAY * 4}>
-            <ul
-              className="grid gap-2 border-y py-3 text-sm sm:grid-cols-3"
-              aria-label="Selected results"
-            >
-              <li className="font-medium">1M+ songs ingested.</li>
-              <li className="font-medium">51× compiler hot-path speedup.</li>
-              <li className="font-medium">
-                Approximately 1.3× faster MoE forward passes.
-              </li>
-            </ul>
-          </BlurFade>
-
-          <BlurFade delay={BLUR_FADE_DELAY * 5}>
             <div className="flex flex-wrap gap-2">
               <Button asChild className="min-h-11">
                 <Link
@@ -82,7 +69,7 @@ export default function Page() {
                   rel="noreferrer"
                 >
                   <FileTextIcon aria-hidden="true" />
-                  AI Infrastructure Resume
+                  Resume
                 </Link>
               </Button>
               <Button asChild variant="outline" className="min-h-11">
