@@ -42,6 +42,8 @@ export default function Navbar() {
                     href={item.href}
                     aria-label={item.label}
                     aria-current={isCurrent ? "page" : undefined}
+                    target={item.newTab ? "_blank" : undefined}
+                    rel={item.newTab ? "noreferrer" : undefined}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
                       "min-h-11 min-w-11 focus-visible:ring-offset-0",

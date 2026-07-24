@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { NAV_ITEMS, SOCIAL_LINKS } from "@/data/navigation";
+import { NAV_ITEMS, RESUME_HREF, SOCIAL_LINKS } from "@/data/navigation";
 
 export const DATA = {
   name: "Ishaan Goyal",
@@ -14,7 +14,7 @@ export const DATA = {
   avatarUrl: "/pfp.webp",
 
   resume: {
-    aiInfrastructure: "/resumes/ishaan-goyal-ai-infrastructure.pdf",
+    aiInfrastructure: RESUME_HREF,
   },
 
   skillGroups: [
@@ -129,7 +129,6 @@ export const DATA = {
     },
     {
       company: "ADAPT Lab, UIUC",
-      href: "https://arxiv.org/pdf/2507.20055",
       badges: [
         "Neural Network Verification",
         "Compiler Optimization",
@@ -151,7 +150,6 @@ export const DATA = {
   education: [
     {
       school: "University of Illinois Urbana-Champaign",
-      href: "https://illinois.edu",
       degree: "Bachelor of Science in Computer Science",
       logoUrl: "/uiucLogo.png",
       start: "2022",

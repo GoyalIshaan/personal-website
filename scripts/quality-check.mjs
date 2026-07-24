@@ -135,10 +135,28 @@ assert(
     "page",
   "Home navigation item must expose the current page",
 );
+const dockResumeLink = page.locator(
+  'nav[aria-label="Primary navigation"] a[href$="ishaan-goyal-ai-infrastructure.pdf"]',
+);
 assert(
-  (await page.locator('a[href$="ishaan-goyal-ai-infrastructure.pdf"]').count()) ===
-    1,
-  "Home must link the AI Infrastructure resume",
+  (await dockResumeLink.count()) === 1,
+  "The dock must contain one Resume link",
+);
+assert(
+  (await dockResumeLink.getAttribute("aria-label")) === "Resume",
+  "The dock Resume link must have an accessible name",
+);
+assert(
+  (await dockResumeLink.getAttribute("target")) === "_blank",
+  "The dock Resume link must open the PDF in a new tab",
+);
+assert(
+  (await dockResumeLink.getAttribute("rel"))?.includes("noreferrer"),
+  "The dock Resume link must protect the new tab",
+);
+assert(
+  (await page.locator("#hero a, #hero button").count()) === 0,
+  "The hero must not contain Resume or Email controls",
 );
 const dockTargets = page.locator(
   'nav[aria-label="Primary navigation"] a, nav[aria-label="Primary navigation"] button',
@@ -163,6 +181,10 @@ assert(
   JSON.stringify(workExperienceTitles) ===
     JSON.stringify(["A Vinyl Bar in Shibuya", "ADAPT Lab, UIUC"]),
   "Work Experience must contain only A Vinyl Bar in Shibuya and ADAPT Lab, in that order",
+);
+assert(
+  (await page.locator("#work a, #education a").count()) === 0,
+  "Work Experience and Education must not contain View links",
 );
 assert(
   (await page.locator("#research").count()) === 0,
