@@ -1,12 +1,10 @@
 "use client";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
 import { ChevronRightIcon, ExternalLinkIcon } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -18,8 +16,14 @@ interface ResumeCardProps {
   href?: string;
   badges?: readonly string[];
   period: string;
+  summary?: string;
   description?: string;
 }
+
+function hasValidHref(href?: string): href is string {
+  return Boolean(href && href.trim() && href.trim() !== "#");
+}
+
 export const ResumeCard = ({
   logoUrl,
   altText,
@@ -28,117 +32,110 @@ export const ResumeCard = ({
   href,
   badges,
   period,
+  summary,
   description,
 }: ResumeCardProps) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
-
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    if (description) {
-      e.preventDefault();
-      setIsExpanded(!isExpanded);
-    } else if (href && href !== "#") {
-      // If there's an external link, prevent default navigation
-      e.preventDefault();
-    }
-  };
-
-  const handleExternalLink = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (href && href !== "#") {
-      window.open(href, "_blank");
-    }
-  };
+  const detailsId = React.useId();
+  const externalHref = hasValidHref(href) ? href : undefined;
 
   return (
-    <Link
-      href={href || "#"}
-      className="block cursor-pointer"
-      onClick={handleClick}
-    >
-      <div className="flex p-3 gap-3">
-        <div className="flex-none">
-          <Avatar className="border size-12 bg-muted-background dark:bg-foreground">
-            <AvatarImage
-              src={logoUrl}
-              alt={altText}
-              className="object-contain"
-            />
-            <AvatarFallback>{altText[0]}</AvatarFallback>
-          </Avatar>
-        </div>
-        <div className="flex-1 min-w-0 group">
-          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-x-4 mb-2">
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2 mb-1">
-                <h3 className="font-semibold text-sm leading-none truncate">
-                  {title}
-                </h3>
-                <ChevronRightIcon
-                  className={cn(
-                    "size-4 flex-shrink-0 translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100",
-                    isExpanded ? "rotate-90" : "rotate-0"
-                  )}
-                />
-              </div>
-              {subtitle && (
-                <div className="font-sans text-xs text-muted-foreground mb-2">
-                  {subtitle}
-                </div>
-              )}
-              {badges && badges.length > 0 && (
-                <div className="flex flex-wrap gap-1 mb-2">
-                  {badges.map((badge, index) => (
-                    <Badge
-                      variant="secondary"
-                      className="text-xs px-2 py-0.5"
-                      key={index}
-                    >
-                      {badge}
-                    </Badge>
-                  ))}
-                </div>
-              )}
-            </div>
-            <div className="flex flex-col items-end gap-2">
-              <div className="text-xs text-muted-foreground whitespace-nowrap">
-                {period}
-              </div>
-              {href && href !== "#" && (
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="text-xs h-6 px-2"
-                  onClick={handleExternalLink}
-                >
-                  <ExternalLinkIcon className="size-3 mr-1" />
-                  View
-                </Button>
-              )}
-            </div>
-          </div>
-          {description && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{
-                opacity: isExpanded ? 1 : 0,
-                height: isExpanded ? "auto" : 0,
-              }}
-              transition={{
-                duration: 0.7,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              className="overflow-hidden"
-            >
-              <div className="text-xs text-muted-foreground leading-relaxed pt-2 border-t">
-                {description}
-              </div>
-            </motion.div>
-          )}
+    <article className="flex gap-3 rounded-lg p-3 transition-colors hover:bg-muted/40 motion-reduce:transition-none">
+      <div className="flex-none">
+        <div className="relative size-12 overflow-hidden rounded-full border bg-muted-background dark:bg-foreground">
+          <Image
+            src={logoUrl}
+            alt={altText}
+            fill
+            loading="eager"
+            sizes="48px"
+            unoptimized
+            className="object-contain"
+          />
         </div>
       </div>
-    </Link>
+
+      <div className="min-w-0 flex-1">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-x-4">
+          <div className="min-w-0 flex-1">
+            <h3 className="break-words text-sm font-semibold leading-tight">
+              {title}
+            </h3>
+            {subtitle && (
+              <p className="mt-1 break-words font-sans text-xs text-muted-foreground">
+                {subtitle}
+              </p>
+            )}
+          </div>
+          <time className="shrink-0 text-xs text-muted-foreground">
+            {period}
+          </time>
+        </div>
+
+        {summary && (
+          <p className="mt-2 text-pretty text-xs font-medium leading-relaxed text-foreground/90">
+            {summary}
+          </p>
+        )}
+
+        {badges && badges.length > 0 && (
+          <div className="mt-2 flex flex-wrap gap-1" aria-label="Skills used">
+            {badges.map((badge) => (
+              <Badge
+                variant="secondary"
+                className="px-2 py-0.5 text-xs"
+                key={badge}
+              >
+                {badge}
+              </Badge>
+            ))}
+          </div>
+        )}
+
+        {(description || externalHref) && (
+          <div className="mt-2 flex flex-wrap items-center gap-2">
+            {description && (
+              <Button
+                type="button"
+                variant="ghost"
+                size="sm"
+                className="min-h-11 px-2 text-xs"
+                aria-expanded={isExpanded}
+                aria-controls={detailsId}
+                onClick={() => setIsExpanded((expanded) => !expanded)}
+              >
+                <ChevronRightIcon
+                  className={cn(
+                    "size-3.5 transition-transform duration-200 motion-reduce:transition-none",
+                    isExpanded && "rotate-90",
+                  )}
+                  aria-hidden="true"
+                />
+                {isExpanded ? "Hide details" : "Show details"}
+              </Button>
+            )}
+            {externalHref && (
+              <Button asChild variant="outline" size="sm" className="min-h-11 px-3 text-xs">
+                <Link href={externalHref} target="_blank" rel="noreferrer">
+                  <ExternalLinkIcon className="size-3" aria-hidden="true" />
+                  View
+                  <span className="sr-only"> {title}</span>
+                </Link>
+              </Button>
+            )}
+          </div>
+        )}
+
+        {description && (
+          <div
+            id={detailsId}
+            hidden={!isExpanded}
+            className="mt-2 border-t pt-2 text-xs leading-relaxed text-muted-foreground"
+          >
+            {description}
+          </div>
+        )}
+      </div>
+    </article>
   );
 };

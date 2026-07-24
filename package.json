@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint --max-warnings=0",
+    "typecheck": "tsc --noEmit --incremental false",
+    "generate:project-art": "node scripts/generate-project-art.mjs",
+    "qa": "node scripts/quality-check.mjs"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
@@ -45,10 +48,9 @@
     "cmdk": "^0.2.0",
     "date-fns": "^3.0.0",
     "embla-carousel-react": "8.5.1",
-    "framer-motion": "^12.23.12",
     "input-otp": "1.4.1",
     "lucide-react": "^0.454.0",
-    "next": "15.1.11",
+    "next": "15.5.21",
     "next-themes": "^0.4.6",
     "react": "^19",
     "react-day-picker": "8.10.1",
@@ -65,10 +67,17 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "chrome-launcher": "^1.2.1",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^15.5.21",
+    "lighthouse": "^13.4.1",
+    "playwright-core": "^1.55.1",
     "postcss": "^8",
+    "sharp": "^0.34.5",
     "tailwindcss": "^3.4.17",
     "typescript": "^5"
   },

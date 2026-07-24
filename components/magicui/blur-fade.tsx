@@ -1,59 +1,63 @@
-"use client";
+import { cn } from "@/lib/utils";
+import type { CSSProperties, HTMLAttributes, ReactNode } from "react";
 
-import { AnimatePresence, motion, useInView, Variants } from "framer-motion";
-import { useRef } from "react";
+type BlurFadeStyle = CSSProperties & {
+  "--blur-fade-delay"?: string;
+  "--blur-fade-duration"?: string;
+  "--blur-fade-y"?: string;
+  "--blur-fade-blur"?: string;
+};
 
-interface BlurFadeProps {
-  children: React.ReactNode;
-  className?: string;
-  variant?: {
-    hidden: { y: number };
-    visible: { y: number };
-  };
+interface BlurFadeProps extends HTMLAttributes<HTMLDivElement> {
+  children: ReactNode;
   duration?: number;
   delay?: number;
   yOffset?: number;
   inView?: boolean;
   inViewMargin?: string;
   blur?: string;
+  variant?: unknown;
 }
+
 const BlurFade = ({
   children,
   className,
-  variant,
   duration = 0.4,
   delay = 0,
   yOffset = 6,
-  inView = false,
-  inViewMargin = "-50px",
   blur = "6px",
+  style,
+  variant: _variant,
+  inView: _inView,
+  inViewMargin: _inViewMargin,
+  ...props
 }: BlurFadeProps) => {
-  const ref = useRef(null);
-  const inViewResult = useInView(ref, { once: true, margin: inViewMargin });
-  const isInView = !inView || inViewResult;
-  const defaultVariants: Variants = {
-    hidden: { y: yOffset, opacity: 0, filter: `blur(${blur})` },
-    visible: { y: -yOffset, opacity: 1, filter: `blur(0px)` },
+  void _variant;
+  void _inView;
+  void _inViewMargin;
+
+  const safeDuration = Math.min(Math.max(duration, 0), 0.5);
+  const safeDelay = Math.min(
+    Math.max(delay, 0),
+    Math.max(0, 0.6 - safeDuration),
+  );
+  const animationStyle: BlurFadeStyle = {
+    ...style,
+    "--blur-fade-delay": `${safeDelay}s`,
+    "--blur-fade-duration": `${safeDuration}s`,
+    "--blur-fade-y": `${yOffset}px`,
+    "--blur-fade-blur": blur,
   };
-  const combinedVariants = variant || defaultVariants;
+
   return (
-    <AnimatePresence>
-      <motion.div
-        ref={ref}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        exit="hidden"
-        variants={combinedVariants}
-        transition={{
-          delay: 0.04 + delay,
-          duration,
-          ease: "easeOut",
-        }}
-        className={className}
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+    <div
+      data-blur-fade=""
+      className={cn("blur-fade", className)}
+      style={animationStyle}
+      {...props}
+    >
+      {children}
+    </div>
   );
 };
 

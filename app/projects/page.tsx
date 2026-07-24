@@ -1,293 +1,181 @@
-"use client";
-
-import { Badge } from "@/components/ui/badge";
 import BlurFade from "@/components/magicui/blur-fade";
 import { ProjectCard } from "@/components/project-card";
-import { Icons } from "@/components/icons";
-import { useState } from "react";
+import { DATA } from "@/data/resume";
 
 const BLUR_FADE_DELAY = 0.04;
+const filters = [
+  "All",
+  "AI and ML",
+  "Developer Tools and Web",
+  "Systems, HFT, and Data",
+] as const;
 
-const categories = ["All", "Web Dev", "HFT", "Low Level"];
+type ProjectFilter = (typeof filters)[number];
 
-const projects = [
-  {
-    title: "VidSmith",
-    href: "https://github.com/GoyalIshaan/vidSmith",
-    dates: "Jul 2025",
-    active: true,
-    description:
-      "Scalable microservices video platform with secure ingestion, automated transcoding, and global CDN delivery. Built on AWS EKS with RabbitMQ messaging, achieving sub-50ms latencies at 10k req/s. Optimized FFmpeg transcoding reducing processing time by 40%, and deployed CloudFront CDN cutting startup latency by 70%.",
-    technologies: [
-      "Go",
-      "RabbitMQ",
-      "Docker",
-      "Kubernetes",
-      "AWS EKS",
-      "AWS CloudFront",
-      "FFmpeg",
-      "Microservices",
-    ],
-    links: [
-      {
-        type: "Demo",
-        href: "https://vidsmith.org/",
-        icon: <Icons.globe className="size-3" />,
-      },
-      {
-        type: "Source",
-        href: "https://github.com/GoyalIshaan/vidSmith",
-        icon: <Icons.github className="size-3" />,
-      },
-    ],
-    image: "/vidSmith.png",
-    video: "",
-    category: "Web Dev",
-  },
-  {
-    title: "Market Data Warehouse Pipeline",
-    href: "https://github.com/GoyalIshaan/market-data-pipeline",
-    dates: "Apr 2025 - Jun 2025",
-    active: true,
-    description:
-      "High-performance C++ PCAP parser processing IEX market data at 1M+ msgs/s with sub-200µs latency. Built modular ingestion system with SQLite bookkeeper for 1B+ record queries. Automated pipeline orchestration with Apache Airflow achieving 99.9% uptime and 3× throughput improvement.",
-    technologies: [
-      "C++",
-      "Python",
-      "Linux",
-      "SQLite",
-      "Apache Airflow",
-      "PCAP",
-      "Parquet",
-      "Multithreading",
-    ],
-    links: [
-      {
-        type: "Source",
-        href: "https://gitlab.engr.illinois.edu/ie421_high_frequency_trading_spring_2025/ie421_hft_spring_2025_group_14/group_14_project",
-        icon: <Icons.github className="size-3" />,
-      },
-    ],
-    image: "/default.jpg",
-    video: "",
-    category: "HFT",
-  },
-  {
-    title: "Hephaestus AI Platform",
-    href: "/",
-    dates: "Jan 2024 - Present",
-    active: true,
-    description:
-      "Built a comprehensive AI context/memory layer for LLM agents with modular OpenAPI tool schema and real-time execution streaming. Implemented advanced prompt engineering and multi-agent coordination systems. Designed scalable architecture handling 10K+ concurrent AI conversations with sub-100ms response times.",
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "LangChain",
-      "AWS",
-      "OpenAI",
-      "Redis",
-      "Postgres",
-      "Docker",
-    ],
-    links: [
-      {
-        type: "Source",
-        href: "https://github.com/GoyalIshaan/hephaestus",
-        icon: <Icons.github className="size-3" />,
-      },
-    ],
-    image: "/hephaestus.png",
-    video: "",
-    category: "Web Dev",
-  },
-  {
-    title: "QuickMark",
-    href: "#",
-    dates: "2024",
-    active: true,
-    description:
-      "A streamlined note-taking application with markdown support, real-time collaboration features, and intuitive organization tools.",
-    technologies: ["TypeScript", "React", "Markdown"],
-    links: [
-      {
-        type: "Source",
-        href: "https://github.com/GoyalIshaan/quickmark",
-        icon: <Icons.github className="size-3" />,
-      },
-      {
-        type: "Demo",
-        href: "https://quickmark-one.vercel.app/",
-        icon: <Icons.globe className="size-3" />,
-      },
-    ],
-    image: "/quickmark.png",
-    video: "",
-    category: "Web Dev",
-  },
-  {
-    title: "Aether - AI Email Client",
-    href: "#",
-    dates: "2024",
-    active: true,
-    description:
-      "An AI-first email client with a local LLM for maximum security, data sovereignty, and lightning-fast operations.",
-    technologies: ["React", "TypeScript", "LLM", "Email"],
-    links: [
-      {
-        type: "Source",
-        href: "https://github.com/GoyalIshaan/aether",
-        icon: <Icons.github className="size-3" />,
-      },
-    ],
-    image: "/aether.png",
-    video: "",
-    category: "Web Dev",
-  },
-  {
-    title: "Custom Programming Language Interpreter",
-    href: "#",
-    dates: "2023",
-    active: false,
-    description:
-      "Built a complete interpreter in Go for a custom programming language, including lexer, parser, and evaluator. Implemented features such as first-class functions, closures, and a REPL.",
-    technologies: ["Go", "Compiler Design", "Language Design"],
-    links: [
-      {
-        type: "Source",
-        href: "https://github.com/GoyalIshaan/interpreter-in-go",
-        icon: <Icons.github className="size-3" />,
-      },
-    ],
-    image: "/default.jpg",
-    video: "",
-    category: "Low Level",
-  },
-  {
-    title: "Docnest Collaborative Editor",
-    href: "https://docnest.dev",
-    dates: "June 2024 - Oct 2024",
-    active: true,
-    description:
-      "Developed a real-time collaborative text editor with Yjs CRDT for conflict-free synchronization, custom WebSocket infrastructure, and AWS serverless deployment. Features include live cursors, document versioning, and multi-user editing with operational transforms.",
-    technologies: [
-      "React",
-      "TypeScript",
-      "Node.js",
-      "WebSocket",
-      "AWS Lambda",
-      "Yjs",
-      "DynamoDB",
-      "CloudFormation",
-    ],
-    links: [
-      {
-        type: "Source",
-        href: "https://github.com/GoyalIshaan/docnest",
-        icon: <Icons.github className="size-3" />,
-      },
-    ],
-    image: "/docnest.png",
-    video: "",
-    category: "Web Dev",
-  },
-  {
-    title: "Custom Unix Shell",
-    href: "#",
-    dates: "2023",
-    active: false,
-    description:
-      "Developed a fully functional Unix shell in C with support for piping, redirection, background processes, and custom built-in commands.",
-    technologies: ["C", "Unix", "Systems Programming"],
-    links: [],
-    image: "/default.jpg",
-    video: "",
-    category: "Low Level",
-  },
+interface ProjectsPageProps {
+  searchParams: Promise<{ filter?: string | string[] }>;
+}
 
-  {
-    title: "High-Performance Memory Manager",
-    href: "#",
-    dates: "2023",
-    active: false,
-    description:
-      "Implemented a custom malloc/free implementation in C that achieves performance comparable to the official published version. Optimized for both speed and memory usage.",
-    technologies: ["C", "Memory Management", "Performance Optimization"],
-    links: [],
-    image: "/default.jpg",
-    video: "",
-    category: "Low Level",
-  },
-  {
-    title: "Nasdaq ITCH Market Data Decoder",
-    href: "#",
-    dates: "2024",
-    active: true,
-    description:
-      "High-throughput binary decoder for Nasdaq ITCH 5.0 protocol (650K msgs/sec, 1.68µs latency), with zero-copy parsing, profiling, and CSV export.",
-    technologies: ["C++", "mmap", "Makefile", "perf", "valgrind", "CSV"],
-    links: [
-      {
-        type: "Source",
-        href: "https://github.com/GoyalIshaan/itch-decoder",
-        icon: <Icons.github className="size-3" />,
-      },
-    ],
-    image: "/default.jpg",
-    video: "",
-    category: "HFT",
-  },
-];
+function isProjectFilter(value: string): value is ProjectFilter {
+  return filters.some((filter) => filter === value);
+}
 
-export default function ProjectsPage() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const filteredProjects =
-    selectedCategory === "All"
-      ? projects
-      : projects.filter((p) => p.category === selectedCategory);
+export default async function ProjectsPage({
+  searchParams,
+}: ProjectsPageProps) {
+  const params = await searchParams;
+  const requestedFilter = Array.isArray(params.filter)
+    ? params.filter[0]
+    : params.filter;
+  const selectedFilter =
+    requestedFilter && isProjectFilter(requestedFilter)
+      ? requestedFilter
+      : "All";
+
+  const visibleProjects =
+    selectedFilter === "All"
+      ? DATA.projects
+      : DATA.projects.filter(
+          (project) => project.filterGroup === selectedFilter,
+        );
+
+  const featuredProjects = visibleProjects
+    .filter((project) => project.featuredRank !== null)
+    .sort((a, b) => (a.featuredRank ?? 99) - (b.featuredRank ?? 99));
+  const moreProjects = visibleProjects.filter(
+    (project) => project.featuredRank === null,
+  );
 
   return (
-    <main className="min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-1 sm:py-1 px-6">
+    <main className="min-h-screen space-y-10 py-1">
       <BlurFade delay={BLUR_FADE_DELAY}>
-        <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none mb-8">
-          Projects
-        </h1>
-      </BlurFade>
-
-      <BlurFade delay={BLUR_FADE_DELAY * 2}>
-        <div className="flex flex-wrap gap-2 mb-8">
-          {categories.map((cat) => (
-            <Badge
-              key={cat}
-              variant={selectedCategory === cat ? "default" : "secondary"}
-              className="cursor-pointer hover:bg-primary/90 transition-colors"
-              onClick={() => setSelectedCategory(cat)}
-            >
-              {cat}
-            </Badge>
-          ))}
+        <div className="space-y-3">
+          <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+            Projects
+          </h1>
+          <p className="max-w-xl text-pretty leading-relaxed text-muted-foreground">
+            Systems work across ML inference, GPU kernels, developer tools,
+            market data, and infrastructure.
+          </p>
         </div>
       </BlurFade>
 
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-        {filteredProjects.map((project, idx) => (
-          <BlurFade
-            key={project.title}
-            delay={BLUR_FADE_DELAY * 3 + idx * 0.05}
-          >
-            <ProjectCard
-              href={project.href}
-              key={project.title}
-              title={project.title}
-              description={project.description}
-              dates={project.dates}
-              tags={project.technologies}
-              image={project.image}
-              video={project.video}
-              links={project.links}
-            />
-          </BlurFade>
-        ))}
-      </div>
+      <BlurFade delay={BLUR_FADE_DELAY * 2}>
+        <form action="/projects" method="get">
+          <fieldset className="flex flex-wrap gap-2">
+            <legend className="sr-only">Filter projects</legend>
+            {filters.map((filter) => {
+              const isSelected = selectedFilter === filter;
+
+              return (
+                <button
+                  key={filter}
+                  type="submit"
+                  name="filter"
+                  value={filter}
+                  aria-pressed={isSelected}
+                  className={`inline-flex min-h-11 items-center justify-center rounded-full border px-4 py-2 text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
+                    isSelected
+                      ? "border-transparent bg-primary text-primary-foreground hover:bg-primary/90"
+                      : "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                  }`}
+                >
+                  {filter}
+                </button>
+              );
+            })}
+          </fieldset>
+        </form>
+      </BlurFade>
+
+      <p className="text-sm text-muted-foreground">
+        Showing {visibleProjects.length} of {DATA.projects.length} projects.
+      </p>
+
+      {featuredProjects.length > 0 && (
+        <section
+          aria-labelledby="featured-projects-title"
+          className="space-y-5"
+        >
+          <div className="space-y-1">
+            <h2 id="featured-projects-title" className="text-xl font-bold">
+              Featured Systems Work
+            </h2>
+            <p className="text-sm text-muted-foreground">
+              Selected work in this project group.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {featuredProjects.map((project, index) => (
+              <BlurFade
+                key={project.title}
+                delay={BLUR_FADE_DELAY * 2 + Math.min(index, 3) * 0.02}
+              >
+                <ProjectCard
+                  variant="archive"
+                  href={"href" in project ? project.href : undefined}
+                  title={project.title}
+                  category={project.category}
+                  summary={project.summary}
+                  impact={project.impact}
+                  description={project.description}
+                  dates={project.dates}
+                  tags={project.technologies}
+                  image={project.image}
+                  imageAlt={project.imageAlt}
+                  video={project.video}
+                  links={project.links}
+                  priority={index === 0}
+                />
+              </BlurFade>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {moreProjects.length > 0 && (
+        <section aria-labelledby="more-projects-title" className="space-y-5">
+          <div className="space-y-1">
+            <h2 id="more-projects-title" className="text-xl font-bold">
+              More Projects
+            </h2>
+            <p className="text-sm text-muted-foreground">
+              Earlier product, systems, and infrastructure work.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {moreProjects.map((project, index) => (
+              <BlurFade
+                key={project.title}
+                delay={BLUR_FADE_DELAY * 2 + Math.min(index, 3) * 0.02}
+              >
+                <ProjectCard
+                  variant="archive"
+                  href={"href" in project ? project.href : undefined}
+                  title={project.title}
+                  category={project.category}
+                  summary={project.summary}
+                  impact={project.impact}
+                  description={project.description}
+                  dates={project.dates}
+                  tags={project.technologies}
+                  image={project.image}
+                  imageAlt={project.imageAlt}
+                  video={project.video}
+                  links={project.links}
+                  priority={featuredProjects.length === 0 && index === 0}
+                />
+              </BlurFade>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {visibleProjects.length === 0 && (
+        <p className="rounded-lg border p-6 text-sm text-muted-foreground">
+          No projects match this filter.
+        </p>
+      )}
     </main>
   );
 }
