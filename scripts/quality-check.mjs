@@ -156,9 +156,32 @@ assert(
   "All 65 resume-backed skills must remain in the document",
 );
 
+const workExperienceTitles = await page
+  .locator("#work article h3")
+  .allTextContents();
+assert(
+  JSON.stringify(workExperienceTitles) ===
+    JSON.stringify(["A Vinyl Bar in Shibuya", "ADAPT Lab, UIUC"]),
+  "Work Experience must contain only A Vinyl Bar in Shibuya and ADAPT Lab, in that order",
+);
+assert(
+  (await page.locator("#research").count()) === 0,
+  "Research must be included in Work Experience without a separate section",
+);
+for (const removedExperience of [
+  "Gies VR Metaverse",
+  "Jinship",
+  "NFT Reality",
+]) {
+  assert(
+    (await page.getByText(removedExperience, { exact: false }).count()) === 0,
+    `${removedExperience} must not appear on the home page`,
+  );
+}
+
 const disclosures = page.locator("button[aria-controls][aria-expanded]");
 const disclosureCount = await disclosures.count();
-assert(disclosureCount === 6, "Home must expose all six resume disclosures");
+assert(disclosureCount === 3, "Home must expose all three resume disclosures");
 for (let index = 0; index < disclosureCount; index += 1) {
   const disclosure = disclosures.nth(index);
   const disclosureTarget = await disclosure.getAttribute("aria-controls");

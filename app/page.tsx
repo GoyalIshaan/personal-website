@@ -111,34 +111,6 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="research" aria-labelledby="research-title">
-        <div className="flex min-h-0 flex-col gap-y-1">
-          <BlurFade delay={BLUR_FADE_DELAY * 2}>
-            <h2 id="research-title" className="text-xl font-bold">
-              Research
-            </h2>
-          </BlurFade>
-          {DATA.research.map((research, id) => (
-            <BlurFade
-              key={research.company}
-              delay={BLUR_FADE_DELAY * 2.2 + Math.min(id, 3) * 0.02}
-            >
-              <ResumeCard
-                logoUrl={research.logoUrl}
-                altText={research.company}
-                title={research.company}
-                subtitle={research.title}
-                href={research.href}
-                badges={research.badges}
-                period={`${research.start} - ${research.end ?? "Present"}`}
-                summary={research.summary}
-                description={research.description}
-              />
-            </BlurFade>
-          ))}
-        </div>
-      </section>
-
       <section id="projects" aria-labelledby="projects-title">
         <div className="space-y-8">
           <BlurFade delay={BLUR_FADE_DELAY * 2}>

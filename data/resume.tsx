@@ -128,50 +128,6 @@ export const DATA = {
         "Built production audio ML systems across music search, stem separation, and on-device inference alongside Spotify's former Head of Innovation. Created an end-to-end ETL pipeline for 1M+ songs, optimized BS-RoFormer to 9.65 average SDR on MUSDB18 with sparse attention and quantization, and built agentic workflows that reduced manual intervention by 60% while accelerating tasks by 2.5x.",
     },
     {
-      company: "Gies VR Metaverse (Gies School of Business, UIUC)",
-      href: "https://business.illinois.edu/",
-      badges: ["Unity", "C#", "Oculus SDK", "AI/ML"],
-      location: "Champaign, IL",
-      title: "Virtual Reality Developer Intern",
-      logoUrl: "/uiucLogo.png",
-      start: "Jan 2025",
-      end: "May 2025",
-      summary:
-        "Reduced avatar inference latency by 75% to less than 100 milliseconds.",
-      description:
-        "Coordinated with a six-member interdisciplinary team to build immersive 3D learning environments in Unity and Blender. Optimized the AI-driven avatar pipeline, reducing end-to-end inference latency by 75% to sub-100 ms and cutting operational costs by 50% through dynamic model serving and resource scaling.",
-    },
-    {
-      company: "Jinship (Disruption Lab)",
-      badges: ["React", "TypeScript", "OpenAI API", "Firebase"],
-      href: "https://disruptionlab.org/",
-      location: "Remote",
-      title: "Software Developer Intern",
-      logoUrl: "/dLab.jpg",
-      start: "Sep 2024",
-      end: "Dec 2024",
-      summary:
-        "Built a reliable feedback system that handled more than 200 requests per second.",
-      description:
-        "Led a Firebase Firestore feedback system sustaining 200+ requests per second with sub-100 ms write latency and 100% data reliability. Built real-time React and TypeScript analytics dashboards for session duration, drop-off rates, and other product metrics.",
-    },
-    {
-      company: "NFT Reality",
-      badges: ["Blockchain", "Web3", "Leadership"],
-      location: "Remote",
-      title: "Founder",
-      logoUrl: "/nftReality.jpeg",
-      start: "Dec 2021",
-      end: "Feb 2023",
-      summary:
-        "Led a ten-member team and built a community of more than 700 members.",
-      description:
-        "Launched a VR-based NFT marketplace, managed a ten-member team, and built a community of 700+ members. Designed smart contracts, developed the full-stack application, established partnerships, and led the product from concept through launch.",
-    },
-  ],
-
-  research: [
-    {
       company: "ADAPT Lab, UIUC",
       href: "https://arxiv.org/pdf/2507.20055",
       badges: [
