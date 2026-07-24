@@ -1,9 +1,23 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon } from "lucide-react";
+import { FileTextIcon, HomeIcon, NotebookIcon } from "lucide-react";
+
+export const RESUME_HREF =
+  "/resumes/ishaan-goyal-ai-infrastructure.pdf";
 
 export const NAV_ITEMS = [
-  { href: "/", icon: HomeIcon, label: "Home" },
-  { href: "/projects", icon: NotebookIcon, label: "Projects" },
+  { href: "/", icon: HomeIcon, label: "Home", newTab: false },
+  {
+    href: "/projects",
+    icon: NotebookIcon,
+    label: "Projects",
+    newTab: false,
+  },
+  {
+    href: RESUME_HREF,
+    icon: FileTextIcon,
+    label: "Resume",
+    newTab: true,
+  },
 ] as const;
 
 export const SOCIAL_LINKS = {

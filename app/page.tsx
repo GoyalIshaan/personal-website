@@ -6,7 +6,7 @@ import { ResumeCard } from "@/components/resume-card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { DATA } from "@/data/resume";
-import { ArrowRightIcon, FileTextIcon, MailIcon } from "lucide-react";
+import { ArrowRightIcon, MailIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -59,27 +59,6 @@ export default function Page() {
               <p>UIUC Computer Science, May 2027.</p>
             </div>
           </BlurFade>
-
-          <BlurFade delay={BLUR_FADE_DELAY * 4}>
-            <div className="flex flex-wrap gap-2">
-              <Button asChild className="min-h-11">
-                <Link
-                  href={DATA.resume.aiInfrastructure}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FileTextIcon aria-hidden="true" />
-                  Resume
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className="min-h-11">
-                <Link href={`mailto:${DATA.contact.email}`}>
-                  <MailIcon aria-hidden="true" />
-                  Email Ishaan
-                </Link>
-              </Button>
-            </div>
-          </BlurFade>
         </div>
       </section>
 
@@ -100,7 +79,6 @@ export default function Page() {
                 altText={work.company}
                 title={work.company}
                 subtitle={work.title}
-                href={"href" in work ? work.href : undefined}
                 badges={work.badges}
                 period={`${work.start} - ${work.end ?? "Present"}`}
                 summary={work.summary}
@@ -176,7 +154,6 @@ export default function Page() {
               delay={BLUR_FADE_DELAY * 2.2 + Math.min(id, 3) * 0.02}
             >
               <ResumeCard
-                href={education.href}
                 logoUrl={education.logoUrl}
                 altText={education.school}
                 title={education.school}
