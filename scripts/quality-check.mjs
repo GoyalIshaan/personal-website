@@ -158,6 +158,11 @@ assert(
   (await page.locator("#hero a, #hero button").count()) === 0,
   "The hero must not contain Resume or Email controls",
 );
+assert(
+  (await page.locator("#github-activity").count()) === 0 &&
+    (await page.getByText("Recent GitHub Activity", { exact: true }).count()) === 0,
+  "The home page must not contain the GitHub activity section",
+);
 const dockTargets = page.locator(
   'nav[aria-label="Primary navigation"] a, nav[aria-label="Primary navigation"] button',
 );
