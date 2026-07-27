@@ -1,4 +1,3 @@
-import LazyGitHubActivity from "@/components/lazy-github-activity";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ProjectCard } from "@/components/project-card";
@@ -217,24 +216,6 @@ export default function Page() {
               ))}
             </div>
           </details>
-        </div>
-      </section>
-
-      <section id="github-activity" aria-labelledby="github-title">
-        <div className="space-y-6">
-          <BlurFade delay={BLUR_FADE_DELAY * 2}>
-            <h2
-              id="github-title"
-              className="text-3xl font-bold tracking-tighter sm:text-5xl"
-            >
-              Recent GitHub Activity
-            </h2>
-          </BlurFade>
-          <BlurFade delay={BLUR_FADE_DELAY * 3}>
-            <div className="max-w-full overflow-x-auto pb-2">
-              <LazyGitHubActivity />
-            </div>
-          </BlurFade>
         </div>
       </section>
 
