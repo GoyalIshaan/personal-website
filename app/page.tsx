@@ -18,10 +18,10 @@ const featuredProjects = DATA.projects
 
 export default function Page() {
   return (
-    <main className="flex min-h-[100dvh] flex-col gap-y-16 sm:gap-y-20">
+    <main className="flex min-h-[100dvh] flex-col gap-y-16">
       <section id="hero" aria-labelledby="hero-title">
-        <div className="space-y-7">
-          <div className="flex items-start justify-between gap-5 sm:gap-8">
+        <div className="space-y-6">
+          <div className="flex items-start justify-between gap-4 sm:gap-8">
             <div className="min-w-0 flex-1 space-y-3">
               <BlurFadeText
                 delay={BLUR_FADE_DELAY}
@@ -38,14 +38,14 @@ export default function Page() {
               </h1>
             </div>
             <BlurFade delay={BLUR_FADE_DELAY * 2}>
-              <div className="relative size-20 overflow-hidden rounded-full border sm:size-28">
+              <div className="relative size-16 overflow-hidden rounded-full border sm:size-28">
                 <Image
                   src={DATA.avatarUrl}
                   alt={DATA.name}
                   fill
                   priority
                   fetchPriority="high"
-                  sizes="(min-width: 640px) 112px, 80px"
+                  sizes="(min-width: 640px) 112px, 64px"
                   className="object-cover"
                 />
               </div>
@@ -62,7 +62,7 @@ export default function Page() {
       </section>
 
       <section id="work" aria-labelledby="work-title">
-        <div className="flex min-h-0 flex-col gap-y-1">
+        <div className="flex min-h-0 flex-col gap-y-2">
           <BlurFade delay={BLUR_FADE_DELAY * 2}>
             <h2 id="work-title" className="text-xl font-bold">
               Work Experience
@@ -89,7 +89,7 @@ export default function Page() {
       </section>
 
       <section id="projects" aria-labelledby="projects-title">
-        <div className="space-y-8">
+        <div className="space-y-6">
           <BlurFade delay={BLUR_FADE_DELAY * 2}>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
               <div className="space-y-2">
@@ -113,7 +113,7 @@ export default function Page() {
             </div>
           </BlurFade>
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
             {featuredProjects.map((project, id) => (
               <BlurFade
                 key={project.title}
@@ -141,7 +141,7 @@ export default function Page() {
       </section>
 
       <section id="education" aria-labelledby="education-title">
-        <div className="flex min-h-0 flex-col gap-y-1">
+        <div className="flex min-h-0 flex-col gap-y-2">
           <BlurFade delay={BLUR_FADE_DELAY * 2}>
             <h2 id="education-title" className="text-xl font-bold">
               Education
@@ -167,14 +167,14 @@ export default function Page() {
       </section>
 
       <section id="skills" aria-labelledby="skills-title">
-        <div className="space-y-5">
+        <div className="space-y-6">
           <BlurFade delay={BLUR_FADE_DELAY * 2}>
             <h2 id="skills-title" className="text-xl font-bold">
               Skills
             </h2>
           </BlurFade>
 
-          <div className="grid gap-5 sm:grid-cols-2">
+          <div className="grid gap-x-8 gap-y-5 sm:grid-cols-2 sm:gap-y-6">
             {DATA.skillGroups.map((group, id) => (
               <BlurFade
                 key={group.title}
@@ -201,7 +201,7 @@ export default function Page() {
                 Hide Additional Skills
               </span>
             </summary>
-            <div className="grid gap-5 pt-4 sm:grid-cols-2">
+            <div className="grid gap-x-8 gap-y-5 pt-4 sm:grid-cols-2 sm:gap-y-6">
               {DATA.skillGroups.map((group) => (
                 <div key={group.title} className="space-y-2">
                   <h3 className="text-sm font-semibold">{group.title}</h3>
@@ -221,19 +221,23 @@ export default function Page() {
 
       <section id="contact" aria-labelledby="contact-title">
         <BlurFade delay={BLUR_FADE_DELAY * 2}>
-          <div className="space-y-4 border-t py-10 sm:py-12">
-            <p className="text-sm font-medium text-muted-foreground">Contact</p>
-            <h2
-              id="contact-title"
-              className="text-3xl font-bold tracking-tighter sm:text-5xl"
-            >
-              Build something ambitious.
-            </h2>
-            <p className="max-w-[36rem] text-pretty leading-relaxed text-muted-foreground">
+          <div className="border-t pt-8 sm:pt-10">
+            <div className="space-y-2">
+              <p className="text-sm font-medium text-muted-foreground">
+                Contact
+              </p>
+              <h2
+                id="contact-title"
+                className="text-3xl font-bold tracking-tighter sm:text-5xl"
+              >
+                Build something ambitious.
+              </h2>
+            </div>
+            <p className="mt-4 max-w-[36rem] text-pretty leading-relaxed text-muted-foreground">
               Send me an email about AI infrastructure, systems, or ambitious
               products.
             </p>
-            <Button asChild variant="outline" className="min-h-11">
+            <Button asChild variant="outline" className="mt-4 min-h-11">
               <Link href={`mailto:${DATA.contact.email}`}>
                 <MailIcon aria-hidden="true" />
                 {DATA.contact.email}
