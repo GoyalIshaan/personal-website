@@ -56,7 +56,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className="mx-auto min-h-screen max-w-2xl overflow-x-clip bg-background px-5 pb-32 pt-10 font-sans antialiased sm:px-6 sm:pb-36 sm:pt-24"
+        className="mx-auto min-h-screen max-w-2xl overflow-x-clip bg-background px-4 pb-24 pt-8 font-sans antialiased sm:px-6 sm:pb-28 sm:pt-20"
       >
         <ThemeProvider attribute="class" defaultTheme="light">
           <TooltipProvider delayDuration={0}>

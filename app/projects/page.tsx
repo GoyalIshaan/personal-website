@@ -47,55 +47,59 @@ export default async function ProjectsPage({
   );
 
   return (
-    <main className="min-h-screen space-y-10 py-1">
-      <BlurFade delay={BLUR_FADE_DELAY}>
+    <main className="min-h-screen space-y-16">
+      <div className="space-y-6 sm:space-y-8">
+        <BlurFade delay={BLUR_FADE_DELAY}>
+          <div className="space-y-3">
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+              Projects
+            </h1>
+            <p className="max-w-xl text-pretty leading-relaxed text-muted-foreground">
+              Systems work across ML inference, GPU kernels, developer tools,
+              market data, and infrastructure.
+            </p>
+          </div>
+        </BlurFade>
+
         <div className="space-y-3">
-          <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-            Projects
-          </h1>
-          <p className="max-w-xl text-pretty leading-relaxed text-muted-foreground">
-            Systems work across ML inference, GPU kernels, developer tools,
-            market data, and infrastructure.
+          <BlurFade delay={BLUR_FADE_DELAY * 2}>
+            <form action="/projects" method="get">
+              <fieldset className="flex flex-wrap gap-2">
+                <legend className="sr-only">Filter projects</legend>
+                {filters.map((filter) => {
+                  const isSelected = selectedFilter === filter;
+
+                  return (
+                    <button
+                      key={filter}
+                      type="submit"
+                      name="filter"
+                      value={filter}
+                      aria-pressed={isSelected}
+                      className={`inline-flex min-h-11 items-center justify-center rounded-full border px-4 py-2 text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
+                        isSelected
+                          ? "border-transparent bg-primary text-primary-foreground hover:bg-primary/90"
+                          : "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                      }`}
+                    >
+                      {filter}
+                    </button>
+                  );
+                })}
+              </fieldset>
+            </form>
+          </BlurFade>
+
+          <p className="text-sm text-muted-foreground">
+            Showing {visibleProjects.length} of {DATA.projects.length} projects.
           </p>
         </div>
-      </BlurFade>
-
-      <BlurFade delay={BLUR_FADE_DELAY * 2}>
-        <form action="/projects" method="get">
-          <fieldset className="flex flex-wrap gap-2">
-            <legend className="sr-only">Filter projects</legend>
-            {filters.map((filter) => {
-              const isSelected = selectedFilter === filter;
-
-              return (
-                <button
-                  key={filter}
-                  type="submit"
-                  name="filter"
-                  value={filter}
-                  aria-pressed={isSelected}
-                  className={`inline-flex min-h-11 items-center justify-center rounded-full border px-4 py-2 text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
-                    isSelected
-                      ? "border-transparent bg-primary text-primary-foreground hover:bg-primary/90"
-                      : "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
-                  }`}
-                >
-                  {filter}
-                </button>
-              );
-            })}
-          </fieldset>
-        </form>
-      </BlurFade>
-
-      <p className="text-sm text-muted-foreground">
-        Showing {visibleProjects.length} of {DATA.projects.length} projects.
-      </p>
+      </div>
 
       {featuredProjects.length > 0 && (
         <section
           aria-labelledby="featured-projects-title"
-          className="space-y-5"
+          className="space-y-6"
         >
           <div className="space-y-1">
             <h2 id="featured-projects-title" className="text-xl font-bold">
@@ -105,7 +109,7 @@ export default async function ProjectsPage({
               Selected work in this project group.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-x-5 sm:gap-y-6">
             {featuredProjects.map((project, index) => (
               <BlurFade
                 key={project.title}
@@ -134,7 +138,7 @@ export default async function ProjectsPage({
       )}
 
       {moreProjects.length > 0 && (
-        <section aria-labelledby="more-projects-title" className="space-y-5">
+        <section aria-labelledby="more-projects-title" className="space-y-6">
           <div className="space-y-1">
             <h2 id="more-projects-title" className="text-xl font-bold">
               More Projects
@@ -143,7 +147,7 @@ export default async function ProjectsPage({
               Earlier product, systems, and infrastructure work.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-x-5 sm:gap-y-6">
             {moreProjects.map((project, index) => (
               <BlurFade
                 key={project.title}

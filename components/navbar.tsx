@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <nav
       aria-label="Primary navigation"
-      className="pointer-events-none fixed inset-x-0 bottom-0 z-30 mx-auto mb-4 flex h-full max-h-14 origin-bottom"
+      className="pointer-events-none fixed inset-x-0 bottom-0 z-30 mx-auto mb-2 flex h-full max-h-14 origin-bottom sm:mb-4"
     >
       <div
         aria-hidden="true"
@@ -60,7 +60,7 @@ export default function Navbar() {
             </DockIcon>
           );
         })}
-        <Separator orientation="vertical" className="h-full" />
+        <Separator orientation="vertical" className="h-6" />
         {Object.entries(SOCIAL_LINKS)
           .filter(([, social]) => social.navbar)
           .map(([name, social]) => (
@@ -86,7 +86,7 @@ export default function Navbar() {
               </Tooltip>
             </DockIcon>
           ))}
-        <Separator orientation="vertical" className="h-full py-2" />
+        <Separator orientation="vertical" className="h-6" />
         <DockIcon>
           <Tooltip>
             <TooltipTrigger asChild>

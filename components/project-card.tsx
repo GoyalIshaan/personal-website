@@ -120,10 +120,10 @@ export function ProjectCard({
           <div className="group/media overflow-hidden">{media}</div>
         ))}
 
-      <CardHeader className="px-4 pb-2 pt-4">
+      <CardHeader className="px-4 pb-3 pt-4">
         <div className="min-w-0 space-y-2">
           <div className="flex min-w-0 items-start justify-between gap-3">
-            <CardTitle className="min-w-0 text-base font-semibold leading-tight">
+            <CardTitle className="flex min-h-11 min-w-0 items-center text-base font-semibold leading-tight">
               {cardHref ? (
                 <Link
                   href={cardHref}
@@ -168,9 +168,9 @@ export function ProjectCard({
         </div>
       </CardHeader>
 
-      <CardContent className="flex-1 px-4 pb-2">
+      <CardContent className="flex-1 px-4 pb-3">
         {visibleTags.length > 0 && (
-          <div className="flex flex-wrap gap-1.5" aria-label="Technologies">
+          <div className="flex flex-wrap gap-2" aria-label="Technologies">
             {visibleTags.map((tag) => (
               <Badge
                 className="px-2 py-1 text-[10px] font-medium"
@@ -185,7 +185,7 @@ export function ProjectCard({
       </CardContent>
 
       {projectLinks.length > 0 && (
-        <CardFooter className="px-4 pb-4 pt-2">
+        <CardFooter className="px-4 pb-4 pt-0">
           <div className="flex w-full flex-wrap gap-2" aria-label="Project links">
             {projectLinks.map((item) => (
               <Link
