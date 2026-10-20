@@ -31,7 +31,7 @@ try {
   assert(!blocking.length, `${route} accessibility: ${blocking.map(v=>v.id).join(", ")}`);
  }
  await page.goto(baseUrl, {waitUntil:"networkidle"});
- assert(await page.locator('section[aria-labelledby="projects-title"] article').count() === 4, "Homepage must show four selected projects");
+ assert(await page.locator('section[aria-labelledby="projects-title"] article').count() === 5, "Homepage must show five selected projects");
  const projects = page.getByRole("link", {name:"View all projects"});
  assert(await projects.count() === 1, "Single all-projects link");
  const resume = await page.getByRole("link", {name:"Résumé PDF"}).getAttribute("href");

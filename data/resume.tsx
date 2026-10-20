@@ -4,11 +4,11 @@ import { NAV_ITEMS, RESUME_HREF, SOCIAL_LINKS } from "@/data/navigation";
 export const DATA = {
   name: "Ishaan Goyal",
   initials: "IG",
-  url: "https://ishaangoyal.dev",
+  url: "https://www.ishaangoyal.com/",
   location: "Champaign, IL",
   locationLink: "https://www.google.com/maps/place/champaign+illinois",
   description:
-    "ML systems engineer focused on inference, GPU kernels, and compilers. Founding Engineer Intern, ML at A Vinyl Bar in Shibuya and UIUC computer science student.",
+    "ML systems engineer focused on inference, GPU kernels, and compilers. Former Founding Engineer Intern, ML at A Vinyl Bar in Shibuya and UIUC computer science student.",
   summary:
     "I'm a UIUC computer science student focused on ML systems, compiler optimization, and high-performance infrastructure. My work spans production music ML, JAX and Pallas kernels, CUDA inference, agentic developer tools, and full-stack platforms.",
   avatarUrl: "/pfp.webp",
@@ -116,16 +116,17 @@ export const DATA = {
   work: [
     {
       company: "A Vinyl Bar in Shibuya",
+      href: "https://www.shibuyaaa.com/",
       badges: ["Python", "PyTorch", "MLX", "Quantization", "On-Device ML"],
       location: "Remote",
       title: "Founding Engineer Intern, ML",
-      logoUrl: "/favicon.svg",
-      start: "Feb 2025",
-      end: "Present",
+      logoUrl: "/shibuya-logo.png", // Official brand mark: https://www.shibuyaaa.com/favicon.png
+      start: "Feb 2026",
+      end: "Aug 2026",
       summary:
-        "Built production music ML systems that support more than 1 million songs.",
+        "Turned customer feedback into product improvements, fine-tuned and deployed BS-RoFormer for stem separation on iOS, and built an internal music ingestion pipeline for 1M+ songs.",
       description:
-        "Built production audio ML systems across music search, stem separation, and on-device inference alongside Spotify's former Head of Innovation. Created an end-to-end ETL pipeline for 1M+ songs, optimized BS-RoFormer to 9.65 average SDR on MUSDB18 with sparse attention and quantization, and built agentic workflows that reduced manual intervention by 60% while accelerating tasks by 2.5x.",
+        "Worked alongside Spotify's former Head of Innovation at a music software startup valued at $50M, turning customer feedback into product improvements with the team. Fine-tuned and optimized BS-RoFormer for stem separation using sparse attention and weight quantization, and deployed it for on-device inference on iOS. Also built an internal music ingestion pipeline for 1M+ songs. One of my favorite parts was experimenting with a collaborative team building new ways to play with music.",
     },
     {
       company: "ADAPT Lab, UIUC",
@@ -143,7 +144,7 @@ export const DATA = {
       end: "Aug 2025",
       summary: "Accelerated a compiler critical path by 51 times.",
       description:
-        "Co-authored research on ConstraintFlow DSL compiler optimization for neural network verification, refactored core IR passes, and created 15+ technical diagrams. Engineered multi-level caching and JIT compilation for a 51x critical-path speedup, designed a CPU-GPU synchronization and scaling roadmap, and reduced end-to-end compile time by 37% through profiling across 20+ passes.",
+        "At UIUC's ADAPT Lab, I worked on ConstraintFlow, a language for neural-network verification. I refactored compiler IR passes and built caching and JIT compilation for tensor-heavy workloads. I also profiled more than 20 compilation passes to find bottlenecks and designed a roadmap for CPU–GPU synchronization and multi-GPU scaling.",
     },
   ],
 
@@ -196,7 +197,7 @@ export const DATA = {
       impact:
         "Raised throughput by 1.3 to 1.6 times and lowered latency by 15 to 20 percent.",
       description:
-        "Reproduced autoregressive, standard speculative, and Speculative2 decoding with Qwen3-32B and Qwen3-8B. Built a custom draft-verify runtime and benchmarked batches 1-64, reaching 1.3-1.6x higher throughput and 15-20% lower latency while identifying diminishing returns beyond speculative depth 4.",
+        "I reproduced standard speculative decoding and Speculative2 with Qwen3-8B and Qwen3-32B, building a custom draft-and-verify runtime. I benchmarked batch sizes and speculative depths to study when drafting more tokens helps and when the overhead outweighs the benefit.",
       technologies: ["PyTorch", "CUDA", "Qwen3", "KV Cache", "LLM Inference"],
       links: [],
       image: "/projects/speculative-decoding.webp",
@@ -214,11 +215,11 @@ export const DATA = {
       category: "Developer Tools",
       filterGroup: "Developer Tools and Web",
       summary:
-        "Built a VS Code-based agentic IDE with multi-agent execution, indexing, review, and observability.",
+        "Shipped an agentic IDE to alpha users with interactive coding agents, parallel orchestration, patch review, and an execution timeline.",
       impact:
         "Supported more than 1,200 AI-assisted edits for more than 50 alpha users.",
       description:
-        "Built an agentic IDE on a forked VS Code codebase with multi-agent execution, patch review, incremental indexing, vector search, live architecture graphs, Merkle-tree change detection, and an observability timeline. Onboarded 50+ alpha users and supported 1,200+ AI-assisted edits, with more than 60% reporting faster understanding and debugging.",
+        "I built and shipped a VS Code-based agentic IDE to alpha users, with interactive coding agents and orchestration for running multiple agents in parallel. I built codebase indexing and retrieval to give agents context, plus patch review and a live execution timeline so users could follow their work and decide which changes to keep.",
       technologies: [
         "TypeScript",
         "VS Code",
@@ -233,6 +234,21 @@ export const DATA = {
           type: "Demo",
           href: "https://ren-ide.com/",
           icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "IDE source",
+          href: "https://github.com/RenCodeIDE/renide",
+          icon: <Icons.github className="size-3" />,
+        },
+        {
+          type: "Terminal source",
+          href: "https://github.com/RenCodeIDE/ren_tui",
+          icon: <Icons.github className="size-3" />,
+        },
+        {
+          type: "Website source",
+          href: "https://github.com/RenCodeIDE/web",
+          icon: <Icons.github className="size-3" />,
         },
       ],
       image: "/projects/ren.webp",
