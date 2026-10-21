@@ -42,8 +42,8 @@ try {
  assert(await page.locator('.rain-drop').first().evaluate(e=>getComputedStyle(e).animationPlayState) === "paused", "Rain actually pauses");
  await projects.click();
  await page.waitForURL('**/projects');
- assert(await page.locator('article').count() === 14, "Archive must contain all 14 projects");
- assert(await page.locator('.category-heading').allTextContents().then(a=>JSON.stringify(a.map(x=>x.trim()))) === JSON.stringify(["ML systems 3","Developer tools & web 6","Systems & data 5"]), "Category counts must be 3, 6, 5");
+ assert(await page.locator('article').count() === 13, "Archive must contain all 13 projects");
+ assert(await page.locator('.category-heading').allTextContents().then(a=>JSON.stringify(a.map(x=>x.trim()))) === JSON.stringify(["ML systems 3","Developer tools & web 6","Systems & data 4"]), "Category counts must be 3, 6, 4");
  assert(await page.getByRole("button", {name:"Resume background"}).getAttribute("aria-pressed") === "true", "Pause preference survives navigation");
  await page.getByRole("button", {name:"Resume background"}).click();
  await page.locator('.breadcrumb').getByRole('link', {name:'Home'}).click();

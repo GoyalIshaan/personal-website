@@ -8,9 +8,9 @@ export const DATA = {
   location: "Champaign, IL",
   locationLink: "https://www.google.com/maps/place/champaign+illinois",
   description:
-    "ML systems engineer focused on inference, GPU kernels, and compilers. Former Founding Engineer Intern, ML at A Vinyl Bar in Shibuya and UIUC computer science student.",
+    "ML systems and developer tools by Ishaan Goyal: on-device audio inference, compiler research, GPU kernels, and coding-agent workflows. Computer science at UIUC.",
   summary:
-    "I'm a UIUC computer science student focused on ML systems, compiler optimization, and high-performance infrastructure. My work spans production music ML, JAX and Pallas kernels, CUDA inference, agentic developer tools, and full-stack platforms.",
+    "I build ML systems and developer tools. I've worked on audio models that run on iPhones, compilers for neural-network verification, and coding agents whose work developers can inspect and control.",
   avatarUrl: "/pfp.webp",
 
   resume: {
@@ -126,7 +126,7 @@ export const DATA = {
       summary:
         "Turned customer feedback into product improvements, fine-tuned and deployed BS-RoFormer for stem separation on iOS, and built an internal music ingestion pipeline for 1M+ songs.",
       description:
-        "Worked alongside Spotify's former Head of Innovation at a music software startup valued at $50M, turning customer feedback into product improvements with the team. Fine-tuned and optimized BS-RoFormer for stem separation using sparse attention and weight quantization, and deployed it for on-device inference on iOS. Also built an internal music ingestion pipeline for 1M+ songs. One of my favorite parts was experimenting with a collaborative team building new ways to play with music.",
+        "I helped build the ML and data systems behind interactive music products at a startup valued at $50M, working alongside Spotify's former Head of Innovation and turning customer feedback into product improvements. I fine-tuned BS-RoFormer for stem separation, optimized it with sparse attention and weight quantization, and deployed it for on-device inference on iOS. Alongside the model work, I built an internal ingestion pipeline for 1M+ songs. I liked moving between model behavior, device constraints, and product ideas with a team that wanted people to play with music.",
     },
     {
       company: "ADAPT Lab, UIUC",
@@ -142,9 +142,9 @@ export const DATA = {
       logoUrl: "/adaptLab.png",
       start: "May 2025",
       end: "Aug 2025",
-      summary: "Accelerated a compiler critical path by 51 times.",
+      summary: "Worked on compiler performance for neural-network verification and coauthored the team’s tensor-compiler preprint.",
       description:
-        "At UIUC's ADAPT Lab, I worked on ConstraintFlow, a language for neural-network verification. I refactored compiler IR passes and built caching and JIT compilation for tensor-heavy workloads. I also profiled more than 20 compilation passes to find bottlenecks and designed a roadmap for CPU–GPU synchronization and multi-GPU scaling.",
+        "I worked on ConstraintFlow, a compiler that turns neural-network verification specifications into tensor computations. My focus was the compilation path: refactoring IR passes, adding caching and JIT compilation, and profiling more than 20 passes to find bottlenecks. I also coauthored the team’s compiler and runtime preprint and designed a roadmap for CPU–GPU synchronization and multi-GPU scaling.",
     },
   ],
 
@@ -172,11 +172,11 @@ export const DATA = {
       category: "AI/ML",
       filterGroup: "AI and ML",
       summary:
-        "Built a decoder-only Transformer and a fused MoE projection kernel in JAX and Pallas.",
+        "I built and trained a Transformer, then added expert routing and a fused Pallas kernel to explore how MoE execution affects memory traffic.",
       impact:
-        "Improved MoE forward-pass speed by approximately 1.3 times against the ragged-dot baseline.",
+        "Connected model training, expert routing, and custom kernel execution in one experiment.",
       description:
-        "Built and trained an approximately 10M-parameter decoder-only Transformer from scratch in JAX, Flax, and Optax for algorithmic reasoning. Extended it with a top-1 MoE layer and a custom fused Pallas projection kernel, achieving approximately 1.3x faster MoE forward passes than the ragged-dot baseline.",
+        "I built a decoder-only Transformer in JAX, Flax, and Optax for arithmetic reasoning, then extended it with top-1 mixture-of-experts routing. From there, I wrote a fused Pallas projection kernel to reduce activation memory traffic and compared it with a ragged-dot baseline. The project follows the same workload from model design down to accelerator execution.",
       technologies: ["JAX", "Flax", "Optax", "TPU", "Pallas", "MoE"],
       links: [],
       image: "/projects/jax-moe.webp",
@@ -193,11 +193,11 @@ export const DATA = {
       category: "AI/ML",
       filterGroup: "AI and ML",
       summary:
-        "Built a draft-and-verify runtime for standard and Speculative2 decoding with Qwen3 models.",
+        "I built a Qwen3 draft-and-verify runtime to study when speculative decoding saves work and when the extra drafting overhead cancels out the benefit.",
       impact:
-        "Raised throughput by 1.3 to 1.6 times and lowered latency by 15 to 20 percent.",
+        "Compared decoding strategies across batching and speculative-depth settings.",
       description:
-        "I reproduced standard speculative decoding and Speculative2 with Qwen3-8B and Qwen3-32B, building a custom draft-and-verify runtime. I benchmarked batch sizes and speculative depths to study when drafting more tokens helps and when the overhead outweighs the benefit.",
+        "I reproduced autoregressive, standard speculative, and Speculative2 decoding with Qwen3-8B and Qwen3-32B. I built a custom draft-and-verify runtime and varied batch size and speculative depth to compare the execution paths. The central question was where speculation pays for itself, rather than assuming that drafting more tokens always improves generation.",
       technologies: ["PyTorch", "CUDA", "Qwen3", "KV Cache", "LLM Inference"],
       links: [],
       image: "/projects/speculative-decoding.webp",
@@ -215,11 +215,11 @@ export const DATA = {
       category: "Developer Tools",
       filterGroup: "Developer Tools and Web",
       summary:
-        "Shipped an agentic IDE to alpha users with interactive coding agents, parallel orchestration, patch review, and an execution timeline.",
+        "I helped build and ship Ren to alpha users: a VS Code-based IDE with interactive coding agents, codebase retrieval, and a live view of their work and changes.",
       impact:
-        "Supported more than 1,200 AI-assisted edits for more than 50 alpha users.",
+        "Connected code context, agent execution, and human review inside the editor.",
       description:
-        "I built and shipped a VS Code-based agentic IDE to alpha users, with interactive coding agents and orchestration for running multiple agents in parallel. I built codebase indexing and retrieval to give agents context, plus patch review and a live execution timeline so users could follow their work and decide which changes to keep.",
+        "I helped build Ren on VS Code and ship it to alpha users. My work included codebase indexing and retrieval, interactive agent workflows, and agent orchestration. I also built views for agent activity, tasks, and file changes, alongside patch review and an execution timeline. The goal was to give developers enough context and visibility to stay involved as coding agents worked.",
       technologies: [
         "TypeScript",
         "VS Code",
@@ -245,11 +245,6 @@ export const DATA = {
           href: "https://github.com/RenCodeIDE/ren_tui",
           icon: <Icons.github className="size-3" />,
         },
-        {
-          type: "Website source",
-          href: "https://github.com/RenCodeIDE/web",
-          icon: <Icons.github className="size-3" />,
-        },
       ],
       image: "/projects/ren.webp",
       imageAlt:
@@ -265,11 +260,11 @@ export const DATA = {
       category: "AI/ML",
       filterGroup: "AI and ML",
       summary:
-        "Optimized GPT-2 inference on an NVIDIA A40 with CUDA kernels and KV caching.",
+        "I used GPU profiles to guide GPT-2 inference work on an NVIDIA A40, tuning CUDA matrix multiplication and adding KV caching to reuse earlier computation.",
       impact:
-        "Reduced matmul latency by 10 to 13 percent and changed decode complexity from O(T^2) to O(T).",
+        "Connected GPU profiling, CUDA kernel tuning, and reuse during generation.",
       description:
-        "Profiled GPT-2 inference on an NVIDIA A40 and found matmul consumed 97-99% of GPU time at only 1-4% of peak compute. Reduced matmul latency by 10-13% using higher CTA counts, shared-memory tiling, loop unrolling, and vectorized loads; implemented WMMA GEMM and KV caching to reduce autoregressive decode complexity from O(T^2) to O(T).",
+        "I profiled GPT-2 inference on an NVIDIA A40 to understand where GPU time was going, then focused on matrix multiplication. I explored shared-memory tiling, launch configuration, vectorized loads, and a WMMA path, and added KV caching for autoregressive generation. I compared kernel behavior with the full inference path to understand how local improvements carried through to the application.",
       technologies: [
         "C++",
         "CUDA",
@@ -294,11 +289,11 @@ export const DATA = {
       category: "Web Dev",
       filterGroup: "Developer Tools and Web",
       summary:
-        "Built a visual platform for composing AI agents, tools, memory, and workflows.",
+        "I built a visual workspace for composing agents and workflows, with reusable tools, persistent context, and responses streamed as a run progresses.",
       impact:
-        "Unified visual agent composition, persistent memory, modular tools, and live streaming in one platform.",
+        "Brought workflow composition, tools, session state, and streaming into one interface.",
       description:
-        "Created a full-stack platform for composing AI agents and workflows from text prompts with a visual editor, persistent memory, and session management. Built a modular tool ecosystem and a WebSocket streaming engine for live responses.",
+        "I built a full-stack workspace that turns text prompts into agent workflows users can work with in a visual editor. Reusable tools provide actions, while persistent memory and session management carry context between interactions. WebSocket streaming exposes responses as they arrive, connecting the workflow-building interface to what happens during execution.",
       technologies: [
         "Next.js",
         "TypeScript",
@@ -324,18 +319,19 @@ export const DATA = {
       category: "Web Dev",
       filterGroup: "Developer Tools and Web",
       summary:
-        "Built a microservices video platform with secure ingestion, transcoding, and CDN delivery.",
+        "I built an event-driven video pipeline that turns multipart uploads into adaptive HLS streams. RabbitMQ coordinates Go workers for FFmpeg transcoding and captions, while GraphQL subscriptions keep the interface updated as jobs run.",
       impact:
-        "Connected secure ingestion, automated transcoding, and global delivery across a microservices architecture.",
+        "Connected upload, asynchronous media processing, and adaptive playback in one system.",
       description:
-        "Built a microservices video platform with secure ingestion, automated FFmpeg transcoding, and global CloudFront delivery. Deployed the services through Docker and Kubernetes on AWS EKS with RabbitMQ message queues.",
+        "I built an event-driven video pipeline that sends multipart uploads directly to S3 and turns them into adaptive HLS streams. RabbitMQ coordinates Go workers for FFmpeg transcoding and captions, while GraphQL subscriptions keep the interface updated as jobs run. The media processing runs in the background, separate from the interactive upload and playback flow.",
       technologies: [
         "Go",
         "RabbitMQ",
         "Docker",
         "Kubernetes",
-        "AWS EKS",
-        "CloudFront",
+        "S3",
+        "GraphQL",
+        "HLS",
         "FFmpeg",
       ],
       links: [
@@ -359,11 +355,11 @@ export const DATA = {
       category: "HFT",
       filterGroup: "Systems, HFT, and Data",
       summary:
-        "Built a C++ pipeline that parses PCAP market data and stores queryable records.",
+        "I built a pipeline that turns IEX packet captures into queryable records, connecting C++ decoding with Parquet storage and Airflow-managed ingestion.",
       impact:
-        "Connected packet decoding, columnar storage, orchestration, and query bookkeeping in one data path.",
+        "Connected binary decoding, structured storage, processing metadata, and job orchestration.",
       description:
-        "Built a high-performance C++ parser for IEX PCAP market data. Added Parquet storage, a SQLite bookkeeper, multithreaded ingestion, and Apache Airflow orchestration.",
+        "I built a C++ parser for IEX packet captures and connected it to a market-data pipeline with Parquet storage, SQLite bookkeeping, and multithreaded ingestion. Airflow coordinates the jobs around that data path. The project links low-level decoding to the storage and processing metadata needed to make captured market activity useful for later analysis.",
       technologies: [
         "C++",
         "Python",
@@ -390,20 +386,12 @@ export const DATA = {
       category: "Web Dev",
       filterGroup: "Developer Tools and Web",
       summary:
-        "Built a collaborative editor with CRDT synchronization and custom WebSocket infrastructure.",
+        "I built a shared document workspace with Yjs-based synchronization, custom WebSockets, persisted document state, and document-linked chat.",
       impact:
-        "Enabled conflict-free multi-user editing with live cursors and document versioning.",
+        "Connected live document updates, saved state, sharing, and conversation.",
       description:
-        "Developed a real-time collaborative editor with Yjs CRDT synchronization, custom WebSocket infrastructure, and an AWS serverless deployment. Added live cursors, document versioning, and conflict-free multi-user editing.",
-      technologies: [
-        "React",
-        "TypeScript",
-        "Node.js",
-        "WebSocket",
-        "AWS Lambda",
-        "Yjs",
-        "DynamoDB",
-      ],
+        "I built the synchronization and persistence layers behind a collaborative document workspace. Yjs updates travel over a custom WebSocket protocol, and the server saves document state to PostgreSQL through Prisma. Document sharing and chat sit around that core. The work connects initial synchronization, live updates, reconnects, and storage rather than stopping at the editing interface.",
+      technologies: ["React", "TypeScript", "Node.js", "Yjs", "WebSockets", "PostgreSQL", "Prisma"],
       links: [
         {
           type: "Source",
@@ -426,12 +414,12 @@ export const DATA = {
       category: "Web Dev",
       filterGroup: "Developer Tools and Web",
       summary:
-        "Built a lightweight note application with Markdown and real-time collaboration.",
+        "I built a publishing app that helps writers recover unfinished drafts, publish rich-text posts, and connect with readers through comments, saves, likes, and follows.",
       impact:
-        "Combined fast note capture, structured organization, and shared editing in one interface.",
+        "Connected draft recovery, publication, and reader interaction.",
       description:
-        "A streamlined note-taking application with Markdown support, real-time collaboration, and lightweight organization tools.",
-      technologies: ["TypeScript", "React", "Markdown"],
+        "I built QuickMark around the path from an unfinished draft to a published post. The rich-text editor saves drafts locally and lets writers restore them when they return. A TypeScript API built with Hono, shared Zod schemas, and Prisma connects publishing to PostgreSQL-backed profiles, comments, saves, likes, and follows. The result brings writing recovery and reader interaction into the same application.",
+      technologies: ["TypeScript", "React", "Hono", "Prisma", "PostgreSQL", "Zod", "Cloudflare Workers"],
       links: [
         {
           type: "Source",
@@ -446,56 +434,28 @@ export const DATA = {
       ],
       image: "/projects/quickmark.webp",
       imageAlt:
-        "QuickMark note-taking interface with a Markdown editor and organized notes.",
+        "QuickMark publishing interface with a rich-text editor and posts.",
       video: "",
     },
     {
       title: "Aether - AI Email Client",
-      dates: "2024",
+      dates: "Mar 2025",
       active: true,
       featured: false,
       featuredRank: null,
       category: "Web Dev",
       filterGroup: "Developer Tools and Web",
       summary:
-        "Built an AI-first email client that runs language-model features on the user's device.",
+        "I contributed database IPC handlers and read/unread inbox interactions to a team-built desktop email client with local AI summaries and reply drafts.",
       impact:
-        "Kept email data private while providing fast AI-assisted email operations.",
+        "Contributed data access and inbox state interactions around a team-built local-AI email client.",
       description:
-        "An AI-first email client built around a local language model for privacy, data sovereignty, and fast on-device operations.",
-      technologies: ["React", "TypeScript", "Local LLM", "Email"],
-      links: [],
+        "I contributed to Aether, a desktop email client built with Electron and React, with a local Flask and Ollama service for summaries and reply drafts. My work focused on database IPC handlers and read/unread inbox interactions: translating stored email records for the interface and connecting message selection to read-state updates. These contributions sit between the desktop process, application data, and everyday inbox behavior.",
+      technologies: ["Electron", "React", "TypeScript", "Flask", "Ollama", "SQLite"],
+      links: [{ type: "Source", href: "https://github.com/AdvaitTahilyani/Aether", icon: <Icons.github className="size-3" /> }],
       image: "/projects/aether.webp",
       imageAlt:
         "Aether email client interface with an inbox and AI-assisted email controls.",
-      video: "",
-    },
-    {
-      title: "Custom Programming Language Interpreter",
-      href: "https://github.com/GoyalIshaan/interpreter-in-go",
-      dates: "2023",
-      active: false,
-      featured: false,
-      featuredRank: null,
-      category: "Low Level",
-      filterGroup: "Systems, HFT, and Data",
-      summary:
-        "Built a complete interpreter in Go with a lexer, parser, evaluator, and REPL.",
-      impact:
-        "Supported first-class functions, closures, and interactive program evaluation.",
-      description:
-        "Built a complete interpreter in Go for a custom language, including a lexer, parser, evaluator, first-class functions, closures, and a REPL.",
-      technologies: ["Go", "Compiler Design", "Language Design"],
-      links: [
-        {
-          type: "Source",
-          href: "https://github.com/GoyalIshaan/interpreter-in-go",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "/projects/interpreter.webp",
-      imageAlt:
-        "Diagram of source code moving through a lexer, parser, evaluator, and interactive REPL.",
       video: "",
     },
     {
@@ -507,11 +467,11 @@ export const DATA = {
       category: "Low Level",
       filterGroup: "Systems, HFT, and Data",
       summary:
-        "Built a Unix shell in C with pipes, redirection, background jobs, and built-in commands.",
+        "I built a shell in C to explore how pipes, redirection, background execution, and built-in commands turn a command line into coordinated process work.",
       impact:
-        "Implemented process creation, coordination, and job control through Unix system calls.",
+        "Connected command composition, process management, and interactive shell behavior.",
       description:
-        "Developed a Unix shell in C with piping, redirection, background processes, process management, and custom built-in commands.",
+        "I built a Unix shell in C with pipes, input/output redirection, background execution, and custom built-in commands. The project explores how commands connect and how the shell manages the processes behind them. It gave me a way to work directly with the process lifecycles and data flow that higher-level applications usually hide.",
       technologies: ["C", "Unix", "Systems Programming"],
       links: [],
       image: "/projects/unix-shell.webp",
@@ -520,7 +480,7 @@ export const DATA = {
       video: "",
     },
     {
-      title: "High-Performance Memory Manager",
+      title: "Memory Allocator in C",
       dates: "2023",
       active: false,
       featured: false,
@@ -528,11 +488,11 @@ export const DATA = {
       category: "Low Level",
       filterGroup: "Systems, HFT, and Data",
       summary:
-        "Built custom malloc and free primitives in C with an optimized allocation strategy.",
+        "I implemented malloc and free in C to explore the trade-offs between allocation overhead, fragmentation, and memory utilization.",
       impact:
-        "Reduced allocation overhead and fragmentation while approaching the reference implementation.",
+        "Explored allocation behavior through a custom implementation of malloc and free.",
       description:
-        "Implemented custom malloc and free primitives in C, optimizing allocation speed, fragmentation, and memory usage to approach the published reference implementation.",
+        "I implemented custom malloc and free primitives in C, working directly with how requests receive memory and how released space becomes available again. The project explores the tension between allocation overhead, fragmentation, and utilization. It made those competing goals concrete in a component most application code delegates to a library.",
       technologies: ["C", "Memory Management", "Performance Optimization"],
       links: [],
       image: "/projects/memory-manager.webp",
@@ -550,12 +510,12 @@ export const DATA = {
       category: "HFT",
       filterGroup: "Systems, HFT, and Data",
       summary:
-        "Built a zero-copy C++ decoder for Nasdaq ITCH 5.0 binary market data.",
+        "I built a C++ decoder that turns memory-mapped Nasdaq ITCH data into CSV records, using explicit binary layouts and message-specific handlers.",
       impact:
-        "Processed approximately 595,000 messages per second with 1.68 microseconds of latency.",
+        "Connected binary protocol layouts, message dispatch, and CSV export.",
       description:
-        "Built a zero-copy Nasdaq ITCH 5.0 binary decoder processing approximately 595,000 messages per second at 1.68 microseconds per message. Added profiling, validation, signal handling, and CSV export.",
-      technologies: ["C++", "mmap", "Makefile", "perf", "valgrind", "CSV"],
+        "I built a C++ decoder for Nasdaq ITCH 5.0 files, connecting memory-mapped input to inspectable CSV output. A dispatch table routes records to message-specific handlers, while packed layouts and compile-time checks keep the protocol representation explicit. The implementation also tracks processing statistics and handles interruption, making the binary-to-record conversion path easier to inspect and measure.",
+      technologies: ["C++", "mmap", "Binary Protocols", "Makefile", "CSV"],
       links: [
         {
           type: "Source",
@@ -565,7 +525,7 @@ export const DATA = {
       ],
       image: "/projects/itch-decoder.webp",
       imageAlt:
-        "Diagram of memory-mapped Nasdaq ITCH packets moving through a zero-copy decoder.",
+        "Diagram of memory-mapped Nasdaq ITCH input moving through message handlers into CSV records.",
       video: "",
     },
   ],
