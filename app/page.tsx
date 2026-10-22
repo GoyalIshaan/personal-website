@@ -3,9 +3,9 @@ import { DATA } from "@/data/resume";
 import { ProjectEntry } from "@/components/project-entry";
 
 const selectedTitles: Record<string, string> = {
+  "Speculative Decoding Runtime & GPU Kernel Lab": "Speculative decoding & GPU kernels",
   "JAX Transformer + MoE Kernel Optimization": "Transformer & MoE kernels",
   "GPT-2 Inference Optimization": "GPT-2 inference",
-  "Speculative Decoding Systems Reproduction": "Speculative decoding",
   "Ren - Agentic IDE": "Ren",
   VidSmith: "VidSmith",
 };

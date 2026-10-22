@@ -168,7 +168,7 @@ export const DATA = {
       dates: "Jun 2026",
       active: true,
       featured: true,
-      featuredRank: 1,
+      featuredRank: 2,
       category: "AI/ML",
       filterGroup: "AI and ML",
       summary:
@@ -185,20 +185,20 @@ export const DATA = {
       video: "",
     },
     {
-      title: "Speculative Decoding Systems Reproduction",
+      title: "Speculative Decoding Runtime & GPU Kernel Lab",
       dates: "Apr 2026",
       active: true,
       featured: true,
-      featuredRank: 2,
+      featuredRank: 1,
       category: "AI/ML",
       filterGroup: "AI and ML",
       summary:
-        "I built a Qwen3 draft-and-verify runtime to study when speculative decoding saves work and when the extra drafting overhead cancels out the benefit.",
+        "I built a custom BF16 speculative-decoding runtime with CUDA graphs, rollback-safe KV caches, multi-GPU draft forecasting, and specialized Triton kernels.",
       impact:
-        "Compared decoding strategies across batching and speculative-depth settings.",
+        "Connected speculative execution, GPU kernels, cache-state management, and numerical/performance evaluation.",
       description:
-        "I reproduced autoregressive, standard speculative, and Speculative2 decoding with Qwen3-8B and Qwen3-32B. I built a custom draft-and-verify runtime and varied batch size and speculative depth to compare the execution paths. The central question was where speculation pays for itself, rather than assuming that drafting more tokens always improves generation.",
-      technologies: ["PyTorch", "CUDA", "Qwen3", "KV Cache", "LLM Inference"],
+        "I built a custom inference runtime for speculative decoding with fused GPU kernels, CUDA graph replay, and overlapping execution across GPUs. I implemented KV-cache rollback for rejected tokens, fixed cache-layout bugs, and investigated numerical mismatches caused by different execution shapes and reduction orders. In single-request Qwen2.5-7B tests on two H100s, speculative speculative decoding reached 229 tokens/s, versus 158 tokens/s for standard speculative decoding, including prefill.",
+      technologies: ["Python", "PyTorch", "Triton", "CUDA", "C++", "CUDA Graphs", "Nsight Systems"],
       links: [],
       image: "/projects/speculative-decoding.webp",
       imageAlt:
