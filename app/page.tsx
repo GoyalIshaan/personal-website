@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { DATA } from "@/data/resume";
 import { ProjectEntry } from "@/components/project-entry";
+import { BLOG_POSTS } from "@/data/blogs";
 
 const selectedTitles: Record<string, string> = {
   "Speculative Decoding Runtime & GPU Kernel Lab": "Speculative decoding & GPU kernels",
@@ -34,6 +35,13 @@ export default function Page() {
 <article className="entry"><div className="entry-heading"><h3>ADAPT Lab, UIUC</h3><time>May–Aug 2025</time></div>
 <p>{DATA.work[1].description}</p>
 </article>
+</section>
+<section aria-labelledby="blogs-title"><h2 id="blogs-title">Blogs</h2>
+{[...BLOG_POSTS].sort((a, b) => b.date.localeCompare(a.date)).map((post) => <article className="entry" key={post.slug}>
+<div className="entry-heading"><h3><a href={`/blogs/${post.slug}`}>{post.title}</a></h3><time dateTime={post.date}>{post.dateLabel}</time></div>
+<p>{post.description}</p>
+</article>)}
+<a className="projects-button" href="/blogs">View all blogs</a>
 </section>
 <section aria-labelledby="projects-title"><h2 id="projects-title">Selected projects</h2>
 {selectedProjects.map((project) => <ProjectEntry key={project.title} project={project} title={selectedTitles[project.title]} />)}
