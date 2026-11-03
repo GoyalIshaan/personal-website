@@ -193,13 +193,19 @@ export const DATA = {
       category: "AI/ML",
       filterGroup: "AI and ML",
       summary:
-        "I built a custom BF16 speculative-decoding runtime with CUDA graphs, rollback-safe KV caches, multi-GPU draft forecasting, and specialized Triton kernels.",
+        "I built a speculative-decoding runtime with CUDA graphs, rollback-safe KV caches, multi-GPU draft forecasting, and custom Triton kernels, reaching 697 tokens/s on a single request.",
       impact:
         "Connected speculative execution, GPU kernels, cache-state management, and numerical/performance evaluation.",
       description:
-        "I built a custom inference runtime for speculative decoding with fused GPU kernels, CUDA graph replay, and overlapping execution across GPUs. I implemented KV-cache rollback for rejected tokens, fixed cache-layout bugs, and investigated numerical mismatches caused by different execution shapes and reduction orders. In single-request Qwen2.5-7B tests on two H100s, speculative speculative decoding reached 229 tokens/s, versus 158 tokens/s for standard speculative decoding, including prefill.",
+        "I built an inference runtime for speculative and speculative speculative decoding with fused GPU kernels, CUDA graph replay, and execution overlapped across two GPUs. With Qwen2.5-7B in FP8 and a trained EAGLE-3 drafter, it reached 697 decode tokens/s on one request on two B300s, about 2× my tuned autoregressive baseline, and ran a single request to 128,000 tokens. Along the way I built an exact-match test suite, tracked down a KV-cache stride bug, and found new matmul schedules worth 17–21% end to end.",
       technologies: ["Python", "PyTorch", "Triton", "CUDA", "C++", "CUDA Graphs", "Nsight Systems"],
-      links: [],
+      links: [
+        {
+          type: "Blog",
+          href: "/blogs/speculative-decoding",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
       image: "/projects/speculative-decoding.webp",
       imageAlt:
         "Diagram of draft tokens that a larger model verifies during speculative decoding.",

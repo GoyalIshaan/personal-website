@@ -22,7 +22,7 @@ export function ProjectEntry({
       {project.links.length > 0 && (
         <div className="project-meta">
           {project.links.map((link) => (
-            <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
+            <a key={link.href} href={link.href} {...(link.href.startsWith("/") ? {} : { target: "_blank", rel: "noopener noreferrer" })}>
               {link.type}
             </a>
           ))}

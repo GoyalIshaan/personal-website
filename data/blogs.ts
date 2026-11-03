@@ -16,4 +16,13 @@ export const HBM3E_POST: BlogPost = {
 };
 
 // Add each new article here; the blog index lists posts by date, newest first.
-export const BLOG_POSTS: readonly BlogPost[] = [HBM3E_POST];
+export const SPECULATIVE_DECODING_POST: BlogPost = {
+  slug: "speculative-decoding",
+  title: "My speculative decoder got slower",
+  date: "2026-11-03",
+  dateLabel: "November 2026",
+  description:
+    "Two GPUs, three decoders, one stride bug, and what it took to reach 697 tokens/sec on one short request.",
+};
+
+export const BLOG_POSTS: readonly BlogPost[] = [SPECULATIVE_DECODING_POST, HBM3E_POST];
