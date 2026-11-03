@@ -9,8 +9,8 @@ export type BlogPost = {
 export const HBM3E_POST: BlogPost = {
   slug: "inside-hbm3e",
   title: "Inside HBM3E",
-  date: "2026-11",
-  dateLabel: "November 2026",
+  date: "2025-10",
+  dateLabel: "October 2025",
   description:
     "Core DRAM dies, the base die, TSVs, the interposer, and how the data moves through all of it.",
 };
