@@ -1,0 +1,89 @@
+.organization { width: 100%; min-width: 0; }
+.address { margin: 16px 0 3px; color: #d5d5d5; font-size: 12px; line-height: 1.6; font-variant-numeric: tabular-nums; }
+.address span { color: #777; margin-inline: 5px; }
+.drawing { display: block; width: 100%; height: auto; }
+.label { fill: #dedede; font-family: inherit; font-size: 14px; }
+.small { fill: #b7b7b7; font-family: inherit; font-size: 12px; }
+.bit { fill: #e7e7e7; font-family: inherit; font-size: 12px; }
+.region { fill: #1e1e1e; stroke: #565656; stroke-width: 1; }
+.selectedRegion { fill: #343434; stroke: var(--hbm-data); stroke-width: 1.5; }
+.cells { fill: #292929; stroke: #686868; stroke-width: 1; }
+.openCells { fill: #53504a; stroke: #c1b09d; stroke-width: 1; }
+.selectedCells { fill: #5b5b5b; stroke: var(--hbm-data); stroke-width: 1.5; }
+.wordline { fill: none; stroke: #484848; stroke-width: 1; }
+.wordlineActive { fill: none; stroke: var(--hbm-command); stroke-width: 2; }
+.bitline { fill: none; stroke: #666; stroke-width: 1; }
+.senseIdle { fill: #232323; stroke: #686868; }
+.senseOpen { fill: #424242; stroke: #b8b8b8; }
+.twoPaths { fill: none; stroke: #737373; stroke-width: 3; }
+.twoPathsSelected { fill: none; stroke: var(--hbm-data); stroke-width: 3; }
+.returnData { fill: none; stroke: var(--hbm-data); stroke-width: 1.8; }
+.command { fill: none; stroke: var(--hbm-command); stroke-width: 1.8; stroke-dasharray: 5 4; }
+.transistor { fill: none; stroke: #d1d1d1; stroke-width: 2; }
+.storedCharge { fill: var(--hbm-data); opacity: .16; }
+.zoomLine { fill: none; stroke: #aaa; stroke-width: 1; stroke-dasharray: 2 3; }
+.divider { stroke: #393939; stroke-width: 1; }
+.mux { fill: #303030; stroke: #c1b09d; }
+.sharedResources { stroke: var(--hbm-command); stroke-width: 2; stroke-dasharray: 5 4; }
+.scene { animation: detail-enter 280ms cubic-bezier(.25, 1, .5, 1) both; transform-origin: 50% 55%; }
+.chargeSharing { fill: none; stroke: var(--hbm-command); stroke-width: 2; stroke-dasharray: 3 13; animation: charge-move 950ms linear 2; }
+.dataTravel { fill: none; stroke: var(--hbm-data); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 1 30; animation: data-move 1.8s linear infinite; }
+.sensingLine { animation: sense-signal 950ms linear 2; }
+.beat { animation: beat-return 200ms cubic-bezier(.25, 1, .5, 1) both; }
+
+.tiny { fill: #9c9c9c; font-family: inherit; font-size: 10.5px; }
+.axis { fill: none; stroke: #6a6a6a; stroke-width: 1; }
+.gridLine { fill: none; stroke: #3c3c3c; stroke-width: 1; }
+.referenceLine { fill: none; stroke: #8a8a8a; stroke-width: 1; stroke-dasharray: 3 3; }
+.marker { fill: none; stroke: #4a4a4a; stroke-width: 1; stroke-dasharray: 2 3; }
+.traceHigh { fill: none; stroke: var(--hbm-data); stroke-width: 2; }
+.traceRef { fill: none; stroke: var(--hbm-command); stroke-width: 1.6; }
+.drawIn { stroke-dasharray: 700; stroke-dashoffset: 0; animation: draw-in 2.4s cubic-bezier(.4, 0, .2, 1) both; }
+.decoder { fill: #2a2a2a; stroke: #c1b09d; stroke-width: 1; }
+.commandIdle { fill: none; stroke: #6d6252; stroke-width: 1.4; stroke-dasharray: 5 4; }
+.bitlineHot { fill: none; stroke: var(--hbm-data); stroke-width: 1.4; }
+.blockAct { fill: #4a3f33; stroke: #c1a27f; stroke-width: 1; }
+.blockRead { fill: #3b3b3b; stroke: #d6d6d6; stroke-width: 1; }
+.blockPre { fill: #2b3238; stroke: #8fa7b8; stroke-width: 1; }
+.blockData { fill: #cfcfcf; stroke: none; }
+.blockIdle { fill: #1c1c1c; stroke: #3d3d3d; stroke-width: 1; }
+.blockText { fill: #e8e8e8; font-family: inherit; font-size: 9.5px; }
+.blockTextDark { fill: #151515; font-family: inherit; font-size: 10px; font-weight: 600; }
+.clock { fill: none; stroke: #8fa7b8; stroke-width: 1.4; }
+.edge { fill: none; stroke: #3d3d3d; stroke-width: 1; stroke-dasharray: 2 2; }
+.pinWire { fill: none; stroke: #2e2e2e; stroke-width: 1; }
+.bitOne { fill: #e2e2e2; }
+.bitZero { fill: #4a4a4a; }
+.bracket { fill: none; stroke: #8a8a8a; stroke-width: 1; }
+.internalPath { fill: none; stroke-width: 2.4; }
+.limitLine { fill: none; stroke: #b56b5b; stroke-width: 1; stroke-dasharray: 4 3; }
+.currentSpike { fill: none; stroke: var(--hbm-command); stroke-width: 1.8; }
+.blockedCross { stroke: #b56b5b; stroke-width: 1.5; }
+.commandBus { fill: none; stroke: var(--hbm-command); stroke-width: 2; stroke-dasharray: 5 3; }
+.commandBusIdle { fill: none; stroke: #6d6252; stroke-width: 1.4; stroke-dasharray: 5 3; }
+.wasted { fill: #222; stroke: #555; stroke-dasharray: 2 2; }
+.field { stroke: #111; stroke-width: 1; }
+.leak { fill: var(--hbm-data); opacity: .35; animation: leak-drip 2.6s ease-in infinite; }
+@keyframes draw-in { from { stroke-dashoffset: 700; } to { stroke-dashoffset: 0; } }
+@keyframes leak-drip { 0% { opacity: .5; transform: translateY(0); } 100% { opacity: 0; transform: translateY(10px); } }
+.drillControls { display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; align-items: center; gap: 6px; margin-top: 6px; }
+.drillControls :where(button, select) { min-height: 44px; min-width: 0; padding: 7px 8px; font-size: 12px; }
+.drillControls button { font-size: 16px; }
+.selectionControl { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 8px; color: #bdbdbd; font-size: 12px; }
+.selectionControl select { min-height: 44px; min-width: 66px; padding: 6px 9px; }
+.explanation { color: #c2c2c2; font-size: 12px; line-height: 1.75; margin: 12px 0 0; }
+.schematicNote { color: #999; font-size: 10px; line-height: 1.6; margin: 8px 0 0; }
+.compact { display: flex; align-items: center; justify-content: center; }
+.compactDrawing { display: block; width: 100%; height: auto; max-height: 142px; }
+.srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.organization[data-motion="paused"] :is(.scene, .chargeSharing, .dataTravel, .sensingLine, .beat, .drawIn, .leak) { animation: none; }
+.organization[data-motion="paused"] .dataTravel { stroke-dasharray: none; stroke-width: 1.8; }
+@keyframes detail-enter { from { opacity: .25; transform: scale(.975); } to { opacity: 1; transform: scale(1); } }
+@keyframes charge-move { to { stroke-dashoffset: -48; } }
+@keyframes data-move { to { stroke-dashoffset: -124; } }
+@keyframes sense-signal { 0%, 30% { stroke: #777; } 75%, 100% { stroke: #bba997; } }
+@keyframes beat-return { from { opacity: .2; } to { opacity: 1; } }
+@media (max-width: 1019px) { .drawing { max-height: 365px; } .address { margin-top: 10px; } }
+@media (max-width: 560px) { .small { font-size: 12px; } .address { font-size: 11px; } .address span { margin-inline: 3px; } .explanation { font-size: 12px; } }
+@media (max-height: 740px) and (max-width: 1019px) { .compactDrawing { max-height: 105px; } }
+@media (prefers-reduced-motion: reduce) { .scene, .chargeSharing, .dataTravel, .sensingLine, .beat, .drawIn, .leak { animation: none !important; } .dataTravel { stroke-dasharray: none; stroke-width: 1.8; } }

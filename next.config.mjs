@@ -7,6 +7,9 @@ try {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  allowedDevOrigins: process.env.LOCAL_ARTICLE_EDITOR === '1'
+    ? (process.env.LOCAL_ARTICLE_EDITOR_ORIGINS ?? '').split(',').filter(Boolean).map(origin => new URL(origin).hostname)
+    : undefined,
   experimental: {
     inlineCss: true,
     webpackBuildWorker: true,

@@ -1,0 +1,3 @@
+import "katex/dist/katex.min.css";
+import type { ReactNode } from "react";
+export default function ArticleLayout({ children }: { children: ReactNode }) { return children; }

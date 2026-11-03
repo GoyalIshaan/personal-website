@@ -23,7 +23,7 @@ export default function Page() {
 <Image className="portrait" src="/pfp.webp" alt="Ishaan Goyal" width="64" height="64" />
 </header>
 <div className="intro"><p>{DATA.summary}</p></div>
-<nav aria-label="Contact and profiles"><a href="mailto:ishaan6@illinois.edu">Email</a><a href="https://github.com/GoyalIshaan" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/ishaan-goyal" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="/resumes/ishaan-goyal-ai-infrastructure.pdf" target="_blank" rel="noopener">Résumé <span>PDF</span></a></nav>
+<nav aria-label="Site and profile links"><a href="/blogs">Blogs</a><a href="mailto:ishaan6@illinois.edu">Email</a><a href="https://github.com/GoyalIshaan" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/ishaan-goyal" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="/resumes/ishaan-goyal-ai-infrastructure.pdf" target="_blank" rel="noopener">Résumé <span>PDF</span></a></nav>
 <section aria-labelledby="experience-title"><h2 id="experience-title">Experience</h2>
 <article className="entry">
 <div className="entry-heading"><h3><a href="https://www.shibuyaaa.com/" target="_blank" rel="noopener noreferrer">A Vinyl Bar in Shibuya</a></h3><time>Feb–Aug 2026</time></div>
