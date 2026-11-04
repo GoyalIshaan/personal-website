@@ -40,7 +40,7 @@ export default async function SpeculativeDecodingPage() {
       <div className={styles.breadcrumb}><a href="/">Ishaan Goyal</a><span aria-hidden="true">/</span><a href="/blogs">Blogs</a></div>
     </nav>
     <header className={styles.header}>
-      <div className={styles.byline}>Ishaan Goyal <span aria-hidden="true">/</span><time dateTime={post.date}>November 3, 2026</time><span aria-hidden="true">/</span>{minutes} min read</div>
+      <div className={styles.byline}>Ishaan Goyal <span aria-hidden="true">/</span><time dateTime={post.date}>{post.dateLabel}</time><span aria-hidden="true">/</span>{minutes} min read</div>
       <h1>{post.title}</h1>
       <p className={styles.subtitle}>{subtitle}</p>
       <p className={styles.note}>Inference engineering · Research log</p>

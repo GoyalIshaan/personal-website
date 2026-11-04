@@ -205,6 +205,11 @@ export const DATA = {
           href: "/blogs/speculative-decoding",
           icon: <Icons.globe className="size-3" />,
         },
+        {
+          type: "Source",
+          href: "https://github.com/GoyalIshaan/speculative-decoding-lab",
+          icon: <Icons.github className="size-3" />,
+        },
       ],
       image: "/projects/speculative-decoding.webp",
       imageAlt:
