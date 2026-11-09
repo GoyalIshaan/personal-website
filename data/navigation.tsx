@@ -1,8 +1,5 @@
 import { Icons } from "@/components/icons";
-import { FileTextIcon, HomeIcon, NotebookIcon } from "lucide-react";
-
-export const RESUME_HREF =
-  "/resumes/ishaan-goyal-ai-infrastructure.pdf";
+import { HomeIcon, NotebookIcon } from "lucide-react";
 
 export const NAV_ITEMS = [
   { href: "/", icon: HomeIcon, label: "Home", newTab: false },
@@ -11,12 +8,6 @@ export const NAV_ITEMS = [
     icon: NotebookIcon,
     label: "Projects",
     newTab: false,
-  },
-  {
-    href: RESUME_HREF,
-    icon: FileTextIcon,
-    label: "Resume",
-    newTab: true,
   },
 ] as const;
 

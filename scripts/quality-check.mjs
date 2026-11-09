@@ -34,9 +34,7 @@ try {
  assert(await page.locator('section[aria-labelledby="projects-title"] article').count() === 5, "Homepage must show five selected projects");
  const projects = page.getByRole("link", {name:"View all projects"});
  assert(await projects.count() === 1, "Single all-projects link");
- const resume = await page.getByRole("link", {name:"Résumé PDF"}).getAttribute("href");
- const pdf = await context.request.get(baseUrl + resume);
- assert(pdf.ok() && pdf.headers()["content-type"].includes("application/pdf"), "Résumé must serve a PDF");
+ assert(await page.locator('a[href^="/resumes/"]').count() === 0, "Homepage must omit the résumé link");
  await page.getByRole("button", {name:"Pause background"}).click();
  assert(await page.getByRole("button", {name:"Resume background"}).getAttribute("aria-pressed") === "true", "Rain pause state");
  assert(await page.locator('.rain-drop').first().evaluate(e=>getComputedStyle(e).animationPlayState) === "paused", "Rain actually pauses");
@@ -58,7 +56,7 @@ try {
  }
  await nojs.close();
  assert(errors.length === 0, `Runtime errors: ${errors.join('; ')}`);
- console.log('Navigation, all projects, PDFs, rain controls, responsive and accessibility checks complete.');
+ console.log('Navigation, all projects, rain controls, responsive and accessibility checks complete.');
 } finally { await browser.close(); }
 
 const lighthouseChrome = await launchChrome({

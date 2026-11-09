@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { NAV_ITEMS, RESUME_HREF, SOCIAL_LINKS } from "@/data/navigation";
+import { NAV_ITEMS, SOCIAL_LINKS } from "@/data/navigation";
 
 export const DATA = {
   name: "Ishaan Goyal",
@@ -12,10 +12,6 @@ export const DATA = {
   summary:
     "I build ML systems and developer tools. I've worked on audio models that run on iPhones, compilers for neural-network verification, and coding agents whose work developers can inspect and control.",
   avatarUrl: "/pfp.webp",
-
-  resume: {
-    aiInfrastructure: RESUME_HREF,
-  },
 
   skillGroups: [
     {
