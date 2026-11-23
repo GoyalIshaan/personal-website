@@ -1,0 +1,25 @@
+{
+  "stop_reason": "deadline",
+  "reached_requested_output": false,
+  "stats": {
+    "prefill_s": 0.015109419999987495,
+    "decode_s": 587.541888536,
+    "total_s": 587.556997956,
+    "rounds": 3749,
+    "proposed": 0,
+    "accepted": 0,
+    "cache_hits": 0,
+    "cache_lookups": 0,
+    "stopped_eos": false,
+    "kv_copy_payload_bytes": 0,
+    "scheduled_ar_steps": 119968,
+    "serialization_s": 0.0020523489999959565,
+    "decode_tps": 204.1862926555394,
+    "e2e_tps": 204.18104186886725,
+    "return_latency_s": 587.559050305
+  },
+  "tokens_sha256": "1179c70afb2d7017a192f89bb6f48d5a3b5605255b0375214d16c71e3cc69457",
+  "peak_allocated_bytes": 29553325568,
+  "first_ignored_eos_output_index": 1391,
+  "timing_scope": "includes checkpoint synchronization and persistence; one stress run, no promotion"
+}

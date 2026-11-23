@@ -31,7 +31,7 @@ try {
   assert(!blocking.length, `${route} accessibility: ${blocking.map(v=>v.id).join(", ")}`);
  }
  await page.goto(baseUrl, {waitUntil:"networkidle"});
- assert(await page.locator('section[aria-labelledby="projects-title"] article').count() === 5, "Homepage must show five selected projects");
+ assert(await page.locator('section[aria-labelledby="projects-title"] article').count() === 6, "Homepage must show six selected projects");
  const projects = page.getByRole("link", {name:"View all projects"});
  assert(await projects.count() === 1, "Single all-projects link");
  assert(await page.locator('a[href^="/resumes/"]').count() === 0, "Homepage must omit the résumé link");
@@ -40,8 +40,8 @@ try {
  assert(await page.locator('.rain-drop').first().evaluate(e=>getComputedStyle(e).animationPlayState) === "paused", "Rain actually pauses");
  await projects.click();
  await page.waitForURL('**/projects');
- assert(await page.locator('article').count() === 7, "Archive must contain all seven projects");
- assert(await page.locator('.category-heading').allTextContents().then(a=>JSON.stringify(a.map(x=>x.trim()))) === JSON.stringify(["ML systems 3","Developer tools & web 3","Systems & data 1"]), "Category counts must be 3, 3, 1");
+ assert(await page.locator('article').count() === 8, "Archive must contain all eight projects");
+ assert(await page.locator('.category-heading').allTextContents().then(a=>JSON.stringify(a.map(x=>x.trim()))) === JSON.stringify(["ML systems 4","Developer tools & web 3","Systems & data 1"]), "Category counts must be 4, 3, 1");
  assert(await page.getByRole("button", {name:"Resume background"}).getAttribute("aria-pressed") === "true", "Pause preference survives navigation");
  await page.getByRole("button", {name:"Resume background"}).click();
  await page.locator('.breadcrumb').getByRole('link', {name:'Home'}).click();

@@ -1,0 +1,16 @@
+[
+  {
+    "directory": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z",
+    "recipe": "15b5ffa2c55954a52e81c5df409ce38fe1153694d76f110b755fe64f00ffc489",
+    "run": "b1cc7d4dfc3ebd2169fbaf9cac5fe5fb462a6e8d71c123cefa9241365c2294c7",
+    "generated_tokens": 119968,
+    "stop_reason": "deadline"
+  },
+  {
+    "directory": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z",
+    "recipe": "5a75c453740f3763691286a976a2a73508a089b8687ece01527e809cadbf3ad9",
+    "run": "8e3d83008110da75b5b4ca21614b7437f107c801d2f37f006f9d77a419ac2783",
+    "generated_tokens": 128000,
+    "stop_reason": "completed"
+  }
+]

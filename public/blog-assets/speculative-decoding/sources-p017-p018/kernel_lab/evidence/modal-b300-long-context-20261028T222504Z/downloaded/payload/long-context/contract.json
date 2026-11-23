@@ -1,0 +1,18 @@
+{
+  "prompt_tokens": 128,
+  "output_tokens": 128000,
+  "capacity": 131072,
+  "checkpoint_tokens": 1024,
+  "reserved_slots": 1,
+  "target_kv_bytes": 7516192768,
+  "rope": {
+    "rope_type": "yarn",
+    "factor": 4.0,
+    "original_max_position_embeddings": 32768
+  },
+  "retain_full_kv": true,
+  "ignore_eos": true,
+  "batch": 1,
+  "scope": "AR-only endurance stress; not SD/SSD equivalence or output quality qualification",
+  "generation_exceeds_documented_8192_output_range": true
+}

@@ -1,0 +1,12 @@
+{
+  "status": "complete-after-cleanup",
+  "all_current_greedy_gates_passed": true,
+  "measured_rows": 80,
+  "cuda_execution_attempted": true,
+  "gpu_model_forward_completed": true,
+  "trained_payload_loaded": true,
+  "quality_task_evaluation_performed": false,
+  "eagle_cuda_ssd_qualified": false,
+  "lease_release_inferred_from_completion": false,
+  "required_next_action": "export then explicitly release lease"
+}

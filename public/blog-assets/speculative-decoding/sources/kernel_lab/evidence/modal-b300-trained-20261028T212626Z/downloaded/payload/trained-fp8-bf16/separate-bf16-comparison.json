@@ -1,0 +1,85 @@
+{
+  "rows": [
+    {
+      "context": 128,
+      "step": 0,
+      "finite": true,
+      "relative_l2": 0.11432476341724396,
+      "max_abs": 1.5625,
+      "tv": 0.10541490465402603,
+      "same_top1": true,
+      "actual_top1": 1249,
+      "expected_top1": 1249,
+      "actual_top2_margin": 0.5,
+      "expected_top2_margin": 0.25
+    },
+    {
+      "context": 128,
+      "step": 1,
+      "finite": true,
+      "relative_l2": 0.21462081372737885,
+      "max_abs": 1.478515625,
+      "tv": 2.8573431336553767e-06,
+      "same_top1": true,
+      "actual_top1": 4211,
+      "expected_top1": 4211,
+      "actual_top2_margin": 11.5,
+      "expected_top2_margin": 11.25
+    },
+    {
+      "context": 128,
+      "step": 2,
+      "finite": true,
+      "relative_l2": 0.05260039493441582,
+      "max_abs": 0.91796875,
+      "tv": 0.0002596885315142572,
+      "same_top1": true,
+      "actual_top1": 458,
+      "expected_top1": 458,
+      "actual_top2_margin": 7.625,
+      "expected_top2_margin": 8.375
+    },
+    {
+      "context": 512,
+      "step": 0,
+      "finite": true,
+      "relative_l2": 0.08474893867969513,
+      "max_abs": 1.625,
+      "tv": 0.05618390068411827,
+      "same_top1": false,
+      "actual_top1": 32,
+      "expected_top1": 1249,
+      "actual_top2_margin": 0.0,
+      "expected_top2_margin": 0.25
+    },
+    {
+      "context": 512,
+      "step": 1,
+      "finite": true,
+      "relative_l2": 0.5503408908843994,
+      "max_abs": 6.6953125,
+      "tv": 0.21785585582256317,
+      "same_top1": false,
+      "actual_top1": 10339,
+      "expected_top1": 3535,
+      "actual_top2_margin": 0.75,
+      "expected_top2_margin": 0.0
+    },
+    {
+      "context": 512,
+      "step": 2,
+      "finite": true,
+      "relative_l2": 0.1881544291973114,
+      "max_abs": 5.4375,
+      "tv": 0.028741730377078056,
+      "same_top1": true,
+      "actual_top1": 3170,
+      "expected_top1": 3170,
+      "actual_top2_margin": 3.0,
+      "expected_top2_margin": 2.5
+    }
+  ],
+  "quality_evaluation": false,
+  "historical_hf_failures_erased": false,
+  "scope": "changed-precision pointwise numerical comparison only"
+}

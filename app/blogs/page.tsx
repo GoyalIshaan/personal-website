@@ -1,5 +1,6 @@
 /* Native links give the portfolio's background script a fresh lifecycle. */
 /* eslint-disable @next/next/no-html-link-for-pages */
+import { ModeToggle } from "@/components/mode-toggle";
 import type { Metadata } from "next";
 import { BLOG_POSTS } from "@/data/blogs";
 import styles from "./blogs.module.css";
@@ -21,10 +22,11 @@ export default function BlogsPage() {
 
   return (
     <main>
-      <nav className="breadcrumb" aria-label="Breadcrumb">
+      <nav className="breadcrumb blog-breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a>
         <span aria-hidden="true">/</span>
         <span aria-current="page">Blogs</span>
+        <ModeToggle className="blog-theme-toggle" />
       </nav>
       <header>
         <div className="identity">

@@ -1,8 +1,9 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import Script from "next/script";
+import { ModeToggle } from "@/components/mode-toggle";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
-export const viewport: Viewport = { themeColor: "#101010" };
 export const metadata: Metadata = {
  metadataBase: new URL("https://www.ishaangoyal.com/"),
  title: { default: "Ishaan Goyal", template: "%s — Ishaan Goyal" },
@@ -11,5 +12,16 @@ export const metadata: Metadata = {
  icons: { icon: "/favicon.svg" },
 };
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
- return <html lang="en"><body><div className="code-background" aria-hidden="true" />{children}<Script src="/portfolio-rain.js" strategy="afterInteractive" /></body></html>;
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeProvider attribute="class" defaultTheme="light">
+          <div className="site-theme-control"><ModeToggle /></div>
+          <div className="code-background" aria-hidden="true" />
+          {children}
+        </ThemeProvider>
+        <Script src="/portfolio-rain.js" strategy="afterInteractive" />
+      </body>
+    </html>
+  );
 }

@@ -1,0 +1,42 @@
+[
+  {
+    "App ID": "ap-WQ1iTrlBVLVXPmMTdtqqnI",
+    "Description": "ssd-b300-long-context",
+    "State": "stopped",
+    "Tasks": "0",
+    "Created at": "2026-10-28 17:25:05-05:00",
+    "Stopped at": "2026-10-28 17:40:28-05:00"
+  },
+  {
+    "App ID": "ap-wmCidTLlCVhEbncxnjfVxa",
+    "Description": "ssd-b300-long-context",
+    "State": "stopped",
+    "Tasks": "0",
+    "Created at": "2026-10-28 17:08:54-05:00",
+    "Stopped at": "2026-10-28 17:23:48-05:00"
+  },
+  {
+    "App ID": "ap-nwO9ghg6pTdxA5eIZ11EAq",
+    "Description": "ssd-b300-trained",
+    "State": "stopped",
+    "Tasks": "0",
+    "Created at": "2026-10-28 16:26:27-05:00",
+    "Stopped at": "2026-10-28 16:31:56-05:00"
+  },
+  {
+    "App ID": "ap-qrzI91O0EzAqvAKOXiiTn1",
+    "Description": "ssd-b300-trained",
+    "State": "stopped",
+    "Tasks": "0",
+    "Created at": "2026-10-28 16:21:13-05:00",
+    "Stopped at": "2026-10-28 16:24:04-05:00"
+  },
+  {
+    "App ID": "ap-BTXCvnbKzSUWaH9p7bLl7P",
+    "Description": "ssd-b300-trained",
+    "State": "stopped",
+    "Tasks": "0",
+    "Created at": "2026-10-28 16:14:56-05:00",
+    "Stopped at": "2026-10-28 16:20:18-05:00"
+  }
+]

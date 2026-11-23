@@ -1,0 +1,17 @@
+{
+  "source_snapshot": "6d887df71c2b3c68e90c99f69f2688dc12de2768",
+  "raw_rows_checked": 80,
+  "gates_checked": 161,
+  "complete_output_equality": true,
+  "timing_arithmetic_checked": true,
+  "gpu_or_cloud_execution": false,
+  "charts": [
+    "01-graphs.svg",
+    "02-h100-release.svg",
+    "03-fusion.svg",
+    "04-projection-search.svg",
+    "05-latest-model.svg",
+    "06-paired-uncertainty.svg",
+    "07-draft-depth.svg"
+  ]
+}

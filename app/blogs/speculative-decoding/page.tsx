@@ -1,5 +1,6 @@
 /* Full-page navigation preserves the portfolio background script's lifecycle. */
 /* eslint-disable @next/next/no-html-link-for-pages */
+import { ModeToggle } from "@/components/mode-toggle";
 import type { Metadata } from "next";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
@@ -9,6 +10,8 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 import { SPECULATIVE_DECODING_POST as post } from "@/data/blogs";
+import { ArticleContents } from "../article-contents";
+import layout from "../article-contents.module.css";
 import styles from "./article.module.css";
 
 export const metadata: Metadata = {
@@ -38,30 +41,30 @@ export default async function SpeculativeDecodingPage() {
     <a className={styles.skip} href="#article-body">Skip to article</a>
     <nav className={styles.topNav} aria-label="Article navigation">
       <div className={styles.breadcrumb}><a href="/">Ishaan Goyal</a><span aria-hidden="true">/</span><a href="/blogs">Blogs</a></div>
+      <ModeToggle className="blog-theme-toggle" />
     </nav>
-    <header className={styles.header}>
-      <div className={styles.byline}>Ishaan Goyal <span aria-hidden="true">/</span><time dateTime={post.date}>{post.dateLabel}</time><span aria-hidden="true">/</span>{minutes} min read</div>
-      <h1>{post.title}</h1>
-      <p className={styles.subtitle}>{subtitle}</p>
-      <p className={styles.note}>Inference engineering · Research log</p>
-    </header>
-    <details className={styles.contents}>
-      <summary>In this article <span>{contents.length} parts</span></summary>
-      <ol>{contents.map(section => <li key={section.id}><a href={`#${section.id}`}>{section.title}</a></li>)}</ol>
-    </details>
-    <article id="article-body" className={styles.prose}>
-      <ReactMarkdown skipHtml remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[[rehypeKatex, { trust: false, throwOnError: false, maxExpand: 1000, maxSize: 20 }]]} components={{
-        h2: ({ children }) => <h2 id={anchor(String(children))}>{children}</h2>,
-        h3: ({ children }) => <h3 id={anchor(String(children))}>{children}</h3>,
-        table: ({ children }) => <div className={styles.tableScroll} tabIndex={0}><table>{children}</table></div>,
-        // Static scientific plots retain their supplied pixels and explicit alt text.
-        /* eslint-disable @next/next/no-img-element */
-        img: ({ src, alt }) => <img src={src} alt={alt ?? ""} loading="lazy" decoding="async" />,
-      }}>{markdown}</ReactMarkdown>
-    </article>
-    <footer className={styles.footer}>
-      <a href="/blogs">← All blogs</a><a href="#">Back to the top ↑</a>
-      <button className="motion-toggle" type="button" aria-pressed="false">Pause background</button>
-    </footer>
+    <div className={layout.layout}>
+      <header className={styles.header}>
+        <div className={styles.byline}>Ishaan Goyal <span aria-hidden="true">/</span><time dateTime={post.date}>{post.dateLabel}</time><span aria-hidden="true">/</span>{minutes} min read</div>
+        <h1>{post.title}</h1>
+        <p className={styles.subtitle}>{subtitle}</p>
+        <p className={styles.note}>Inference engineering · Research log</p>
+      </header>
+      <ArticleContents entries={contents} />
+      <article id="article-body" className={`${layout.body} ${styles.prose}`}>
+        <ReactMarkdown skipHtml remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[[rehypeKatex, { trust: false, throwOnError: false, maxExpand: 1000, maxSize: 20 }]]} components={{
+          h2: ({ children }) => <h2 id={anchor(String(children))}>{children}</h2>,
+          h3: ({ children }) => <h3 id={anchor(String(children))}>{children}</h3>,
+          table: ({ children }) => <div className={styles.tableScroll} tabIndex={0}><table>{children}</table></div>,
+          // Static scientific plots retain their supplied pixels and explicit alt text.
+          /* eslint-disable @next/next/no-img-element */
+          img: ({ src, alt }) => <img src={src} alt={alt ?? ""} loading="lazy" decoding="async" />,
+        }}>{markdown}</ReactMarkdown>
+      </article>
+      <footer className={styles.footer}>
+        <a href="/blogs">← All blogs</a><a href="#">Back to the top ↑</a>
+        <button className="motion-toggle" type="button" aria-pressed="false">Pause background</button>
+      </footer>
+    </div>
   </main>;
 }

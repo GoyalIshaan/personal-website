@@ -1,0 +1,7 @@
+{
+  "tokens_compared": 119968,
+  "exact": true,
+  "first_run": "modal-b300-long-context-20261028T220853Z",
+  "second_run": "modal-b300-long-context-20261028T222504Z",
+  "scope": "same-recipe AR repeatability across allocations; not SD/SSD comparison"
+}

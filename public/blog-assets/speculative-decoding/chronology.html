@@ -1,0 +1,516 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101010"><title>Project chronology and claim ledger | Ishaan Goyal</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;550;600;650&display=swap');
+:root{color-scheme:dark;--ink:#e5e5e5;--muted:#999999;--paper:#101010;--line:#2b2b2b;--prose:#c6c6c6;--sage:#a9bda9;--command:#bba997}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.65 Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;isolation:isolate}
+main{position:relative;max-width:1192px;margin:0 auto;padding:44px 40px 48px}a{color:inherit;text-underline-offset:4px;text-decoration-color:#686868}a:hover{color:#fff;text-decoration-color:currentColor}a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--sage);outline-offset:5px}::selection{background:#344034}
+.skip{position:absolute;left:24px;top:-100px;padding:10px;background:#2d2d2d;z-index:20}.skip:focus{top:10px}
+.top-nav{display:flex;justify-content:space-between;align-items:center;gap:20px;margin:0 0 44px;font-size:13px}.top-nav a{text-decoration:none;padding:8px 0;color:#afafaf}.top-nav a:hover{text-decoration:underline;color:var(--ink)}.top-nav a[aria-current=page]{color:var(--ink)}.breadcrumb,.article-links{display:flex;align-items:center;gap:12px}.breadcrumb span{color:#999}.article-links{gap:22px}
+.article-header{display:block;max-width:760px;margin:0 auto 44px}.byline{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;color:#a5a5a5;margin-bottom:22px}.byline span{margin:0 4px;color:#999}h1{font-size:clamp(30px,3.2vw,38px);line-height:1.15;letter-spacing:-1.1px;font-weight:550;margin:0}.subtitle{font-size:19px;line-height:1.5;color:#cacaca;margin:20px 0 0;max-width:660px}.draft-label{color:#a1a1a1;font-size:13px;margin:14px 0 0}
+article{max-width:760px;margin:auto;min-width:0;font-size:17px;line-height:1.9;color:var(--prose)}article :where(p,h2,h3,li,figcaption){overflow-wrap:break-word}p{margin:0 0 24px}strong{font-weight:600;color:#e0e0e0}h2{color:var(--ink);margin:68px 0 25px;font-size:25px;font-weight:500;letter-spacing:-.65px;line-height:1.45;scroll-margin-top:40px}h3{font-size:20px;font-weight:550;color:var(--ink);margin:32px 0 18px;line-height:1.45}ul,ol{padding-left:24px;margin:16px 0 26px}li{margin:9px 0}
+.contents{border-block:1px solid #383838;margin:38px 0 58px;padding:10px 0;font-size:14px}.contents summary{min-height:44px;cursor:pointer;padding:9px 0;color:#e0e0e0}.contents summary span{color:#a1a1a1;font-size:12px;margin-left:8px}.contents ol{margin:13px 0 18px;padding-left:23px}.contents li{padding:5px 0 5px 5px;margin:0}.contents a{color:#c3c3c3}
+article img{display:block;width:calc(100% + 176px);max-width:calc(100vw - 80px);height:auto;margin:38px -88px 42px;border-block:1px solid var(--line);padding:20px 0;background:var(--paper)}table{display:block;max-width:100%;overflow:auto;width:100%;border-collapse:collapse;font-size:13px;line-height:1.7;margin:28px 0 36px;text-align:left;font-variant-numeric:tabular-nums}th,td{padding:12px 14px 12px 0;border-bottom:1px solid #383838;vertical-align:top;min-width:100px}th{font-weight:500;color:#e3e3e3}td{color:#c6c6c6}td:first-child{min-width:150px}
+code{font:13px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace;overflow-wrap:anywhere}pre{overflow-x:auto;background:#191919;border:1px solid #383838;padding:18px;font-size:14px;line-height:1.7;margin:28px 0}pre code{white-space:pre;overflow-wrap:normal}:not(pre)>code{background:#252525;padding:2px 4px;font-size:.86em}hr{border:0;border-top:1px solid var(--line);margin:55px 0}
+footer{max-width:760px;margin:64px auto 0;border-top:1px solid var(--line);padding-top:21px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;font-size:12px;color:var(--muted)}footer a{text-decoration:none}footer a:hover{text-decoration:underline}.motion-toggle{font:inherit;color:var(--muted);background:none;border:0;padding:0;cursor:pointer;text-align:left}.motion-toggle:hover{color:var(--ink)}
+/* Reuse the portfolio's scattered rain in margins only, beyond article figures. */
+.code-background{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}.code-rail{position:absolute;top:0;bottom:0;width:max(10px,calc((100vw - 1192px)/2));overflow:hidden}.code-rail:first-child{left:0}.code-rail:last-child{right:0}.rain-drop{position:absolute;top:0;display:block;font:11px/14px ui-monospace,SFMono-Regular,Consolas,monospace;color:#8ca98e;animation:rain-fall var(--duration) linear infinite;animation-delay:var(--delay);user-select:none}.rain-drop>span,.rain-drop>b,.rain-drop>em{display:block;height:14px;text-align:center}.rain-drop>b{font-weight:700;color:#b7cbb8}.rain-drop>em{font-style:italic}.rain-drop>:last-child{color:#c2d5c4}.background-paused .rain-drop,.rain-hidden .rain-drop{animation-play-state:paused}@keyframes rain-fall{from{transform:translate(0,-100%)}to{transform:translate(var(--drift),100vh)}}
+@media(max-width:1000px){main{padding:36px 28px 36px}article img{width:100%;max-width:100%;margin:30px 0}.code-background{opacity:.4}}
+@media(max-width:600px){main{padding:28px 24px}.top-nav{margin-bottom:36px;gap:14px;flex-wrap:wrap}.article-links{gap:18px}.article-header{margin-bottom:34px}h1{font-size:30px}.subtitle{font-size:18px}article{font-size:16px;line-height:1.85}h2{font-size:23px;margin-top:52px}h3{font-size:19px}.byline{gap:6px;font-size:11px}.byline span{margin:0 1px}footer{gap:18px;font-size:11px}.contents{margin-bottom:40px}table{font-size:12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.code-background,.motion-toggle{display:none}}
+@media print{.code-background,.motion-toggle,.top-nav,.contents,.skip{display:none}main{padding:0}article{font-size:11pt;max-width:none}h1{font-size:28pt}h2{break-after:avoid}img,tr{break-inside:avoid}article img{width:100%;margin-inline:0}}
+</style></head><body><div class="code-background" aria-hidden="true"></div><main><a class="skip" href="#article-body">Skip to article</a><nav class="top-nav" aria-label="Article navigation"><div class="breadcrumb"><a href="https://www.ishaangoyal.com/">Ishaan Goyal</a><span aria-hidden="true">/</span><a href="https://www.ishaangoyal.com/blogs">Blogs</a></div><div class="article-links"><a href="/blogs/speculative-decoding" >Article</a><a href="chronology.html" aria-current="page">Chronology</a></div></nav><header class="article-header"><div class="byline">Ishaan Goyal <span aria-hidden="true">/</span><time datetime="2026-10-28">October 28, 2026</time><span aria-hidden="true">/</span>10 min read</div><h1>Project chronology and claim ledger</h1><p class="draft-label">Publication draft · Inference engineering</p></header><article id="article-body">
+<p>This appendix accompanies the blog. It reconstructs the completed history from two fixed repository snapshots through P018, rather than continuing the main thread's experiments. It includes unsuccessful attempts. <strong>prepared</strong>, <strong>compiled</strong>, <strong>GPU-tested</strong>, <strong>timed</strong>, and <strong>promoted</strong> are different states. Early E001–E015 entries were reconstructed after the fact in the original log, not preregistered.</p>
+<details class="contents"><summary>In this article <span>6 parts</span></summary><ol><li><a href="#notebook-and-first-correctness-first-rewrite">Notebook and first correctness-first rewrite</a></li><li><a href="#static-graphs-and-measured-h100-release">Static graphs and measured H100 release</a></li><li><a href="#new-b300-kernel-laboratory">New B300 kernel laboratory</a></li><li><a href="#beam-modal-migration-and-trained-native-result">Beam/Modal migration and trained native result</a></li><li><a href="#claims-that-are-supported-and-claims-to-avoid">Claims that are supported and claims to avoid</a></li><li><a href="#publication-checklist-specific-to-this-draft">Publication checklist specific to this draft</a></li></ol></details><h2 id="notebook-and-first-correctness-first-rewrite">Notebook and first correctness-first rewrite</h2>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Work or finding</th>
+<th>Result / status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Original notebook</td>
+<td>Qwen2.5-7B / 0.5B, requested 128 outputs</td>
+<td>Saved AR/SD/SSD times 5.8759/3.9746/12.5391 s. output mismatch and incomplete environment identity prevent a validated speed claim</td>
+</tr>
+<tr>
+<td>E001</td>
+<td>Audit positions, inference mode, tie handling, branch copying</td>
+<td>Several defects/risk points identified. original mismatch not fully attributed</td>
+</tr>
+<tr>
+<td>E002–003</td>
+<td>Reusable KV slabs, rollback cursors, incremental branches, independent benchmark protocol</td>
+<td>Original retained. CPU validation. no GPU result from local tests alone</td>
+</tr>
+<tr>
+<td>E004–006</td>
+<td>Modal notebook setup. corrected resource parameters. A100 request queued then canceled</td>
+<td>Switched to H100. startup and cleanup receipts retained</td>
+</tr>
+<tr>
+<td>E007–008</td>
+<td>32B BF16 test. native/custom cache replay of first mismatch</td>
+<td>Both cache implementations agree within serial/block schedules. serial/block logits differ near a tie</td>
+</tr>
+<tr>
+<td>E009–010</td>
+<td>FP32 head and then FP16 transformer with FP32 head</td>
+<td>First tie repaired, later divergence remained. diagnostic wrapper also exposed a dtype failure</td>
+</tr>
+<tr>
+<td>E011</td>
+<td>Full FP32, TF32 disabled, 7B/0.5B, 2×H100</td>
+<td>Complete 200-row experiment. 90 evaluation rows agree. SD and SSD lose to AR</td>
+</tr>
+<tr>
+<td>E012</td>
+<td>Analyze actual kernel overlap</td>
+<td>2.644 ms concurrent kernels in 5706.435 ms decode window, 325,497 kernels. not occupancy</td>
+</tr>
+<tr>
+<td>E013</td>
+<td>Submit Python scout earlier</td>
+<td>Six matched requests regress. discard candidate</td>
+</tr>
+<tr>
+<td>E014</td>
+<td>Larger 32B FP32 target on 2×H200</td>
+<td>Partial correct run, deadline hit. no complete result. larger target not a general fix</td>
+</tr>
+<tr>
+<td>E015</td>
+<td>Preserve originals, outputs, bills and cleanup</td>
+<td>First-round recorded resource usage approximately $3.99. no lingering containers in saved receipts</td>
+</tr>
+</tbody>
+</table>
+<p><a href="sources/history/PROJECT_HISTORY.md">Detailed E001–E015 record</a>.</p>
+<h2 id="static-graphs-and-measured-h100-release">Static graphs and measured H100 release</h2>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Work or finding</th>
+<th>Result / status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E016–017</td>
+<td>Read numerical and SSD sources. fixed buffers and captured forwards</td>
+<td>Numerical contracts separated. fixture inference-mode bug repaired</td>
+</tr>
+<tr>
+<td>E018</td>
+<td>Graph/eager BF16 ablation</td>
+<td>AR 60.96→108.89 and SD 46.21→127.95 decode tok/s. shape-reference equality only, native equality 6/18</td>
+</tr>
+<tr>
+<td>E019</td>
+<td>Whole-draft capture, packed KV, direct scout graphs</td>
+<td>Measured development gains, still disclosed native-output differences</td>
+</tr>
+<tr>
+<td>E019 metadata repair</td>
+<td>SSD row inherited SD's selected K</td>
+<td>Actual executed SSD configuration recovered from selection record. raw rows retained</td>
+</tr>
+<tr>
+<td>E020</td>
+<td>Fused projections/pointwise operations. invariant alternative</td>
+<td>Same-backend AR/SD equality passed tested cases. separate arithmetic implementations preserved</td>
+</tr>
+<tr>
+<td>E021</td>
+<td>Eight-prompt verification and multi-GPU device-context repair</td>
+<td>Corrected explicit device guards before initial evaluation. reran checks</td>
+</tr>
+<tr>
+<td>E022</td>
+<td>Real EOS and 1089-token prefix checks</td>
+<td>AR/SD/SSD complete output equality. not a long-context timing study</td>
+</tr>
+<tr>
+<td>E023</td>
+<td>Independent audit catches wrong V stride</td>
+<td>Fix independent K/V addressing, add non-contiguous cases, rerun affected verification</td>
+</tr>
+<tr>
+<td>E024–025 / release</td>
+<td>Optional 32B invariant run interrupted. complete configurations audited and frozen</td>
+<td>360 primary rows retained. incomplete optional variant excluded. measured release tagged separately</td>
+</tr>
+</tbody>
+</table>
+<p><a href="sources/analysis/REPORT.md">H100 release</a>. Fused 7B: AR1 126.23, SD1 156.82, SD2 157.55, SSD2 228.77 warm request tok/s. Fused 32B: 34.73, 89.36, 88.88, 101.70. Invariant 7B: 108.69, 158.33, 158.53, 219.73. Eight prompts × three repetitions. same-backend equality does not establish universal equality to HF or model quality.</p>
+<h2 id="new-b300-kernel-laboratory">New B300 kernel laboratory</h2>
+<p>The initial infrastructure batches A–H and the later named kernel candidates C–H are separate labels in the logs. they should not be conflated.</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Work or finding</th>
+<th>Result / status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Initial prepared lab</td>
+<td>Fixed plans, split-K projections, split-KV attention, device verification, graph runners</td>
+<td>Frozen measured release retained. new code initially untested on GPU</td>
+</tr>
+<tr>
+<td>Infrastructure A</td>
+<td>First B300 primitive checks</td>
+<td>Ranking oracle API failed after 32 passes. harness repair</td>
+</tr>
+<tr>
+<td>Infrastructure B</td>
+<td>Numerical checks then symbolic runtime</td>
+<td>54 passes, concrete <code>cuda:0</code> versus <code>cuda</code> alias validation bug. repair ownership identity</td>
+</tr>
+<tr>
+<td>Infrastructure C</td>
+<td>Component suite and plan sweep</td>
+<td>74 tests and 164 micro cases. component qualification does not establish pretrained speed</td>
+</tr>
+<tr>
+<td>Infrastructure D–H</td>
+<td>Bulk staging failure, direct download, HF RoPE device guard, pretrained audits</td>
+<td>Exact prefill eventually recovered. custom cached decode audit still fails</td>
+</tr>
+<tr>
+<td>Nsight A/B</td>
+<td>Trace/counter attempts</td>
+<td>Capacity and capture failures. counter permission denial. provisional model timings are not qualified speedups</td>
+</tr>
+<tr>
+<td>Research C</td>
+<td>Transposed query-axis MMA, activity fallback</td>
+<td>Primitive/row tests pass. modest diagnostic model changes, HF audit still fails</td>
+</tr>
+<tr>
+<td>Fusion D</td>
+<td>Combine RoPE/cache append/attention</td>
+<td>Exact outputs. 14/16 boundary timing losses. broad fusion rejected</td>
+</tr>
+<tr>
+<td>Direct E</td>
+<td>Bypass merge for one physical KV split</td>
+<td>16–24% boundary time reductions in supported single-split cases. valid software trace smoke</td>
+</tr>
+<tr>
+<td>Warp F</td>
+<td>Capacity controls, complete timelines, fewer warps</td>
+<td>Real kernel rankings obtained. blanket two-warp projection policy loses</td>
+</tr>
+<tr>
+<td>Role G</td>
+<td>Per-role narrower tiles and more splits</td>
+<td>Faster selected timing changes target outputs. reject preserved-output claim</td>
+</tr>
+<tr>
+<td>Exact H</td>
+<td>Preserve BK/splits, change narrower tiles. K sweep</td>
+<td>Exact control outputs. small schedule gains. reserved prompt gain diagnostic because independent HF gate still fails</td>
+</tr>
+<tr>
+<td>Systems I</td>
+<td>Packed weights, lookahead, native launch, adaptive depth</td>
+<td>Packing/native model deltas small. lookahead and adaptive policy regress. no default promotion</td>
+</tr>
+<tr>
+<td>Systems I operations</td>
+<td>Mac lock blocks explicit provider release</td>
+<td>Deadline missed despite finished subprocess. recorded cost overrun. release subsequently verified</td>
+</tr>
+<tr>
+<td>J</td>
+<td>Ordered FP32 TP2 exchange, independent batch/context support, broad sweep preparation</td>
+<td>Prepared does not imply swept. batches initially extended to 512 at user's request</td>
+</tr>
+<tr>
+<td>K</td>
+<td>User narrows to batch≤32 and single-request priority. two-device and AR tests</td>
+<td>Tiny TP arithmetic checks pass, process teardown times out. pretrained TP blocked. AR diagnostics at128/2048 preserve custom reference but fail HF audit</td>
+</tr>
+<tr>
+<td>K control audit</td>
+<td>Single-part cat/stack and different linear backends contaminate controls</td>
+<td>Kernel ratios not attributable solely to packing. retain failures, prepare matched controls</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Graph lifecycle repair and matched control preparation</td>
+<td>Separate prepared changes. no qualified pretrained TP speedup established in reviewed result set</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Weight-only low precision, parallel scout/precision design</td>
+<td>Format/architecture preparation. BF16 reconstruction is not native FP4/FP8 execution</td>
+</tr>
+<tr>
+<td>N/N2</td>
+<td>Native formats, trained EAGLE adapter and normalization-to-pack fusion</td>
+<td>Numerical/native gates prepared. first runtime environment attempt failed before usable qualification</td>
+</tr>
+<tr>
+<td>N3</td>
+<td>CPU explicit-target compiler preflight while queued</td>
+<td>FP8 masked fill fixed, FP16 fallback discovered. physical M16 tile yields native tcgen05 emission</td>
+</tr>
+<tr>
+<td>N4</td>
+<td>GPU native tests and boundary fusion</td>
+<td>40 CUDA passes, eight native proofs. synthetic boundary55.619→55.336μs. trained model not loaded</td>
+</tr>
+<tr>
+<td>N5/N6</td>
+<td>Trained EAGLE and real-role audit preparation</td>
+<td>Pinned payload, mapping, features, cache repair, exact sequence and real-weight gates prepared</td>
+</tr>
+</tbody>
+</table>
+<p><a href="sources/kernel_lab/reports/WORK_REPORT.md">Complete work log</a>, <a href="sources/kernel_lab/reports/READING_LOG.md">reading lineage</a>, <a href="sources/kernel_lab/reports/SINGLE_K_RESULTS.md">K's detailed failure</a>, <a href="sources/kernel_lab/reports/N4_GPU_RESULTS.md">native qualification</a>.</p>
+<h2 id="beam-modal-migration-and-trained-native-result">Beam/Modal migration and trained native result</h2>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Work or finding</th>
+<th>Result / status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Beam setup</td>
+<td>Authenticate and CPU hello-world</td>
+<td>CPU VM executed and stopped. does not qualify B200/B300</td>
+</tr>
+<tr>
+<td>Provider plan / registry</td>
+<td>Kernel identities, recipe identities, run evidence and promotion rules</td>
+<td>Per-precision/architecture/workload comparison and rollback, no universal winner</td>
+</tr>
+<tr>
+<td>P002–005</td>
+<td>Modal setup and two-B200 qualification attempts</td>
+<td>Dependency/path/setup work. request timed out without worker evidence. stopped explicitly</td>
+</tr>
+<tr>
+<td>P007</td>
+<td>B300 fallback</td>
+<td>Container entrypoint assumed wrong filesystem depth. startup failure</td>
+</tr>
+<tr>
+<td>P008</td>
+<td>Fix remote root. qualify 2×B300</td>
+<td>28 CUDA tests, eight native receipts, peer-copy smoke. topology command failed, no confirmed NVLink claim</td>
+</tr>
+<tr>
+<td>P009</td>
+<td>First trained request</td>
+<td>Canceled before final export. cause unknown. no recovered trained result</td>
+</tr>
+<tr>
+<td>P010</td>
+<td>Stream bounded hash-checked text snapshots</td>
+<td>Local recovery path added. binary artifacts still require archive</td>
+</tr>
+<tr>
+<td>P011</td>
+<td>Trained FP8 target/BF16 EAGLE baseline</td>
+<td>30 timing rows recovered. full greedy gates pass. pre-1980 ZIP timestamp failure loses binary profile exports</td>
+</tr>
+<tr>
+<td>P012</td>
+<td>Fixed-length AR queue</td>
+<td>Correct. −0.06%..+0.21% paired changes, no promotion</td>
+</tr>
+<tr>
+<td>P013</td>
+<td>One-stage and row-fused packing candidates. archive fix</td>
+<td>Six exact candidates, all slower. complete exports and Nsight smoke probes now work</td>
+</tr>
+<tr>
+<td>P014</td>
+<td>Versioned target-only native overrides</td>
+<td>Preparation enabling controlled full-model comparison</td>
+</tr>
+<tr>
+<td>P015</td>
+<td>Deeper pipelines/larger tiles and depth sweep</td>
+<td>Seven exact candidates, three numerical rejects. gate/up1.3338× and down1.5971× boundary winners</td>
+</tr>
+<tr>
+<td>P016</td>
+<td>Independent incumbent/candidate models, five interleaved repeats</td>
+<td>80 rows/161 gates. AR≈21%, SD≈17% faster within same recipe. eight workload-specific promotions</td>
+</tr>
+<tr>
+<td>Latest inventory</td>
+<td>Beam B2000/B3000 in saved read-only check</td>
+<td>No new Beam GPU allocation. availability is a point-in-time observation</td>
+</tr>
+<tr>
+<td>Latest authorization</td>
+<td>User authorizes15USD additional Modal spend</td>
+<td>Round cap25USD. authorization is not actual usage or wallet verification</td>
+</tr>
+<tr>
+<td>P017 attempt 1</td>
+<td>Static YaRN4, 131072 cache slots, full-history AR</td>
+<td>119968 outputs in587.54s,204.19tok/s. Planned deadline, no OOM. Checkpoints preserved</td>
+</tr>
+<tr>
+<td>P017 attempt 2</td>
+<td>Fresh request with a longer bounded allowance</td>
+<td>128000 outputs after128 prompt tokens in631.966s,202.54tok/s. Final window174.70tok/s, decode-phase peak27.52GiB allocated. Full KV retained, EOS ignored</td>
+</tr>
+<tr>
+<td>P017 repeatability</td>
+<td>Compare complete shared output prefix across allocations</td>
+<td>All119968 shared token IDs match. AR repeatability only, no long-context SD/SSD or text-quality claim</td>
+</tr>
+<tr>
+<td>P018</td>
+<td>Split attention-merge head channels into32/64/128wide tiles</td>
+<td>18 synthetic cases,10exact/8nonexact.32wide at capacity131072/position127 gives6.402x complete-attention speedup with zero reported merge spills, but fails exact checks at longer positions. No promotion</td>
+</tr>
+<tr>
+<td>P019</td>
+<td>Further warp and normalizer experiments</td>
+<td>Prepared after this article's completed-results cutoff. No results included</td>
+</tr>
+</tbody>
+</table>
+<p><a href="sources/kernel_lab/reports/EXPERIMENT_COMPARISON.md">Provider chronology</a>, <a href="sources/kernel_lab/reports/P016_FULL_MODEL_RESULTS.md">P016</a>, <a href="sources-p017-p018/kernel_lab/reports/P017_LONG_CONTEXT_STRESS.md">P017</a>, and <a href="sources-p017-p018/kernel_lab/reports/P018_ATTENTION_MERGE.md">P018</a>.</p>
+<h2 id="claims-that-are-supported-and-claims-to-avoid">Claims that are supported and claims to avoid</h2>
+<table>
+<thead>
+<tr>
+<th>Supported wording</th>
+<th>Unsupported shortcut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Built and evaluated custom greedy AR/SD/SSD paths with independent numerical gates</td>
+<td>Invented speculative speculative decoding</td>
+</tr>
+<tr>
+<td>Scoped H100 SSD latency wins against the project's measured AR/SD controls</td>
+<td>SSD always beats SD or is the cheapest approach</td>
+</tr>
+<tr>
+<td>Native FP8/FP4 primitive qualification on B300</td>
+<td>Trained FP4 model performance/quality is established</td>
+</tr>
+<tr>
+<td>P016 schedules improve AR about21% and SD about17% in the paired development cases</td>
+<td>Entire project is a notebook-to-B300 code-only speedup</td>
+</tr>
+<tr>
+<td>Best tested trained SD case696.64decode /642.80request tok/s</td>
+<td>1,000tok/s achieved. 697tok/s from trained SSD</td>
+</tr>
+<tr>
+<td>Exact full greedy outputs within the tested target recipe</td>
+<td>Bitwise equivalence to HF on all prompts or no quality loss from FP8</td>
+</tr>
+<tr>
+<td>Valid software timelines and later profiler smoke probes</td>
+<td>Complete latest native-model bottleneck profile or measured near-SOL efficiency</td>
+</tr>
+<tr>
+<td>One full-history AR request generated128000outputs at202.54tok/s average</td>
+<td>Long-context SD/SSD equivalence or coherent128k text established</td>
+</tr>
+<tr>
+<td>P018 short-position attention primitive improved6.402x in its exact case</td>
+<td>Full-model or long-context generation became6.4x faster</td>
+</tr>
+<tr>
+<td>Batch/context machinery prepared, with limited executed cases</td>
+<td>Batch32/512 sweep completed</td>
+</tr>
+<tr>
+<td>Failed ideas, binaries, recipes, source hashes and cleanup receipts retained</td>
+<td>Every planned experiment ran, every saved report is final billing, or local passes are CUDA passes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="publication-checklist-specific-to-this-draft">Publication checklist specific to this draft</h2>
+<ul>
+<li>Keep the hardware, precision, prompt count, output length, and timing scope next to each headline number.</li>
+<li>Preserve the visible AI-assistance and prior-art credits. adjust the personal voice before publishing if it does not match your experience.</li>
+<li>Review prose for your own technical understanding, especially the three numerical contracts, FP8 lowering, EAGLE feature/mapping ABI, and exact split grouping.</li>
+<li>If publishing to a public repository/site, replace local source-bundle links with stable public commit links or publish the included bundle. Nothing has been published by this side conversation.</li>
+<li>Completed P017/P018 evidence is included from commit d97a5dc. Keep later experiments separate until their results are checked. The earlier P016 source snapshot remains unchanged.</li>
+</ul>
+</article><footer><a href="https://www.ishaangoyal.com/blogs">← All blogs</a><a href="#">Back to the top ↑</a><button class="motion-toggle" type="button" aria-pressed="false">Pause background</button></footer></main><script>"use strict";
+const toggle = document.querySelector('.motion-toggle');
+let paused = false;
+try { paused = localStorage.getItem('portfolio-background-paused') === 'true'; } catch {}
+function render() {
+ document.body.classList.toggle('background-paused', paused);
+ toggle.setAttribute('aria-pressed', String(paused));
+ toggle.textContent = paused ? 'Resume background' : 'Pause background';
+}
+render();
+toggle.addEventListener('click', () => {
+ paused = !paused;
+ render();
+ try { localStorage.setItem('portfolio-background-paused', String(paused)); } catch {}
+});
+
+const backdrop = document.querySelector('.code-background');
+const glyphs = '01{}[]<>/+=*;:abcdefxyz';
+const random = (min, max) => min + Math.random() * (max - min);
+function styleDrop(drop, width, firstRun) {
+ drop.style.left = random(1, Math.max(2, width - 13)) + 'px';
+ if (firstRun) {
+  const duration = random(10, 21);
+  drop.style.setProperty('--duration', duration + 's');
+  drop.style.setProperty('--delay', -random(0, duration) + 's');
+ }
+ drop.style.setProperty('--drift', random(-9, 9) + 'px');
+ drop.style.opacity = random(.13, .3);
+ drop.replaceChildren();
+ const length = Math.floor(random(5, 15));
+ for (let i = 0; i < length; i++) {
+  const chance = Math.random();
+  const char = document.createElement(chance < .18 ? 'b' : chance < .3 ? 'em' : 'span');
+  char.textContent = glyphs[Math.floor(Math.random() * glyphs.length)];
+  char.style.opacity = .2 + .8 * (i / (length - 1));
+  drop.append(char);
+ }
+}
+function buildRain() {
+ backdrop.replaceChildren();
+ for (let side = 0; side < 2; side++) {
+  const rail = document.createElement('div');
+  rail.className = 'code-rail';
+  backdrop.append(rail);
+  const width = rail.clientWidth;
+  const count = Math.min(50, Math.max(2, Math.round(width * innerHeight / 13000)));
+  for (let i = 0; i < count; i++) {
+   const drop = document.createElement('span');
+   drop.className = 'rain-drop';
+   styleDrop(drop, width, true);
+   drop.addEventListener('animationiteration', () => styleDrop(drop, rail.clientWidth, false));
+   rail.append(drop);
+  }
+ }
+}
+buildRain();
+let resizeTimer;
+window.addEventListener('resize', () => {
+ clearTimeout(resizeTimer);
+ resizeTimer = setTimeout(buildRain, 150);
+});
+document.addEventListener('visibilitychange', () => {
+ backdrop.classList.toggle('rain-hidden', document.hidden);
+});
+</script></body></html>

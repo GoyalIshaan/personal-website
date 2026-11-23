@@ -1,0 +1,1034 @@
+[
+  {
+    "name": "resolved-target-revision-and-geometry",
+    "passed": true
+  },
+  {
+    "name": "real-target-logits-finite",
+    "passed": true
+  },
+  {
+    "name": "reference-full-length",
+    "passed": true,
+    "context": 128
+  },
+  {
+    "name": "ar-chunk-complete-output",
+    "passed": true,
+    "context": 128,
+    "chunk": 1
+  },
+  {
+    "name": "ar-chunk-complete-output",
+    "passed": true,
+    "context": 128,
+    "chunk": 32
+  },
+  {
+    "name": "incumbent-vs-candidate-ar-complete-output",
+    "passed": true,
+    "context": 128,
+    "chunk": 1
+  },
+  {
+    "name": "incumbent-vs-candidate-ar-complete-output",
+    "passed": true,
+    "context": 128,
+    "chunk": 32
+  },
+  {
+    "name": "incumbent-vs-candidate-sd-complete-output",
+    "passed": true,
+    "context": 128,
+    "k": 2
+  },
+  {
+    "name": "incumbent-vs-candidate-sd-complete-output",
+    "passed": true,
+    "context": 128,
+    "k": 3
+  },
+  {
+    "name": "incumbent-vs-candidate-sd-complete-output",
+    "passed": true,
+    "context": 128,
+    "k": 4
+  },
+  {
+    "name": "block-logits-finite",
+    "passed": true,
+    "context": 128,
+    "width": 1
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 128,
+    "width": 1,
+    "row": 0
+  },
+  {
+    "name": "materialized-head-matches-token-ar",
+    "passed": true,
+    "context": 128,
+    "width": 1
+  },
+  {
+    "name": "raw-target-features-finite",
+    "passed": true,
+    "context": 128,
+    "width": 1
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 128,
+    "width": 1,
+    "row": 0
+  },
+  {
+    "name": "block-logits-finite",
+    "passed": true,
+    "context": 128,
+    "width": 3
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 128,
+    "width": 3,
+    "row": 0
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 128,
+    "width": 3,
+    "row": 1
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 128,
+    "width": 3,
+    "row": 2
+  },
+  {
+    "name": "materialized-head-matches-token-ar",
+    "passed": true,
+    "context": 128,
+    "width": 3
+  },
+  {
+    "name": "raw-target-features-finite",
+    "passed": true,
+    "context": 128,
+    "width": 3
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 128,
+    "width": 3,
+    "row": 0
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 128,
+    "width": 3,
+    "row": 1
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 128,
+    "width": 3,
+    "row": 2
+  },
+  {
+    "name": "block-logits-finite",
+    "passed": true,
+    "context": 128,
+    "width": 4
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 128,
+    "width": 4,
+    "row": 0
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 128,
+    "width": 4,
+    "row": 1
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 128,
+    "width": 4,
+    "row": 2
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 128,
+    "width": 4,
+    "row": 3
+  },
+  {
+    "name": "materialized-head-matches-token-ar",
+    "passed": true,
+    "context": 128,
+    "width": 4
+  },
+  {
+    "name": "raw-target-features-finite",
+    "passed": true,
+    "context": 128,
+    "width": 4
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 128,
+    "width": 4,
+    "row": 0
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 128,
+    "width": 4,
+    "row": 1
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 128,
+    "width": 4,
+    "row": 2
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 128,
+    "width": 4,
+    "row": 3
+  },
+  {
+    "name": "block-logits-finite",
+    "passed": true,
+    "context": 128,
+    "width": 5
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 128,
+    "width": 5,
+    "row": 0
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 128,
+    "width": 5,
+    "row": 1
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 128,
+    "width": 5,
+    "row": 2
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 128,
+    "width": 5,
+    "row": 3
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 128,
+    "width": 5,
+    "row": 4
+  },
+  {
+    "name": "materialized-head-matches-token-ar",
+    "passed": true,
+    "context": 128,
+    "width": 5
+  },
+  {
+    "name": "raw-target-features-finite",
+    "passed": true,
+    "context": 128,
+    "width": 5
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 128,
+    "width": 5,
+    "row": 0
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 128,
+    "width": 5,
+    "row": 1
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 128,
+    "width": 5,
+    "row": 2
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 128,
+    "width": 5,
+    "row": 3
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 128,
+    "width": 5,
+    "row": 4
+  },
+  {
+    "name": "block-logits-finite",
+    "passed": true,
+    "context": 128,
+    "width": 8
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 128,
+    "width": 8,
+    "row": 0
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 128,
+    "width": 8,
+    "row": 1
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 128,
+    "width": 8,
+    "row": 2
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 128,
+    "width": 8,
+    "row": 3
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 128,
+    "width": 8,
+    "row": 4
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 128,
+    "width": 8,
+    "row": 5
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 128,
+    "width": 8,
+    "row": 6
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 128,
+    "width": 8,
+    "row": 7
+  },
+  {
+    "name": "materialized-head-matches-token-ar",
+    "passed": true,
+    "context": 128,
+    "width": 8
+  },
+  {
+    "name": "raw-target-features-finite",
+    "passed": true,
+    "context": 128,
+    "width": 8
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 128,
+    "width": 8,
+    "row": 0
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 128,
+    "width": 8,
+    "row": 1
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 128,
+    "width": 8,
+    "row": 2
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 128,
+    "width": 8,
+    "row": 3
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 128,
+    "width": 8,
+    "row": 4
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 128,
+    "width": 8,
+    "row": 5
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 128,
+    "width": 8,
+    "row": 6
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 128,
+    "width": 8,
+    "row": 7
+  },
+  {
+    "name": "eagle-complete-output",
+    "passed": true,
+    "context": 128,
+    "k": 2
+  },
+  {
+    "name": "trained-draft-committed-kv-finite",
+    "passed": true,
+    "context": 128,
+    "k": 2
+  },
+  {
+    "name": "eagle-eos",
+    "passed": true,
+    "context": 128,
+    "k": 2
+  },
+  {
+    "name": "eagle-complete-output",
+    "passed": true,
+    "context": 128,
+    "k": 3
+  },
+  {
+    "name": "trained-draft-committed-kv-finite",
+    "passed": true,
+    "context": 128,
+    "k": 3
+  },
+  {
+    "name": "eagle-eos",
+    "passed": true,
+    "context": 128,
+    "k": 3
+  },
+  {
+    "name": "eagle-complete-output",
+    "passed": true,
+    "context": 128,
+    "k": 4
+  },
+  {
+    "name": "trained-draft-committed-kv-finite",
+    "passed": true,
+    "context": 128,
+    "k": 4
+  },
+  {
+    "name": "eagle-eos",
+    "passed": true,
+    "context": 128,
+    "k": 4
+  },
+  {
+    "name": "reference-full-length",
+    "passed": true,
+    "context": 512
+  },
+  {
+    "name": "ar-chunk-complete-output",
+    "passed": true,
+    "context": 512,
+    "chunk": 1
+  },
+  {
+    "name": "ar-chunk-complete-output",
+    "passed": true,
+    "context": 512,
+    "chunk": 32
+  },
+  {
+    "name": "incumbent-vs-candidate-ar-complete-output",
+    "passed": true,
+    "context": 512,
+    "chunk": 1
+  },
+  {
+    "name": "incumbent-vs-candidate-ar-complete-output",
+    "passed": true,
+    "context": 512,
+    "chunk": 32
+  },
+  {
+    "name": "incumbent-vs-candidate-sd-complete-output",
+    "passed": true,
+    "context": 512,
+    "k": 2
+  },
+  {
+    "name": "incumbent-vs-candidate-sd-complete-output",
+    "passed": true,
+    "context": 512,
+    "k": 3
+  },
+  {
+    "name": "incumbent-vs-candidate-sd-complete-output",
+    "passed": true,
+    "context": 512,
+    "k": 4
+  },
+  {
+    "name": "block-logits-finite",
+    "passed": true,
+    "context": 512,
+    "width": 1
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 512,
+    "width": 1,
+    "row": 0
+  },
+  {
+    "name": "materialized-head-matches-token-ar",
+    "passed": true,
+    "context": 512,
+    "width": 1
+  },
+  {
+    "name": "raw-target-features-finite",
+    "passed": true,
+    "context": 512,
+    "width": 1
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 512,
+    "width": 1,
+    "row": 0
+  },
+  {
+    "name": "block-logits-finite",
+    "passed": true,
+    "context": 512,
+    "width": 3
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 512,
+    "width": 3,
+    "row": 0
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 512,
+    "width": 3,
+    "row": 1
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 512,
+    "width": 3,
+    "row": 2
+  },
+  {
+    "name": "materialized-head-matches-token-ar",
+    "passed": true,
+    "context": 512,
+    "width": 3
+  },
+  {
+    "name": "raw-target-features-finite",
+    "passed": true,
+    "context": 512,
+    "width": 3
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 512,
+    "width": 3,
+    "row": 0
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 512,
+    "width": 3,
+    "row": 1
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 512,
+    "width": 3,
+    "row": 2
+  },
+  {
+    "name": "block-logits-finite",
+    "passed": true,
+    "context": 512,
+    "width": 4
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 512,
+    "width": 4,
+    "row": 0
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 512,
+    "width": 4,
+    "row": 1
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 512,
+    "width": 4,
+    "row": 2
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 512,
+    "width": 4,
+    "row": 3
+  },
+  {
+    "name": "materialized-head-matches-token-ar",
+    "passed": true,
+    "context": 512,
+    "width": 4
+  },
+  {
+    "name": "raw-target-features-finite",
+    "passed": true,
+    "context": 512,
+    "width": 4
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 512,
+    "width": 4,
+    "row": 0
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 512,
+    "width": 4,
+    "row": 1
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 512,
+    "width": 4,
+    "row": 2
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 512,
+    "width": 4,
+    "row": 3
+  },
+  {
+    "name": "block-logits-finite",
+    "passed": true,
+    "context": 512,
+    "width": 5
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 512,
+    "width": 5,
+    "row": 0
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 512,
+    "width": 5,
+    "row": 1
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 512,
+    "width": 5,
+    "row": 2
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 512,
+    "width": 5,
+    "row": 3
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 512,
+    "width": 5,
+    "row": 4
+  },
+  {
+    "name": "materialized-head-matches-token-ar",
+    "passed": true,
+    "context": 512,
+    "width": 5
+  },
+  {
+    "name": "raw-target-features-finite",
+    "passed": true,
+    "context": 512,
+    "width": 5
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 512,
+    "width": 5,
+    "row": 0
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 512,
+    "width": 5,
+    "row": 1
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 512,
+    "width": 5,
+    "row": 2
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 512,
+    "width": 5,
+    "row": 3
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 512,
+    "width": 5,
+    "row": 4
+  },
+  {
+    "name": "block-logits-finite",
+    "passed": true,
+    "context": 512,
+    "width": 8
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 512,
+    "width": 8,
+    "row": 0
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 512,
+    "width": 8,
+    "row": 1
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 512,
+    "width": 8,
+    "row": 2
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 512,
+    "width": 8,
+    "row": 3
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 512,
+    "width": 8,
+    "row": 4
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 512,
+    "width": 8,
+    "row": 5
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 512,
+    "width": 8,
+    "row": 6
+  },
+  {
+    "name": "every-row-logits",
+    "passed": true,
+    "context": 512,
+    "width": 8,
+    "row": 7
+  },
+  {
+    "name": "materialized-head-matches-token-ar",
+    "passed": true,
+    "context": 512,
+    "width": 8
+  },
+  {
+    "name": "raw-target-features-finite",
+    "passed": true,
+    "context": 512,
+    "width": 8
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 512,
+    "width": 8,
+    "row": 0
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 512,
+    "width": 8,
+    "row": 1
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 512,
+    "width": 8,
+    "row": 2
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 512,
+    "width": 8,
+    "row": 3
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 512,
+    "width": 8,
+    "row": 4
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 512,
+    "width": 8,
+    "row": 5
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 512,
+    "width": 8,
+    "row": 6
+  },
+  {
+    "name": "feature-every-row",
+    "passed": true,
+    "context": 512,
+    "width": 8,
+    "row": 7
+  },
+  {
+    "name": "eagle-complete-output",
+    "passed": true,
+    "context": 512,
+    "k": 2
+  },
+  {
+    "name": "trained-draft-committed-kv-finite",
+    "passed": true,
+    "context": 512,
+    "k": 2
+  },
+  {
+    "name": "eagle-eos",
+    "passed": true,
+    "context": 512,
+    "k": 2
+  },
+  {
+    "name": "eagle-complete-output",
+    "passed": true,
+    "context": 512,
+    "k": 3
+  },
+  {
+    "name": "trained-draft-committed-kv-finite",
+    "passed": true,
+    "context": 512,
+    "k": 3
+  },
+  {
+    "name": "eagle-eos",
+    "passed": true,
+    "context": 512,
+    "k": 3
+  },
+  {
+    "name": "eagle-complete-output",
+    "passed": true,
+    "context": 512,
+    "k": 4
+  },
+  {
+    "name": "trained-draft-committed-kv-finite",
+    "passed": true,
+    "context": 512,
+    "k": 4
+  },
+  {
+    "name": "eagle-eos",
+    "passed": true,
+    "context": 512,
+    "k": 4
+  },
+  {
+    "name": "ar-unrelated-reuse",
+    "passed": true,
+    "chunk": 1
+  },
+  {
+    "name": "ar-unrelated-reuse",
+    "passed": true,
+    "chunk": 32
+  },
+  {
+    "name": "eagle-unrelated-reuse",
+    "passed": true,
+    "k": 2
+  },
+  {
+    "name": "eagle-unrelated-reuse",
+    "passed": true,
+    "k": 3
+  },
+  {
+    "name": "eagle-unrelated-reuse",
+    "passed": true,
+    "k": 4
+  },
+  {
+    "name": "incumbent-unrelated-reuse",
+    "passed": true,
+    "method": "control-ar1"
+  },
+  {
+    "name": "incumbent-unrelated-reuse",
+    "passed": true,
+    "method": "control-ar32"
+  },
+  {
+    "name": "incumbent-unrelated-reuse",
+    "passed": true,
+    "method": "control-eagle2"
+  },
+  {
+    "name": "incumbent-unrelated-reuse",
+    "passed": true,
+    "method": "control-eagle3"
+  },
+  {
+    "name": "incumbent-unrelated-reuse",
+    "passed": true,
+    "method": "control-eagle4"
+  },
+  {
+    "name": "all-required-measured-rows",
+    "passed": true
+  }
+]

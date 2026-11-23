@@ -1,0 +1,26 @@
+[
+  {
+    "dim_tile": 32,
+    "kernel": "fcb0a5a72835b2797217dca55378ae85aacdcea117d5ce20ece2ddab1d6e6c5a",
+    "control": "e76ba11b562d0e488bc836b566c2e913277cbdc64c94af567f327f603b5aab77",
+    "exact_regions": 2,
+    "regions": 6,
+    "promoted": false
+  },
+  {
+    "dim_tile": 64,
+    "kernel": "abb94208de1b99bc8dc6a1246d18dbee192aadee94cb5cf15a34a56f959782bc",
+    "control": "e76ba11b562d0e488bc836b566c2e913277cbdc64c94af567f327f603b5aab77",
+    "exact_regions": 2,
+    "regions": 6,
+    "promoted": false
+  },
+  {
+    "dim_tile": 128,
+    "kernel": "f717d6144ce4ca5e89a6ac2cc70ac9108a1853fd59a0c9aa990d246822b0851f",
+    "control": "e76ba11b562d0e488bc836b566c2e913277cbdc64c94af567f327f603b5aab77",
+    "exact_regions": 6,
+    "regions": 6,
+    "promoted": false
+  }
+]

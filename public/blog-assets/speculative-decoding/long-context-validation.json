@@ -1,0 +1,21 @@
+{
+  "source_snapshot": "d97a5dc336d3dfec6befb6ec6d3d2a3dd592aaa8",
+  "token_counts": [
+    119968,
+    128000
+  ],
+  "complete_common_prefix_checked": 119968,
+  "sequence_hashes_verified": true,
+  "contiguous_checkpoints_and_cache_cursors_checked": true,
+  "window_csv_matches_raw_segments": true,
+  "final_window_tokens_per_second": 174.69900796564355,
+  "p018_cases": 18,
+  "p018_exact": 10,
+  "p018_numerical_failures": 8,
+  "p018_paired_medians_recomputed": 10,
+  "gpu_or_cloud_execution": false,
+  "charts": [
+    "08-long-context.png",
+    "09-attention-merge.png"
+  ]
+}

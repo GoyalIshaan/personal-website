@@ -1,0 +1,1985 @@
+[
+  {
+    "path": "runs/graph-20261021-022022/downloaded/attempt-2/benchmark-Qwen2.5-7B-Instruct-fused/raw.jsonl",
+    "complete": true,
+    "args": {
+      "target": "Qwen/Qwen2.5-7B-Instruct",
+      "output": "/root/ssd-v2/evidence/attempt-2/benchmark-Qwen2.5-7B-Instruct-fused",
+      "cache": "/cache/hub",
+      "tokens": 192,
+      "repeats": 3,
+      "capacity": 768,
+      "quick": false,
+      "draft_device": "cuda:1",
+      "fixed_k": 0,
+      "include_eager": false,
+      "ssd": true,
+      "backend": "fused",
+      "profile": true,
+      "audit": true,
+      "suite": "heldout",
+      "stop_eos": true
+    },
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "backend": "fused",
+    "suite": "heldout",
+    "eos_policy": "Stop on real EOS; maximum token cap",
+    "row_count": 147,
+    "evaluation_rows": 120,
+    "methods": {
+      "ar_native": {
+        "requests": 24,
+        "tokens": 4608,
+        "e2e_tps": 126.23336871751128,
+        "decode_tps": 127.71009974799293,
+        "native_equal": 24,
+        "reference_equal": 24,
+        "accepted": 0,
+        "proposed": 0,
+        "hits": 0,
+        "lookups": 0,
+        "eos_stops": 0
+      },
+      "ar_shape8": {
+        "requests": 24,
+        "tokens": 4608,
+        "e2e_tps": 121.77016147854013,
+        "decode_tps": 123.21820342013064,
+        "native_equal": 24,
+        "reference_equal": 24,
+        "accepted": 0,
+        "proposed": 0,
+        "hits": 0,
+        "lookups": 0,
+        "eos_stops": 0
+      },
+      "sd": {
+        "requests": 24,
+        "tokens": 4608,
+        "e2e_tps": 157.55090577620263,
+        "decode_tps": 162.08911121908034,
+        "native_equal": 24,
+        "reference_equal": 24,
+        "accepted": 2796,
+        "proposed": 3642,
+        "hits": 0,
+        "lookups": 0,
+        "eos_stops": 0
+      },
+      "sd_colocated": {
+        "requests": 24,
+        "tokens": 4608,
+        "e2e_tps": 156.82158319604028,
+        "decode_tps": 161.39914505708586,
+        "native_equal": 24,
+        "reference_equal": 24,
+        "accepted": 2796,
+        "proposed": 3642,
+        "hits": 0,
+        "lookups": 0,
+        "eos_stops": 0
+      },
+      "ssd": {
+        "requests": 24,
+        "tokens": 4608,
+        "e2e_tps": 228.7657693591632,
+        "decode_tps": 239.08728218334772,
+        "native_equal": 24,
+        "reference_equal": 24,
+        "accepted": 2796,
+        "proposed": 3642,
+        "hits": 1089,
+        "lookups": 1791,
+        "eos_stops": 0
+      }
+    },
+    "comparisons": {
+      "sd_ar_speedup": {
+        "median_paired_request": 1.2618406455414228,
+        "wins": 24,
+        "pairs": 24,
+        "prompt_medians": {
+          "hold-binary-search": 1.298429794167626,
+          "hold-streaming": 1.2196955621378243,
+          "hold-probability": 1.372719013097619,
+          "hold-euclid": 1.3005292121254157,
+          "hold-concurrency": 1.1256168580390054,
+          "hold-incident": 1.1876614363033933,
+          "hold-summary": 1.143467714390091,
+          "hold-structured": 1.404473970312075
+        },
+        "min_prompt_median": 1.1256168580390054,
+        "max_prompt_median": 1.404473970312075,
+        "scope": "Observed spread across chosen prompts; no confidence interval or population-generalization claim."
+      },
+      "ssd_ar_speedup": {
+        "median_paired_request": 1.8414404004683655,
+        "wins": 24,
+        "pairs": 24,
+        "prompt_medians": {
+          "hold-binary-search": 2.0477238175901697,
+          "hold-streaming": 1.64539777199326,
+          "hold-probability": 2.2373086534292734,
+          "hold-euclid": 2.0382730853458852,
+          "hold-concurrency": 1.3561578052888446,
+          "hold-incident": 1.5993837547927565,
+          "hold-summary": 1.5692983359116879,
+          "hold-structured": 2.6384334230883524
+        },
+        "min_prompt_median": 1.3561578052888446,
+        "max_prompt_median": 2.6384334230883524,
+        "scope": "Observed spread across chosen prompts; no confidence interval or population-generalization claim."
+      },
+      "ssd_sd_speedup": {
+        "median_paired_request": 1.4583143805959973,
+        "wins": 24,
+        "pairs": 24,
+        "prompt_medians": {
+          "hold-binary-search": 1.5629777336038775,
+          "hold-streaming": 1.3503445357326846,
+          "hold-probability": 1.6295607748090482,
+          "hold-euclid": 1.561277661696625,
+          "hold-concurrency": 1.2048129837460646,
+          "hold-incident": 1.337615088677034,
+          "hold-summary": 1.3668833129799538,
+          "hold-structured": 1.8813545170656365
+        },
+        "min_prompt_median": 1.2048129837460646,
+        "max_prompt_median": 1.8813545170656365,
+        "scope": "Observed spread across chosen prompts; no confidence interval or population-generalization claim."
+      }
+    },
+    "pairs": [
+      {
+        "prompt_id": "hold-binary-search",
+        "repeat": 0,
+        "sd_ar_speedup": 1.3098988181058624,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.008387938067963,
+        "ssd_sd_speedup": 1.5332389878571906,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-binary-search",
+        "repeat": 1,
+        "sd_ar_speedup": 1.298429794167626,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.0602630509928286,
+        "ssd_sd_speedup": 1.5801463315935587,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-binary-search",
+        "repeat": 2,
+        "sd_ar_speedup": 1.2971712692784414,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.0477238175901697,
+        "ssd_sd_speedup": 1.5629777336038775,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-streaming",
+        "repeat": 0,
+        "sd_ar_speedup": 1.2185021884807214,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 1.64539777199326,
+        "ssd_sd_speedup": 1.3503445357326846,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-streaming",
+        "repeat": 1,
+        "sd_ar_speedup": 1.2196955621378243,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 1.6744928628687683,
+        "ssd_sd_speedup": 1.372877720349984,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-streaming",
+        "repeat": 2,
+        "sd_ar_speedup": 1.2265100218044043,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 1.6448987028588011,
+        "ssd_sd_speedup": 1.3411212901781888,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-probability",
+        "repeat": 0,
+        "sd_ar_speedup": 1.372719013097619,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.2373086534292734,
+        "ssd_sd_speedup": 1.6295607748090482,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-probability",
+        "repeat": 1,
+        "sd_ar_speedup": 1.37058222920171,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.1924834941580045,
+        "ssd_sd_speedup": 1.5996730786703746,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-probability",
+        "repeat": 2,
+        "sd_ar_speedup": 1.3762642265142633,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.2636145008010904,
+        "ssd_sd_speedup": 1.644752844106299,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-euclid",
+        "repeat": 0,
+        "sd_ar_speedup": 1.3259713901790553,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.0382730853458852,
+        "ssd_sd_speedup": 1.5371923560663272,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-euclid",
+        "repeat": 1,
+        "sd_ar_speedup": 1.2981425081086186,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.0481765489698405,
+        "ssd_sd_speedup": 1.5777748099120599,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-euclid",
+        "repeat": 2,
+        "sd_ar_speedup": 1.3005292121254157,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.030487207275323,
+        "ssd_sd_speedup": 1.561277661696625,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-concurrency",
+        "repeat": 0,
+        "sd_ar_speedup": 1.1256168580390054,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 1.3561578052888446,
+        "ssd_sd_speedup": 1.2048129837460646,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-concurrency",
+        "repeat": 1,
+        "sd_ar_speedup": 1.1281057413022635,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 1.3453220062954099,
+        "ssd_sd_speedup": 1.1925495607729077,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-concurrency",
+        "repeat": 2,
+        "sd_ar_speedup": 1.0892456497674166,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 1.3674467901502474,
+        "ssd_sd_speedup": 1.2322375477517407,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-incident",
+        "repeat": 0,
+        "sd_ar_speedup": 1.1876614363033933,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 1.5824284769181325,
+        "ssd_sd_speedup": 1.3252801677386599,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-incident",
+        "repeat": 1,
+        "sd_ar_speedup": 1.171412131630018,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 1.6253772249688214,
+        "ssd_sd_speedup": 1.383389773334804,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-incident",
+        "repeat": 2,
+        "sd_ar_speedup": 1.1956980512044197,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 1.5993837547927565,
+        "ssd_sd_speedup": 1.337615088677034,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-summary",
+        "repeat": 0,
+        "sd_ar_speedup": 1.1379620933908918,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 1.5692983359116879,
+        "ssd_sd_speedup": 1.358796982388532,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-summary",
+        "repeat": 1,
+        "sd_ar_speedup": 1.1467567329529182,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 1.5674826423207533,
+        "ssd_sd_speedup": 1.3668833129799538,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-summary",
+        "repeat": 2,
+        "sd_ar_speedup": 1.143467714390091,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 1.579091467475935,
+        "ssd_sd_speedup": 1.380967252160853,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-structured",
+        "repeat": 0,
+        "sd_ar_speedup": 1.4048805591491969,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.5853088980318657,
+        "ssd_sd_speedup": 1.8402339481425682,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-structured",
+        "repeat": 1,
+        "sd_ar_speedup": 1.4024116130985977,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.6384334230883524,
+        "ssd_sd_speedup": 1.8813545170656365,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-structured",
+        "repeat": 2,
+        "sd_ar_speedup": 1.404473970312075,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.6532553859106374,
+        "ssd_sd_speedup": 1.889145289977202,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      }
+    ],
+    "hf_audit": {
+      "comparisons": [
+        {
+          "prompt": "cal-systems",
+          "max_abs": 0.25,
+          "rmse": 0.043070465326309204,
+          "relative_l2": 0.013171449303627014,
+          "softmax_total_variation": 0.016035329550504684,
+          "top1_equal": true,
+          "a_top5": [
+            [
+              95456,
+              34.75
+            ],
+            [
+              39814,
+              32.25
+            ],
+            [
+              23140,
+              28.25
+            ],
+            [
+              1249,
+              24.75
+            ],
+            [
+              77045,
+              24.375
+            ]
+          ],
+          "b_top5": [
+            [
+              95456,
+              35.0
+            ],
+            [
+              39814,
+              32.25
+            ],
+            [
+              23140,
+              28.25
+            ],
+            [
+              1249,
+              24.75
+            ],
+            [
+              77045,
+              24.375
+            ]
+          ]
+        },
+        {
+          "prompt": "cal-code",
+          "max_abs": 0.3125,
+          "rmse": 0.06622729450464249,
+          "relative_l2": 0.018516570329666138,
+          "softmax_total_variation": 3.871405351674184e-05,
+          "top1_equal": true,
+          "a_top5": [
+            [
+              95456,
+              36.5
+            ],
+            [
+              39814,
+              33.5
+            ],
+            [
+              1249,
+              30.75
+            ],
+            [
+              8420,
+              27.75
+            ],
+            [
+              38214,
+              26.375
+            ]
+          ],
+          "b_top5": [
+            [
+              95456,
+              36.5
+            ],
+            [
+              39814,
+              33.5
+            ],
+            [
+              1249,
+              30.75
+            ],
+            [
+              8420,
+              27.5
+            ],
+            [
+              38214,
+              26.25
+            ]
+          ]
+        }
+      ],
+      "scope": "One-shot last-prompt-token logits on two calibration prompts; not a model-quality benchmark."
+    },
+    "metadata": {
+      "started_utc": "2026-10-21T02:00:45.626167+00:00",
+      "args": {
+        "target": "Qwen/Qwen2.5-7B-Instruct",
+        "output": "/root/ssd-v2/evidence/attempt-2/benchmark-Qwen2.5-7B-Instruct-fused",
+        "cache": "/cache/hub",
+        "tokens": 192,
+        "repeats": 3,
+        "capacity": 768,
+        "quick": false,
+        "draft_device": "cuda:1",
+        "fixed_k": 0,
+        "include_eager": false,
+        "ssd": true,
+        "backend": "fused",
+        "profile": true,
+        "audit": true,
+        "suite": "heldout",
+        "stop_eos": true
+      },
+      "torch": "2.8.0+cu128",
+      "transformers": "4.57.1",
+      "gpus": [
+        {
+          "name": "NVIDIA H100 80GB HBM3",
+          "memory": 85009367040
+        },
+        {
+          "name": "NVIDIA H100 80GB HBM3",
+          "memory": 85009367040
+        }
+      ],
+      "model_revisions": {
+        "Qwen/Qwen2.5-7B-Instruct": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "Qwen/Qwen2.5-0.5B-Instruct": "7ae557604adf67be50417f59c2c2f167def9a775",
+        "Qwen/Qwen2.5-32B-Instruct": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd"
+      },
+      "load_s": 4.969705976,
+      "target_graph_setup_s": 0.37031639799999994,
+      "draft_graph_setup_s": 0.37794559899998603,
+      "backend": "fused",
+      "precision": "BF16 weights, BF16 logits; default PyTorch accumulation; no TF32",
+      "contract": "Exact to fixed-width-8 reference; native-width-1 equality separately reported. Native graph AR is speed baseline.",
+      "source_sha256": {
+        "graph_engine.py": "9b1a2e27c60aabf4e2f799702d2d082791b05a29b6b32a917aec50afd5c2795a",
+        "benchmark_graph.py": "78bc3e8f6c0c38099d870879cb97e5541de0862da85f579ea398a14c50ab0789",
+        "fast_qwen.py": "1a6bbd6077959dcfbbafed1a0bc10b18bff58281cc8d331949ec87c5a0eb7ce3",
+        "numerics.py": "2388b5f85a79e7a48d69a0b4b3010d98000e31fcced93ffd6336556cf91164c9"
+      },
+      "calibration_prompts": [
+        [
+          "cal-systems",
+          "Explain the difference between latency and throughput using a small numerical example."
+        ],
+        [
+          "cal-code",
+          "Write a Python function to merge two sorted lists. Include a short example."
+        ]
+      ],
+      "evaluation_prompts": [
+        [
+          "hold-binary-search",
+          "Implement lower_bound in Python: return the first index whose value is at least x in a sorted list. Include empty-list and duplicate-value examples, and explain why the loop terminates."
+        ],
+        [
+          "hold-streaming",
+          "Write a Python generator that reads lines formatted as name,integer and yields running totals per name. Skip blank lines and raise a useful error for malformed input. Include a short demonstration."
+        ],
+        [
+          "hold-probability",
+          "An urn contains 5 red, 3 blue, and 2 green balls. Two balls are drawn without replacement. Find the probability that exactly one is red. Give both a counting solution and a sequential-probability solution."
+        ],
+        [
+          "hold-euclid",
+          "Use the Euclidean algorithm to find gcd(1071, 462). Then work backwards to express the gcd as an integer combination of 1071 and 462. Verify the identity."
+        ],
+        [
+          "hold-concurrency",
+          "Explain a single-producer single-consumer ring buffer to a systems programmer. Describe head and tail ownership, the full and empty conditions, and where acquire/release ordering is needed. Use a small example."
+        ],
+        [
+          "hold-incident",
+          "Analyze this fictional service incident and propose the first three measurements you would collect. At 09:00 requests rose from 100 to 300 per second. CPU stayed at 35 percent. P50 latency stayed at 20 ms but P99 rose from 70 to 900 ms. The database connection pool has 32 slots, average query time is 10 ms, and timeout count rose to 120 per minute. Cache hit rate fell from 92 to 61 percent. A background export started at 08:58 and scans a large table. There were no application deployments. Discuss at least two plausible causes and explain how your measurements distinguish them. Do not assume the provided observations prove one cause."
+        ],
+        [
+          "hold-summary",
+          "Summarize the following fictional experiment in five bullet points, preserving the important numbers and uncertainty. A team compared two storage layouts on the same server with 64 GB of memory and eight worker threads. The baseline stored 10 million records as separately allocated objects. The alternative stored fixed-width fields in contiguous arrays and variable-length strings in a separate arena. They warmed the filesystem cache, then ran seven repetitions of a scan that selected records with an integer field above a threshold. The baseline median was 840 ms and the alternative median was 390 ms. The slowest alternative run was 510 ms. A point-lookup workload improved only from 12 to 11 ms. Updating one percent of records became slower, rising from 140 to 190 ms. Memory use fell from 9.2 to 6.4 GB. They did not measure cold-cache scans, larger-than-memory data, or concurrent updates. They suspect locality explains much of the scan improvement, but did not collect hardware counters. State which conclusions are supported and which follow-up measurement is most useful."
+        ],
+        [
+          "hold-structured",
+          "Write a JSON object with a products array containing these fictional items in the given order: Neralis costs 17 dollars and has stock 4; Vexorin costs 23 dollars and has stock 9; Talumet costs 11 dollars and has stock 6; Ospiral costs 37 dollars and has stock 2; Cendova costs 19 dollars and has stock 7. Use the keys name, price_usd, stock, and inventory_value_usd for each item. Then include total_inventory_value_usd. Output valid JSON without markdown."
+        ]
+      ],
+      "eos_policy": "Stop on real EOS; maximum token cap",
+      "eos_ids": [
+        151645,
+        151643
+      ]
+    },
+    "selected": {
+      "k": 2,
+      "ssd": [
+        2,
+        1
+      ],
+      "scores": {
+        "1": [
+          0.37397941099999343,
+          0.3787182559999849
+        ],
+        "2": [
+          0.33249216699999806,
+          0.33506633700000066
+        ],
+        "4": [
+          0.33563421099998436,
+          0.361973952999989
+        ],
+        "6": [
+          0.3625049779999756,
+          0.37854131499997834
+        ]
+      },
+      "ssd_scores": {
+        "(1, 1)": [
+          0.28108641899999043,
+          0.29220503100000883
+        ],
+        "(1, 2)": [
+          0.28037704400000507,
+          0.29880826199999433
+        ],
+        "(2, 1)": [
+          0.2658905279999999,
+          0.268253226000013
+        ],
+        "(2, 2)": [
+          0.37014603400001533,
+          0.3555476330000147
+        ],
+        "(4, 1)": [
+          0.37490884900000765,
+          0.3766606330000002
+        ],
+        "(4, 2)": [
+          0.526094535999988,
+          0.5043878070000005
+        ],
+        "(6, 1)": [
+          0.4722023420000028,
+          0.4425354999999911
+        ],
+        "(6, 2)": [
+          0.6698850770000035,
+          0.6020519249999836
+        ]
+      },
+      "selection": "Median calibration total latency; no evaluation tuning"
+    }
+  },
+  {
+    "path": "runs/graph-20261021-022022/downloaded/attempt-2/benchmark-Qwen2.5-32B-Instruct-fused/raw.jsonl",
+    "complete": true,
+    "args": {
+      "target": "Qwen/Qwen2.5-32B-Instruct",
+      "output": "/root/ssd-v2/evidence/attempt-2/benchmark-Qwen2.5-32B-Instruct-fused",
+      "cache": "/cache/hub",
+      "tokens": 192,
+      "repeats": 3,
+      "capacity": 768,
+      "quick": false,
+      "draft_device": "cuda:1",
+      "fixed_k": 0,
+      "include_eager": false,
+      "ssd": true,
+      "backend": "fused",
+      "profile": true,
+      "audit": true,
+      "suite": "heldout",
+      "stop_eos": true
+    },
+    "model": "Qwen/Qwen2.5-32B-Instruct",
+    "backend": "fused",
+    "suite": "heldout",
+    "eos_policy": "Stop on real EOS; maximum token cap",
+    "row_count": 147,
+    "evaluation_rows": 120,
+    "methods": {
+      "ar_native": {
+        "requests": 24,
+        "tokens": 4608,
+        "e2e_tps": 34.72816212528861,
+        "decode_tps": 34.96252225579743,
+        "native_equal": 24,
+        "reference_equal": 24,
+        "accepted": 0,
+        "proposed": 0,
+        "hits": 0,
+        "lookups": 0,
+        "eos_stops": 0
+      },
+      "ar_shape8": {
+        "requests": 24,
+        "tokens": 4608,
+        "e2e_tps": 34.26011948215109,
+        "decode_tps": 34.48990210473091,
+        "native_equal": 24,
+        "reference_equal": 24,
+        "accepted": 0,
+        "proposed": 0,
+        "hits": 0,
+        "lookups": 0,
+        "eos_stops": 0
+      },
+      "sd": {
+        "requests": 24,
+        "tokens": 4608,
+        "e2e_tps": 88.87607773145442,
+        "decode_tps": 90.67452079847084,
+        "native_equal": 24,
+        "reference_equal": 24,
+        "accepted": 3576,
+        "proposed": 6588,
+        "hits": 0,
+        "lookups": 0,
+        "eos_stops": 0
+      },
+      "sd_colocated": {
+        "requests": 24,
+        "tokens": 4608,
+        "e2e_tps": 89.36141331694863,
+        "decode_tps": 91.18967988458733,
+        "native_equal": 24,
+        "reference_equal": 24,
+        "accepted": 3576,
+        "proposed": 6588,
+        "hits": 0,
+        "lookups": 0,
+        "eos_stops": 0
+      },
+      "ssd": {
+        "requests": 24,
+        "tokens": 4608,
+        "e2e_tps": 101.69674535575902,
+        "decode_tps": 103.92324952896841,
+        "native_equal": 24,
+        "reference_equal": 24,
+        "accepted": 3576,
+        "proposed": 6588,
+        "hits": 360,
+        "lookups": 1068,
+        "eos_stops": 0
+      }
+    },
+    "comparisons": {
+      "sd_ar_speedup": {
+        "median_paired_request": 2.387377409144305,
+        "wins": 24,
+        "pairs": 24,
+        "prompt_medians": {
+          "hold-binary-search": 2.402070212427672,
+          "hold-streaming": 2.362861460699183,
+          "hold-probability": 3.556977375759747,
+          "hold-euclid": 3.5535809089704404,
+          "hold-concurrency": 1.839118569358293,
+          "hold-incident": 2.1162623251422894,
+          "hold-summary": 2.2281229746267015,
+          "hold-structured": 3.8707051969263913
+        },
+        "min_prompt_median": 1.839118569358293,
+        "max_prompt_median": 3.8707051969263913,
+        "scope": "Observed spread across chosen prompts; no confidence interval or population-generalization claim."
+      },
+      "ssd_ar_speedup": {
+        "median_paired_request": 2.5792571535770845,
+        "wins": 24,
+        "pairs": 24,
+        "prompt_medians": {
+          "hold-binary-search": 2.6114890532724635,
+          "hold-streaming": 2.53361620905242,
+          "hold-probability": 5.009816731739326,
+          "hold-euclid": 5.089714017597104,
+          "hold-concurrency": 1.9631413776153865,
+          "hold-incident": 2.167144153743154,
+          "hold-summary": 2.391884420332885,
+          "hold-structured": 6.0119084537442165
+        },
+        "min_prompt_median": 1.9631413776153865,
+        "max_prompt_median": 6.0119084537442165,
+        "scope": "Observed spread across chosen prompts; no confidence interval or population-generalization claim."
+      },
+      "ssd_sd_speedup": {
+        "median_paired_request": 1.0770362437540426,
+        "wins": 24,
+        "pairs": 24,
+        "prompt_medians": {
+          "hold-binary-search": 1.0824922255065537,
+          "hold-streaming": 1.068257730620093,
+          "hold-probability": 1.3995476974650691,
+          "hold-euclid": 1.42379975241391,
+          "hold-concurrency": 1.0501222392877994,
+          "hold-incident": 1.017531799372925,
+          "hold-summary": 1.067952495756584,
+          "hold-structured": 1.5421448617209892
+        },
+        "min_prompt_median": 1.017531799372925,
+        "max_prompt_median": 1.5421448617209892,
+        "scope": "Observed spread across chosen prompts; no confidence interval or population-generalization claim."
+      }
+    },
+    "pairs": [
+      {
+        "prompt_id": "hold-binary-search",
+        "repeat": 0,
+        "sd_ar_speedup": 2.4001729404293872,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.61238399632158,
+        "ssd_sd_speedup": 1.0824922255065537,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-binary-search",
+        "repeat": 1,
+        "sd_ar_speedup": 2.4030859232719144,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.6114890532724635,
+        "ssd_sd_speedup": 1.0860747581726082,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-binary-search",
+        "repeat": 2,
+        "sd_ar_speedup": 2.402070212427672,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.608874381645645,
+        "ssd_sd_speedup": 1.0803508570679832,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-streaming",
+        "repeat": 0,
+        "sd_ar_speedup": 2.3745818778592227,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.5496399255085236,
+        "ssd_sd_speedup": 1.073721630440102,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-streaming",
+        "repeat": 1,
+        "sd_ar_speedup": 2.362861460699183,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.53361620905242,
+        "ssd_sd_speedup": 1.068257730620093,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-streaming",
+        "repeat": 2,
+        "sd_ar_speedup": 2.361704637560706,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.530403011588431,
+        "ssd_sd_speedup": 1.0641725858681286,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-probability",
+        "repeat": 0,
+        "sd_ar_speedup": 3.5007212132387333,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 4.9934763895353615,
+        "ssd_sd_speedup": 1.4106715205410765,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-probability",
+        "repeat": 1,
+        "sd_ar_speedup": 3.5587368763393616,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 5.009816731739326,
+        "ssd_sd_speedup": 1.398894930519351,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-probability",
+        "repeat": 2,
+        "sd_ar_speedup": 3.556977375759747,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 5.012700373616078,
+        "ssd_sd_speedup": 1.3995476974650691,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-euclid",
+        "repeat": 0,
+        "sd_ar_speedup": 3.5595856051334454,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 5.0950556031798255,
+        "ssd_sd_speedup": 1.4249447048958463,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-euclid",
+        "repeat": 1,
+        "sd_ar_speedup": 3.551645151641927,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 5.0892270649448355,
+        "ssd_sd_speedup": 1.42379975241391,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-euclid",
+        "repeat": 2,
+        "sd_ar_speedup": 3.5535809089704404,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 5.089714017597104,
+        "ssd_sd_speedup": 1.4236154532482144,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-concurrency",
+        "repeat": 0,
+        "sd_ar_speedup": 1.830240786121202,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 1.9631413776153865,
+        "ssd_sd_speedup": 1.065180580008658,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-concurrency",
+        "repeat": 1,
+        "sd_ar_speedup": 1.8670282957518818,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 1.970026447485685,
+        "ssd_sd_speedup": 1.0484690069035345,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-concurrency",
+        "repeat": 2,
+        "sd_ar_speedup": 1.839118569358293,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 1.9388634285033945,
+        "ssd_sd_speedup": 1.0501222392877994,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-incident",
+        "repeat": 0,
+        "sd_ar_speedup": 2.1162623251422894,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.1651169206216876,
+        "ssd_sd_speedup": 1.0178447293973574,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-incident",
+        "repeat": 1,
+        "sd_ar_speedup": 2.117810459606766,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.167144153743154,
+        "ssd_sd_speedup": 1.017065371358017,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-incident",
+        "repeat": 2,
+        "sd_ar_speedup": 2.116135199740427,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.1676092320735285,
+        "ssd_sd_speedup": 1.017531799372925,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-summary",
+        "repeat": 0,
+        "sd_ar_speedup": 2.2286817070895664,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.391690756106488,
+        "ssd_sd_speedup": 1.0673754255455203,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-summary",
+        "repeat": 1,
+        "sd_ar_speedup": 2.2281229746267015,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.3927721362230128,
+        "ssd_sd_speedup": 1.0683574886546865,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-summary",
+        "repeat": 2,
+        "sd_ar_speedup": 2.2271008381221926,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.391884420332885,
+        "ssd_sd_speedup": 1.067952495756584,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-structured",
+        "repeat": 0,
+        "sd_ar_speedup": 3.8707051969263913,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 6.008485052556082,
+        "ssd_sd_speedup": 1.5418352628847436,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-structured",
+        "repeat": 1,
+        "sd_ar_speedup": 3.870076425003293,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 6.016761993615206,
+        "ssd_sd_speedup": 1.54339102617266,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-structured",
+        "repeat": 2,
+        "sd_ar_speedup": 3.871498332861525,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 6.0119084537442165,
+        "ssd_sd_speedup": 1.5421448617209892,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      }
+    ],
+    "hf_audit": {
+      "comparisons": [
+        {
+          "prompt": "cal-systems",
+          "max_abs": 0.25,
+          "rmse": 0.028438327834010124,
+          "relative_l2": 0.00499312486499548,
+          "softmax_total_variation": 0.06101919710636139,
+          "top1_equal": true,
+          "a_top5": [
+            [
+              23140,
+              34.5
+            ],
+            [
+              95456,
+              33.75
+            ],
+            [
+              1249,
+              33.0
+            ],
+            [
+              39814,
+              31.125
+            ],
+            [
+              785,
+              31.0
+            ]
+          ],
+          "b_top5": [
+            [
+              23140,
+              34.75
+            ],
+            [
+              95456,
+              33.75
+            ],
+            [
+              1249,
+              33.0
+            ],
+            [
+              39814,
+              31.125
+            ],
+            [
+              785,
+              31.0
+            ]
+          ]
+        },
+        {
+          "prompt": "cal-code",
+          "max_abs": 0.375,
+          "rmse": 0.04659295827150345,
+          "relative_l2": 0.009089592844247818,
+          "softmax_total_variation": 0.0009668265702202916,
+          "top1_equal": true,
+          "a_top5": [
+            [
+              95456,
+              38.5
+            ],
+            [
+              39814,
+              38.0
+            ],
+            [
+              8420,
+              37.75
+            ],
+            [
+              38214,
+              35.0
+            ],
+            [
+              1249,
+              34.75
+            ]
+          ],
+          "b_top5": [
+            [
+              95456,
+              38.5
+            ],
+            [
+              39814,
+              38.0
+            ],
+            [
+              8420,
+              37.75
+            ],
+            [
+              38214,
+              35.0
+            ],
+            [
+              1249,
+              34.75
+            ]
+          ]
+        }
+      ],
+      "scope": "One-shot last-prompt-token logits on two calibration prompts; not a model-quality benchmark."
+    },
+    "metadata": {
+      "started_utc": "2026-10-21T02:09:47.143695+00:00",
+      "args": {
+        "target": "Qwen/Qwen2.5-32B-Instruct",
+        "output": "/root/ssd-v2/evidence/attempt-2/benchmark-Qwen2.5-32B-Instruct-fused",
+        "cache": "/cache/hub",
+        "tokens": 192,
+        "repeats": 3,
+        "capacity": 768,
+        "quick": false,
+        "draft_device": "cuda:1",
+        "fixed_k": 0,
+        "include_eager": false,
+        "ssd": true,
+        "backend": "fused",
+        "profile": true,
+        "audit": true,
+        "suite": "heldout",
+        "stop_eos": true
+      },
+      "torch": "2.8.0+cu128",
+      "transformers": "4.57.1",
+      "gpus": [
+        {
+          "name": "NVIDIA H100 80GB HBM3",
+          "memory": 85009367040
+        },
+        {
+          "name": "NVIDIA H100 80GB HBM3",
+          "memory": 85009367040
+        }
+      ],
+      "model_revisions": {
+        "Qwen/Qwen2.5-7B-Instruct": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "Qwen/Qwen2.5-0.5B-Instruct": "7ae557604adf67be50417f59c2c2f167def9a775",
+        "Qwen/Qwen2.5-32B-Instruct": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd"
+      },
+      "load_s": 72.73601139799996,
+      "target_graph_setup_s": 0.7804954579999048,
+      "draft_graph_setup_s": 0.2622590800000353,
+      "backend": "fused",
+      "precision": "BF16 weights, BF16 logits; default PyTorch accumulation; no TF32",
+      "contract": "Exact to fixed-width-8 reference; native-width-1 equality separately reported. Native graph AR is speed baseline.",
+      "source_sha256": {
+        "graph_engine.py": "9b1a2e27c60aabf4e2f799702d2d082791b05a29b6b32a917aec50afd5c2795a",
+        "benchmark_graph.py": "78bc3e8f6c0c38099d870879cb97e5541de0862da85f579ea398a14c50ab0789",
+        "fast_qwen.py": "1a6bbd6077959dcfbbafed1a0bc10b18bff58281cc8d331949ec87c5a0eb7ce3",
+        "numerics.py": "2388b5f85a79e7a48d69a0b4b3010d98000e31fcced93ffd6336556cf91164c9"
+      },
+      "calibration_prompts": [
+        [
+          "cal-systems",
+          "Explain the difference between latency and throughput using a small numerical example."
+        ],
+        [
+          "cal-code",
+          "Write a Python function to merge two sorted lists. Include a short example."
+        ]
+      ],
+      "evaluation_prompts": [
+        [
+          "hold-binary-search",
+          "Implement lower_bound in Python: return the first index whose value is at least x in a sorted list. Include empty-list and duplicate-value examples, and explain why the loop terminates."
+        ],
+        [
+          "hold-streaming",
+          "Write a Python generator that reads lines formatted as name,integer and yields running totals per name. Skip blank lines and raise a useful error for malformed input. Include a short demonstration."
+        ],
+        [
+          "hold-probability",
+          "An urn contains 5 red, 3 blue, and 2 green balls. Two balls are drawn without replacement. Find the probability that exactly one is red. Give both a counting solution and a sequential-probability solution."
+        ],
+        [
+          "hold-euclid",
+          "Use the Euclidean algorithm to find gcd(1071, 462). Then work backwards to express the gcd as an integer combination of 1071 and 462. Verify the identity."
+        ],
+        [
+          "hold-concurrency",
+          "Explain a single-producer single-consumer ring buffer to a systems programmer. Describe head and tail ownership, the full and empty conditions, and where acquire/release ordering is needed. Use a small example."
+        ],
+        [
+          "hold-incident",
+          "Analyze this fictional service incident and propose the first three measurements you would collect. At 09:00 requests rose from 100 to 300 per second. CPU stayed at 35 percent. P50 latency stayed at 20 ms but P99 rose from 70 to 900 ms. The database connection pool has 32 slots, average query time is 10 ms, and timeout count rose to 120 per minute. Cache hit rate fell from 92 to 61 percent. A background export started at 08:58 and scans a large table. There were no application deployments. Discuss at least two plausible causes and explain how your measurements distinguish them. Do not assume the provided observations prove one cause."
+        ],
+        [
+          "hold-summary",
+          "Summarize the following fictional experiment in five bullet points, preserving the important numbers and uncertainty. A team compared two storage layouts on the same server with 64 GB of memory and eight worker threads. The baseline stored 10 million records as separately allocated objects. The alternative stored fixed-width fields in contiguous arrays and variable-length strings in a separate arena. They warmed the filesystem cache, then ran seven repetitions of a scan that selected records with an integer field above a threshold. The baseline median was 840 ms and the alternative median was 390 ms. The slowest alternative run was 510 ms. A point-lookup workload improved only from 12 to 11 ms. Updating one percent of records became slower, rising from 140 to 190 ms. Memory use fell from 9.2 to 6.4 GB. They did not measure cold-cache scans, larger-than-memory data, or concurrent updates. They suspect locality explains much of the scan improvement, but did not collect hardware counters. State which conclusions are supported and which follow-up measurement is most useful."
+        ],
+        [
+          "hold-structured",
+          "Write a JSON object with a products array containing these fictional items in the given order: Neralis costs 17 dollars and has stock 4; Vexorin costs 23 dollars and has stock 9; Talumet costs 11 dollars and has stock 6; Ospiral costs 37 dollars and has stock 2; Cendova costs 19 dollars and has stock 7. Use the keys name, price_usd, stock, and inventory_value_usd for each item. Then include total_inventory_value_usd. Output valid JSON without markdown."
+        ]
+      ],
+      "eos_policy": "Stop on real EOS; maximum token cap",
+      "eos_ids": [
+        151645,
+        151643
+      ]
+    },
+    "selected": {
+      "k": 6,
+      "ssd": [
+        6,
+        1
+      ],
+      "scores": {
+        "1": [
+          1.0528988390000222,
+          0.9094716070000004
+        ],
+        "2": [
+          0.88604774800001,
+          0.690178598999978
+        ],
+        "4": [
+          0.8352649669999437,
+          0.5149489630000517
+        ],
+        "6": [
+          0.8035982290000447,
+          0.4077818619999789
+        ]
+      },
+      "ssd_scores": {
+        "(1, 1)": [
+          0.9728601699999899,
+          0.793496355000002
+        ],
+        "(1, 2)": [
+          0.9583238559999927,
+          0.786938753999948
+        ],
+        "(2, 1)": [
+          0.8355184739999686,
+          0.580207628999915
+        ],
+        "(2, 2)": [
+          0.8031448200000568,
+          0.5735217689999672
+        ],
+        "(4, 1)": [
+          0.8139648110000053,
+          0.4076633800000309
+        ],
+        "(4, 2)": [
+          0.7767454270000371,
+          0.3959001890000309
+        ],
+        "(6, 1)": [
+          0.8093660839999757,
+          0.34888835799995377
+        ],
+        "(6, 2)": [
+          0.8581558289999975,
+          0.3792805569999018
+        ]
+      },
+      "selection": "Median calibration total latency; no evaluation tuning"
+    }
+  },
+  {
+    "path": "runs/graph-20261021-021825/downloaded/attempt-1/benchmark-Qwen2.5-7B-Instruct-invariant/raw.jsonl",
+    "complete": true,
+    "args": {
+      "target": "Qwen/Qwen2.5-7B-Instruct",
+      "output": "/root/ssd-v2/evidence/attempt-1/benchmark-Qwen2.5-7B-Instruct-invariant",
+      "cache": "/cache/hub",
+      "tokens": 192,
+      "repeats": 3,
+      "capacity": 768,
+      "quick": false,
+      "draft_device": "cuda:1",
+      "fixed_k": 0,
+      "include_eager": false,
+      "ssd": true,
+      "backend": "invariant",
+      "profile": true,
+      "audit": true,
+      "suite": "heldout",
+      "stop_eos": true
+    },
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "backend": "invariant",
+    "suite": "heldout",
+    "eos_policy": "Stop on real EOS; maximum token cap",
+    "row_count": 147,
+    "evaluation_rows": 120,
+    "methods": {
+      "ar_native": {
+        "requests": 24,
+        "tokens": 4608,
+        "e2e_tps": 108.6907984381387,
+        "decode_tps": 109.91858622432717,
+        "native_equal": 24,
+        "reference_equal": 24,
+        "accepted": 0,
+        "proposed": 0,
+        "hits": 0,
+        "lookups": 0,
+        "eos_stops": 0
+      },
+      "ar_shape8": {
+        "requests": 24,
+        "tokens": 4608,
+        "e2e_tps": 106.09348258923873,
+        "decode_tps": 107.26842226118816,
+        "native_equal": 24,
+        "reference_equal": 24,
+        "accepted": 0,
+        "proposed": 0,
+        "hits": 0,
+        "lookups": 0,
+        "eos_stops": 0
+      },
+      "sd": {
+        "requests": 24,
+        "tokens": 4608,
+        "e2e_tps": 158.53328323440337,
+        "decode_tps": 162.37218415971208,
+        "native_equal": 24,
+        "reference_equal": 24,
+        "accepted": 2826,
+        "proposed": 3588,
+        "hits": 0,
+        "lookups": 0,
+        "eos_stops": 0
+      },
+      "sd_colocated": {
+        "requests": 24,
+        "tokens": 4608,
+        "e2e_tps": 158.32769192319637,
+        "decode_tps": 162.09754718541828,
+        "native_equal": 24,
+        "reference_equal": 24,
+        "accepted": 2826,
+        "proposed": 3588,
+        "hits": 0,
+        "lookups": 0,
+        "eos_stops": 0
+      },
+      "ssd": {
+        "requests": 24,
+        "tokens": 4608,
+        "e2e_tps": 219.73490255874742,
+        "decode_tps": 227.2330230001164,
+        "native_equal": 24,
+        "reference_equal": 24,
+        "accepted": 2826,
+        "proposed": 3588,
+        "hits": 1116,
+        "lookups": 1764,
+        "eos_stops": 0
+      }
+    },
+    "comparisons": {
+      "sd_ar_speedup": {
+        "median_paired_request": 1.4847648892079666,
+        "wins": 24,
+        "pairs": 24,
+        "prompt_medians": {
+          "hold-binary-search": 1.511866968114742,
+          "hold-streaming": 1.4156459583246548,
+          "hold-probability": 1.586195948864218,
+          "hold-euclid": 1.5702424606111804,
+          "hold-concurrency": 1.269097451197966,
+          "hold-incident": 1.4608500426730153,
+          "hold-summary": 1.321170161726291,
+          "hold-structured": 1.614956977695997
+        },
+        "min_prompt_median": 1.269097451197966,
+        "max_prompt_median": 1.614956977695997,
+        "scope": "Observed spread across chosen prompts; no confidence interval or population-generalization claim."
+      },
+      "ssd_ar_speedup": {
+        "median_paired_request": 2.1023291396351285,
+        "wins": 24,
+        "pairs": 24,
+        "prompt_medians": {
+          "hold-binary-search": 2.1938509170266403,
+          "hold-streaming": 1.843173109066471,
+          "hold-probability": 2.4238702818178224,
+          "hold-euclid": 2.365701916995512,
+          "hold-concurrency": 1.4991532836078982,
+          "hold-incident": 2.0111539900043445,
+          "hold-summary": 1.691703946165807,
+          "hold-structured": 2.7194262420848245
+        },
+        "min_prompt_median": 1.4991532836078982,
+        "max_prompt_median": 2.7194262420848245,
+        "scope": "Observed spread across chosen prompts; no confidence interval or population-generalization claim."
+      },
+      "ssd_sd_speedup": {
+        "median_paired_request": 1.4122258901840696,
+        "wins": 24,
+        "pairs": 24,
+        "prompt_medians": {
+          "hold-binary-search": 1.451087273744934,
+          "hold-streaming": 1.3031146207176572,
+          "hold-probability": 1.5281026808531528,
+          "hold-euclid": 1.5077259070122353,
+          "hold-concurrency": 1.1800704445345345,
+          "hold-incident": 1.3767011885247311,
+          "hold-summary": 1.280938374264283,
+          "hold-structured": 1.6798800997204226
+        },
+        "min_prompt_median": 1.1800704445345345,
+        "max_prompt_median": 1.6798800997204226,
+        "scope": "Observed spread across chosen prompts; no confidence interval or population-generalization claim."
+      }
+    },
+    "pairs": [
+      {
+        "prompt_id": "hold-binary-search",
+        "repeat": 0,
+        "sd_ar_speedup": 1.511866968114742,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.1938509170266403,
+        "ssd_sd_speedup": 1.451087273744934,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-binary-search",
+        "repeat": 1,
+        "sd_ar_speedup": 1.515225761642949,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.1932660440599423,
+        "ssd_sd_speedup": 1.4474846584457481,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-binary-search",
+        "repeat": 2,
+        "sd_ar_speedup": 1.5085586720425677,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.196448844142484,
+        "ssd_sd_speedup": 1.455991659355564,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-streaming",
+        "repeat": 0,
+        "sd_ar_speedup": 1.4156459583246548,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 1.8448645226672966,
+        "ssd_sd_speedup": 1.303196263033591,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-streaming",
+        "repeat": 1,
+        "sd_ar_speedup": 1.4160867879771741,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 1.840354877955012,
+        "ssd_sd_speedup": 1.2996059941946698,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-streaming",
+        "repeat": 2,
+        "sd_ar_speedup": 1.4117296664066106,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 1.843173109066471,
+        "ssd_sd_speedup": 1.3031146207176572,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-probability",
+        "repeat": 0,
+        "sd_ar_speedup": 1.586195948864218,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.4238702818178224,
+        "ssd_sd_speedup": 1.5281026808531528,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-probability",
+        "repeat": 1,
+        "sd_ar_speedup": 1.5813908017361638,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.4225542238075306,
+        "ssd_sd_speedup": 1.531913693407017,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-probability",
+        "repeat": 2,
+        "sd_ar_speedup": 1.587127122384164,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.4243056771935407,
+        "ssd_sd_speedup": 1.5274804664365993,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-euclid",
+        "repeat": 0,
+        "sd_ar_speedup": 1.5689926576059117,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.3656108777844107,
+        "ssd_sd_speedup": 1.5077259070122353,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-euclid",
+        "repeat": 1,
+        "sd_ar_speedup": 1.5723593274860317,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.3771630171228177,
+        "ssd_sd_speedup": 1.5118446372710157,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-euclid",
+        "repeat": 2,
+        "sd_ar_speedup": 1.5702424606111804,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.365701916995512,
+        "ssd_sd_speedup": 1.5065838406093779,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-concurrency",
+        "repeat": 0,
+        "sd_ar_speedup": 1.269097451197966,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 1.4974891659009775,
+        "ssd_sd_speedup": 1.1799511245903904,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-concurrency",
+        "repeat": 1,
+        "sd_ar_speedup": 1.2683024968693517,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 1.5005222755038385,
+        "ssd_sd_speedup": 1.183094947149984,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-concurrency",
+        "repeat": 2,
+        "sd_ar_speedup": 1.270393043526501,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 1.4991532836078982,
+        "ssd_sd_speedup": 1.1800704445345345,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-incident",
+        "repeat": 0,
+        "sd_ar_speedup": 1.460740930692811,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.011392235210315,
+        "ssd_sd_speedup": 1.3769671219223911,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-incident",
+        "repeat": 1,
+        "sd_ar_speedup": 1.4609711063733657,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.010082368082864,
+        "ssd_sd_speedup": 1.3758536081336898,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-incident",
+        "repeat": 2,
+        "sd_ar_speedup": 1.4608500426730153,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.0111539900043445,
+        "ssd_sd_speedup": 1.3767011885247311,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-summary",
+        "repeat": 0,
+        "sd_ar_speedup": 1.321170161726291,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 1.6933873691735861,
+        "ssd_sd_speedup": 1.2817329805276119,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-summary",
+        "repeat": 1,
+        "sd_ar_speedup": 1.3222386810772853,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 1.691703946165807,
+        "ssd_sd_speedup": 1.2794240331764477,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-summary",
+        "repeat": 2,
+        "sd_ar_speedup": 1.320029605624708,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 1.6908765770096361,
+        "ssd_sd_speedup": 1.280938374264283,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-structured",
+        "repeat": 0,
+        "sd_ar_speedup": 1.618821630506493,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.7194262420848245,
+        "ssd_sd_speedup": 1.6798800997204226,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-structured",
+        "repeat": 1,
+        "sd_ar_speedup": 1.61264203551192,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.7026449567936655,
+        "ssd_sd_speedup": 1.673413776053239,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      },
+      {
+        "prompt_id": "hold-structured",
+        "repeat": 2,
+        "sd_ar_speedup": 1.614956977695997,
+        "sd_matches_ar": true,
+        "ssd_ar_speedup": 2.722105195186616,
+        "ssd_sd_speedup": 1.685558954685065,
+        "ssd_matches_ar": true,
+        "ssd_matches_sd": true
+      }
+    ],
+    "hf_audit": {
+      "comparisons": [
+        {
+          "prompt": "cal-systems",
+          "max_abs": 0.375,
+          "rmse": 0.03871065005660057,
+          "relative_l2": 0.01183816697448492,
+          "softmax_total_variation": 0.0003214808530174196,
+          "top1_equal": true,
+          "a_top5": [
+            [
+              95456,
+              34.75
+            ],
+            [
+              39814,
+              32.25
+            ],
+            [
+              23140,
+              28.25
+            ],
+            [
+              1249,
+              24.75
+            ],
+            [
+              77045,
+              24.375
+            ]
+          ],
+          "b_top5": [
+            [
+              95456,
+              35.0
+            ],
+            [
+              39814,
+              32.5
+            ],
+            [
+              23140,
+              28.25
+            ],
+            [
+              1249,
+              24.75
+            ],
+            [
+              77045,
+              24.5
+            ]
+          ]
+        },
+        {
+          "prompt": "cal-code",
+          "max_abs": 0.3125,
+          "rmse": 0.09502404928207397,
+          "relative_l2": 0.02656788006424904,
+          "softmax_total_variation": 3.971339901909232e-05,
+          "top1_equal": true,
+          "a_top5": [
+            [
+              95456,
+              36.5
+            ],
+            [
+              39814,
+              33.5
+            ],
+            [
+              1249,
+              30.75
+            ],
+            [
+              8420,
+              27.75
+            ],
+            [
+              38214,
+              26.375
+            ]
+          ],
+          "b_top5": [
+            [
+              95456,
+              36.5
+            ],
+            [
+              39814,
+              33.5
+            ],
+            [
+              1249,
+              30.75
+            ],
+            [
+              8420,
+              27.5
+            ],
+            [
+              38214,
+              26.25
+            ]
+          ]
+        }
+      ],
+      "scope": "One-shot last-prompt-token logits on two calibration prompts; not a model-quality benchmark."
+    },
+    "metadata": {
+      "started_utc": "2026-10-21T02:14:24.848572+00:00",
+      "args": {
+        "target": "Qwen/Qwen2.5-7B-Instruct",
+        "output": "/root/ssd-v2/evidence/attempt-1/benchmark-Qwen2.5-7B-Instruct-invariant",
+        "cache": "/cache/hub",
+        "tokens": 192,
+        "repeats": 3,
+        "capacity": 768,
+        "quick": false,
+        "draft_device": "cuda:1",
+        "fixed_k": 0,
+        "include_eager": false,
+        "ssd": true,
+        "backend": "invariant",
+        "profile": true,
+        "audit": true,
+        "suite": "heldout",
+        "stop_eos": true
+      },
+      "torch": "2.8.0+cu128",
+      "transformers": "4.57.1",
+      "gpus": [
+        {
+          "name": "NVIDIA H100 80GB HBM3",
+          "memory": 85009367040
+        },
+        {
+          "name": "NVIDIA H100 80GB HBM3",
+          "memory": 85009367040
+        }
+      ],
+      "model_revisions": {
+        "Qwen/Qwen2.5-7B-Instruct": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "Qwen/Qwen2.5-0.5B-Instruct": "7ae557604adf67be50417f59c2c2f167def9a775",
+        "Qwen/Qwen2.5-32B-Instruct": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd"
+      },
+      "load_s": 17.464340161000003,
+      "target_graph_setup_s": 3.2861732089999975,
+      "draft_graph_setup_s": 1.932554107999998,
+      "backend": "invariant",
+      "precision": "BF16 weights, BF16 logits; default PyTorch accumulation; no TF32",
+      "contract": "Exact to fixed-width-8 reference; native-width-1 equality separately reported. Native graph AR is speed baseline.",
+      "source_sha256": {
+        "graph_engine.py": "9b1a2e27c60aabf4e2f799702d2d082791b05a29b6b32a917aec50afd5c2795a",
+        "benchmark_graph.py": "78bc3e8f6c0c38099d870879cb97e5541de0862da85f579ea398a14c50ab0789",
+        "fast_qwen.py": "025c518ef59bd3a4bf2f06f50100e05b5b6e9c5b7fefa4d23ad79e35d0b2154d",
+        "numerics.py": "2388b5f85a79e7a48d69a0b4b3010d98000e31fcced93ffd6336556cf91164c9"
+      },
+      "calibration_prompts": [
+        [
+          "cal-systems",
+          "Explain the difference between latency and throughput using a small numerical example."
+        ],
+        [
+          "cal-code",
+          "Write a Python function to merge two sorted lists. Include a short example."
+        ]
+      ],
+      "evaluation_prompts": [
+        [
+          "hold-binary-search",
+          "Implement lower_bound in Python: return the first index whose value is at least x in a sorted list. Include empty-list and duplicate-value examples, and explain why the loop terminates."
+        ],
+        [
+          "hold-streaming",
+          "Write a Python generator that reads lines formatted as name,integer and yields running totals per name. Skip blank lines and raise a useful error for malformed input. Include a short demonstration."
+        ],
+        [
+          "hold-probability",
+          "An urn contains 5 red, 3 blue, and 2 green balls. Two balls are drawn without replacement. Find the probability that exactly one is red. Give both a counting solution and a sequential-probability solution."
+        ],
+        [
+          "hold-euclid",
+          "Use the Euclidean algorithm to find gcd(1071, 462). Then work backwards to express the gcd as an integer combination of 1071 and 462. Verify the identity."
+        ],
+        [
+          "hold-concurrency",
+          "Explain a single-producer single-consumer ring buffer to a systems programmer. Describe head and tail ownership, the full and empty conditions, and where acquire/release ordering is needed. Use a small example."
+        ],
+        [
+          "hold-incident",
+          "Analyze this fictional service incident and propose the first three measurements you would collect. At 09:00 requests rose from 100 to 300 per second. CPU stayed at 35 percent. P50 latency stayed at 20 ms but P99 rose from 70 to 900 ms. The database connection pool has 32 slots, average query time is 10 ms, and timeout count rose to 120 per minute. Cache hit rate fell from 92 to 61 percent. A background export started at 08:58 and scans a large table. There were no application deployments. Discuss at least two plausible causes and explain how your measurements distinguish them. Do not assume the provided observations prove one cause."
+        ],
+        [
+          "hold-summary",
+          "Summarize the following fictional experiment in five bullet points, preserving the important numbers and uncertainty. A team compared two storage layouts on the same server with 64 GB of memory and eight worker threads. The baseline stored 10 million records as separately allocated objects. The alternative stored fixed-width fields in contiguous arrays and variable-length strings in a separate arena. They warmed the filesystem cache, then ran seven repetitions of a scan that selected records with an integer field above a threshold. The baseline median was 840 ms and the alternative median was 390 ms. The slowest alternative run was 510 ms. A point-lookup workload improved only from 12 to 11 ms. Updating one percent of records became slower, rising from 140 to 190 ms. Memory use fell from 9.2 to 6.4 GB. They did not measure cold-cache scans, larger-than-memory data, or concurrent updates. They suspect locality explains much of the scan improvement, but did not collect hardware counters. State which conclusions are supported and which follow-up measurement is most useful."
+        ],
+        [
+          "hold-structured",
+          "Write a JSON object with a products array containing these fictional items in the given order: Neralis costs 17 dollars and has stock 4; Vexorin costs 23 dollars and has stock 9; Talumet costs 11 dollars and has stock 6; Ospiral costs 37 dollars and has stock 2; Cendova costs 19 dollars and has stock 7. Use the keys name, price_usd, stock, and inventory_value_usd for each item. Then include total_inventory_value_usd. Output valid JSON without markdown."
+        ]
+      ],
+      "eos_policy": "Stop on real EOS; maximum token cap",
+      "eos_ids": [
+        151645,
+        151643
+      ]
+    },
+    "selected": {
+      "k": 2,
+      "ssd": [
+        2,
+        1
+      ],
+      "scores": {
+        "1": [
+          0.39637410399998885,
+          0.4034673440000063
+        ],
+        "2": [
+          0.3479244429999966,
+          0.3619794900000102
+        ],
+        "4": [
+          0.3359705290000079,
+          0.3770993279999999
+        ],
+        "6": [
+          0.35485155300000315,
+          0.3834284619999977
+        ]
+      },
+      "ssd_scores": {
+        "(1, 1)": [
+          0.3183694119999956,
+          0.32141334699998936
+        ],
+        "(1, 2)": [
+          0.30783856399999365,
+          0.3026592850000043
+        ],
+        "(2, 1)": [
+          0.28266766699999835,
+          0.2872276599999992
+        ],
+        "(2, 2)": [
+          0.3342924519999997,
+          0.32264954600000806
+        ],
+        "(4, 1)": [
+          0.33938262799999563,
+          0.3360428879999944
+        ],
+        "(4, 2)": [
+          0.47328017300000624,
+          0.46991368199999783
+        ],
+        "(6, 1)": [
+          0.4292972029999902,
+          0.400957137000006
+        ],
+        "(6, 2)": [
+          0.6003043609999992,
+          0.5837843320000076
+        ]
+      },
+      "selection": "Median calibration total latency; no evaluation tuning"
+    }
+  }
+]

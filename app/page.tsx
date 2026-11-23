@@ -3,6 +3,7 @@ import { DATA } from "@/data/resume";
 import { ProjectEntry } from "@/components/project-entry";
 
 const selectedTitles: Record<string, string> = {
+  "Jen's Son": "Jen's Son — Inference chip",
   "Speculative Decoding Runtime & GPU Kernel Lab": "Speculative decoding & GPU kernels",
   "JAX Transformer + MoE Kernel Optimization": "Transformer & MoE kernels",
   "GPT-2 Inference Optimization": "GPT-2 inference",
@@ -20,7 +21,7 @@ export default function Page() {
 <main>
 <header>
 <div className="identity"><h1>Ishaan Goyal</h1><p>Computer Science at UIUC</p></div>
-<Image className="portrait" src="/pfp.webp" alt="Ishaan Goyal" width="64" height="64" />
+<Image className="portrait" src={DATA.avatarUrl} alt={DATA.name} width="64" height="64" />
 </header>
 <div className="intro"><p>{DATA.summary}</p></div>
 <nav aria-label="Site and profile links"><a href="/blogs">Blogs</a><a href="mailto:ishaan6@illinois.edu">Email</a><a href="https://github.com/GoyalIshaan" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/ishaan-goyal" target="_blank" rel="noopener noreferrer">LinkedIn</a></nav>

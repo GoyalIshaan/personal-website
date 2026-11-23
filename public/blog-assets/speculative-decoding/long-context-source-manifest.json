@@ -1,0 +1,1412 @@
+{
+  "commit": "d97a5dc336d3dfec6befb6ec6d3d2a3dd592aaa8",
+  "cutoff": "Completed P017/P018 only; no P019 results",
+  "original_source_manifest_unchanged": "source-manifest.json",
+  "files": [
+    {
+      "path": "kernel_lab/benchmarks/analyze_long_context_p017.py",
+      "sha256": "b99537128596d5eafac93a5d4217ff535431b4e1a5d247fcd616afce36a1783d",
+      "bytes": 2503
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-attention-20261028T224229Z/downloaded/completion.json",
+      "sha256": "58b3edfb7870e401d8f61ed29c60897d5cb867222ec9765c0d7e26fdb175c867",
+      "bytes": 404
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-attention-20261028T224229Z/downloaded/rows.json",
+      "sha256": "f8e429340b1d5fab42a5ccfab70846e4ef63acec0cb4f3552fc21d3456339ff7",
+      "bytes": 16688
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/analysis.json",
+      "sha256": "93c2616499eeba8b98f71497bf83efb4e00a900c28bdc706b5bd5dd15025a7b3",
+      "bytes": 36889
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/app-after-refresh.json",
+      "sha256": "c2f5f50a14cb3341954970859b72e2f5cd61f2781b9f962851742b7b60f0cc2d",
+      "bytes": 912
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/container-after-refresh.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/ar-gates.json",
+      "sha256": "bb115974d26994fba8225d53c1f0c08c2faa6fdbe5a6048ef98f573f4fb402fc",
+      "bytes": 1100
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/contract.json",
+      "sha256": "36be2f7e922b6d16d9968b06766894abe9c68fb4fb77f51bd524148f61655189",
+      "bytes": 484
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/hardware.json",
+      "sha256": "ade60ee24564c188d88bd0cbf0d3f0eb9340b3d2d5cbadbb88444f53296c2aef",
+      "bytes": 636
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/long-attention-gates.json",
+      "sha256": "7e271cd8d71a6020c8faee743d369b670be3a0412deec96c588226d931c09d79",
+      "bytes": 718
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/precision.json",
+      "sha256": "79c7dfa7239bf26853f72fecfe90f401ac0bde8865812add83ad0f93d1e6af27",
+      "bytes": 51494
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/progress.json",
+      "sha256": "6a092f40da0782bf8bdf248b5a47342adb002acf4d6a3a1affabec451983fc53",
+      "bytes": 31207
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/prompt.json",
+      "sha256": "0c8356a45e687a03fcfadf3309786d873d64f421d1097be976a1a56f1a770706",
+      "bytes": 996
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/resolved-config.json",
+      "sha256": "5a1c64e9ece2c6b11a1eee58f317f8522841b18a205266a534562e33acf66c3c",
+      "bytes": 1410
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/result.json",
+      "sha256": "15de99e0555419c5a018184c8b7af6292ecd0911fea8108d6d90a3ab167e2476",
+      "bytes": 809
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/rope-gate.json",
+      "sha256": "8565983643c9c22eae032e720a196182fce6d715387f00d96b20857d103f2060",
+      "bytes": 163
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/source-manifest.json",
+      "sha256": "cf13ad64056dc6e0ed0a5833c2efe2a3e3b10d5c5abdb2547b4756b7f8240a12",
+      "bytes": 22384
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-000000.json",
+      "sha256": "65c82e183d1179ff2013cf4cb92c223be9d85a521fb637b3430e423c6d208bac",
+      "bytes": 9946
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-001024.json",
+      "sha256": "418284daea4b9998dd9cfb5fd964260a96187d3ab5d6936c4700e713d2498489",
+      "bytes": 9829
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-002048.json",
+      "sha256": "408525048c2a32a221ef5c4989353b338be382b0bbb2769edbdbe928f7d00389",
+      "bytes": 9456
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-003072.json",
+      "sha256": "4d051a22d0e7628915aedba1960393cef6c2c71935e3a71bd42b77910cd5201b",
+      "bytes": 9573
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-004096.json",
+      "sha256": "e4ba04d8c053433e7f6be19d77f36b7b5c9b6a4bd65b0fcfea04dd9ecda0ddce",
+      "bytes": 9357
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-005120.json",
+      "sha256": "f809ed40498a300c5f29c94f69a4dee957012b02bd28ab90bcf6a34da6db133d",
+      "bytes": 9389
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-006144.json",
+      "sha256": "98ce43e74bd7a098b140694c1bc9064ae19d62d301a6f944accf63ca5089228a",
+      "bytes": 9697
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-007168.json",
+      "sha256": "568424c794907b6efe3ce8de301fdffbcffde98bec469660290e217915d7336b",
+      "bytes": 9734
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-008192.json",
+      "sha256": "2ab4d329d5890eec5e8c415a13f98031283ff279a969f28a7ba312f437d838b1",
+      "bytes": 9656
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-009216.json",
+      "sha256": "3e397a9b90c223ebe03c28ae4f541ec2bac5c8b47885957e1f93f483102953c2",
+      "bytes": 9602
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-010240.json",
+      "sha256": "bebcb915abca573635255b1b1d9b335be0738fe88f63a48926d8fdaa69a7a99d",
+      "bytes": 9400
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-011264.json",
+      "sha256": "95f69cc1e496dd5ab25c3ba6b93a843688743d1c2efb350627df9335f3daf5ca",
+      "bytes": 9842
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-012288.json",
+      "sha256": "8ef1b7e3b0064c66b10f2d93ec35fa3410dfcc42ad9a574e9279b5d5fa5664d8",
+      "bytes": 9546
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-013312.json",
+      "sha256": "11db6ee725ca12d1e751524d6f230ce62d2fa0714ced361c2f608d7bb54d1510",
+      "bytes": 9561
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-014336.json",
+      "sha256": "6aef68f2ad24d1990249d41a0c8d55798e349082571d8202b3c4cf2fc346531a",
+      "bytes": 9465
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-015360.json",
+      "sha256": "9d017f76f34a075a9c287c44ad5f50bbc413c7e5be9679318e35319f3aa1e193",
+      "bytes": 9395
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-016384.json",
+      "sha256": "7a1171a772c47a5a6a93f32155c54c7433222770c3338b8e7654d024fe2b93de",
+      "bytes": 9615
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-017408.json",
+      "sha256": "ffeabf73aab7a94a8570d6f58841b1c5082de21bffb4fe4f4890dc80951c9403",
+      "bytes": 9580
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-018432.json",
+      "sha256": "b0161f572d16e79f5b5810dedaa2c3eb610127b7e84dd8a2e9bea7e42bc085c8",
+      "bytes": 9482
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-019456.json",
+      "sha256": "ef440a9f06fe77bdfa199691f7bfa7c1b57a9d5c30d9e4a0143296c10ed10090",
+      "bytes": 9517
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-020480.json",
+      "sha256": "379bdb41d77c7bf61434a1ae3bf168e4812292169c869460a3e5f12618c3fdcf",
+      "bytes": 9483
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-021504.json",
+      "sha256": "c8b69f613c8538b1bab0ac77ade8f6375d2d9513c87af6b992dbd53dbf693e2f",
+      "bytes": 9505
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-022528.json",
+      "sha256": "265affbe437bcf5cd6acb3a8df10040f6bd1723c82ef457621a49ec10c5d520a",
+      "bytes": 9433
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-023552.json",
+      "sha256": "1083b47f719453fe3a779563538396e2efc9c329c4baf42076f46a9a64d13c51",
+      "bytes": 9470
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-024576.json",
+      "sha256": "5801d474bf3b66183c12a859e31c496cef86a90f831abcb43d2ae862bae28f08",
+      "bytes": 9426
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-025600.json",
+      "sha256": "4fc967c30fa9f417b37e853f47157c5a2e3cb15104b79e3370d7ba5842549d7d",
+      "bytes": 9424
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-026624.json",
+      "sha256": "e827b95f9d6b2fed2991d8a0373cdd6559e47fea56423c2a63465084255b40c6",
+      "bytes": 9478
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-027648.json",
+      "sha256": "3c99ed510b992f452fd4bfcdcbc5fc6d60cfc9512821f1c7741a697397afe687",
+      "bytes": 9356
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-028672.json",
+      "sha256": "543583b12ee1ec1e492e4989bcbea372040912e5b015ed7d474d055f8f41327e",
+      "bytes": 9403
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-029696.json",
+      "sha256": "978b44538fd29e3d7418bd36249713605ac6a0f928b0db2a535f2139bb26d100",
+      "bytes": 9395
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-030720.json",
+      "sha256": "4cad2aa444a149368cc4eee1a4117194838385bcaa5ee19ebcc584528060be01",
+      "bytes": 9442
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-031744.json",
+      "sha256": "43195a44bd04cc344bceeb7bc0f28e57d8059bebf66825ad24bcaa545cd3ba47",
+      "bytes": 9430
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-032768.json",
+      "sha256": "39e7d90cb0416fb3896ba0ec528b3a256651c772e76a21014bfe4d864dd86fc3",
+      "bytes": 9342
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-033792.json",
+      "sha256": "d1b33c9b7632d882efb0cfe11ec1843515053a7e185ced864e64d9dd538f8cde",
+      "bytes": 9435
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-034816.json",
+      "sha256": "1e019937328b300a921eb366521a113fb8e6bc52771976a6b2cfb618a45ec8ae",
+      "bytes": 9400
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-035840.json",
+      "sha256": "0f8d845c209916d756ea74f0c385ddc8e83c36352ce7007a023be2c869b63a37",
+      "bytes": 9372
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-036864.json",
+      "sha256": "37216526c3cab91374af2494d5069076919082cb1b52d7b749ddafee0b5e1e3c",
+      "bytes": 9426
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-037888.json",
+      "sha256": "599019a7a8cb4821a2a7157a8e00621482ec9bc0404ab37df02583fa02cc79cb",
+      "bytes": 9386
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-038912.json",
+      "sha256": "7eef52e309a79ea931a3ee9f4019bee9ba50a940a84883c8461f89a2db29c78a",
+      "bytes": 9426
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-039936.json",
+      "sha256": "83809f8ee60f68bdc132981278ffa35497a9a01124cb58365e8af3c3ca02ab06",
+      "bytes": 9425
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-040960.json",
+      "sha256": "6d2be667d80a7ddc4a4e98384eee4205b846ee3798571d4d94f548382fb00f3c",
+      "bytes": 9381
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-041984.json",
+      "sha256": "9621773b8621816e94671210e149047e24505f216a6191e8480ee7939e2d2cbf",
+      "bytes": 9474
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-043008.json",
+      "sha256": "561541aebbec81d798d6ed444d6b072b8bdf9f4a74638cdf87cff4f5871e3028",
+      "bytes": 9407
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-044032.json",
+      "sha256": "e8873dc66878e2b86044e2eb1e70fbebf9b6792dc83cad7243091d3169f091a5",
+      "bytes": 9399
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-045056.json",
+      "sha256": "5f7125f75ff25bb51c20f612f97d037edda21cf4501c1d1f63ffe61ff8309884",
+      "bytes": 9452
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-046080.json",
+      "sha256": "b820fbb8056b0d200bb9994dd3c2274a2f76027f117c9eeede632dd7e582a754",
+      "bytes": 9379
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-047104.json",
+      "sha256": "75ed4b105a28a69ebfb7168488d5c96aa49e8f2dc291fc19eda9bf93ebbcd7a1",
+      "bytes": 9428
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-048128.json",
+      "sha256": "0264a20a8985ec3d887c46fef101cbd750ddc5664a6adc5a60bb84c3cbc9f8bb",
+      "bytes": 9415
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-049152.json",
+      "sha256": "c9d575b972216cab827b770548821ffb45a4b9ed5775ecfd876b0c734e3a566f",
+      "bytes": 9383
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-050176.json",
+      "sha256": "93a86ad3a9149f1899251db1fd209a0e0f0e31fb27515fedf96fd3b290945401",
+      "bytes": 9462
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-051200.json",
+      "sha256": "da0263389a9b065a95352a316cd2ad630ad8f64bf7b366e06faf54cafe6bfeec",
+      "bytes": 9420
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-052224.json",
+      "sha256": "253e6749e4818e6dd753c6a925c8758e520c95adceca05d2e4145f0cdd252524",
+      "bytes": 9386
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-053248.json",
+      "sha256": "68170874802fe793486273f95d9190be6111fdfc66dee12b9b14225f74d5b59d",
+      "bytes": 9458
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-054272.json",
+      "sha256": "3094aa009652e1eff7f67284e30d6906feb05cc6607fa1034ec4654a3b861b81",
+      "bytes": 9413
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-055296.json",
+      "sha256": "c6fbcb573527ae9cd486bb5af98007d992c89c724e6c90014b6798581af995a7",
+      "bytes": 9390
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-056320.json",
+      "sha256": "1e18047956bb5119be93df648c01315fe759522b4742f55a5b047b8716c88ca8",
+      "bytes": 9415
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-057344.json",
+      "sha256": "6cf33cb207ce810556acd94e65c3a4e27d2c375f1be9d0d480572acc3b94b581",
+      "bytes": 9387
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-058368.json",
+      "sha256": "ac72f7bed20bd1a25bdbe5c41100a315a2ec61406877b38547283082fc5d4d01",
+      "bytes": 9468
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-059392.json",
+      "sha256": "3177947532dc9386b45501ce930b1df9f69fcea3041d9a8b0a1a0f754409f4fb",
+      "bytes": 9430
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-060416.json",
+      "sha256": "4b249c5d9de9e6488bb363a57a9aca38396fe43da230ba356510963d040ee294",
+      "bytes": 9375
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-061440.json",
+      "sha256": "b65b285526e251b033f99d172e7c5651f8ee39a1e92c4f193fbff4e782867e46",
+      "bytes": 9464
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-062464.json",
+      "sha256": "9935721b77570980feb836f57bfede6a273d0563c166102cae40ff3834b2e09c",
+      "bytes": 9414
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-063488.json",
+      "sha256": "b6bb6f6ca99b078dc48e10cd33a574407061477d2e8f0e51de49c69075976516",
+      "bytes": 9384
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-064512.json",
+      "sha256": "c44223901668a5a50f114ed448b4f4e3926ac38e3b5e44daedd5f38427cc122a",
+      "bytes": 9405
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-065536.json",
+      "sha256": "b06661e659ce507158bcad935d432bef43e4682f34ead1eb535eafd5bc9992b8",
+      "bytes": 9372
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-066560.json",
+      "sha256": "e598b912d09d76388eb29a1f036ae5c134c76820a34c0cd4ac8c10f72973ea98",
+      "bytes": 9478
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-067584.json",
+      "sha256": "2e3ebe9b8570678a2d7828e3095569e0c26c1d651fc4549935df967e1a6692db",
+      "bytes": 9429
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-068608.json",
+      "sha256": "ea8f3373cd8735d0c9ce36aeafd288df7ad57953b0717c2f351184e5013e2f1f",
+      "bytes": 9369
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-069632.json",
+      "sha256": "7021bc87e3e9f8d447cc441cbe6dcdfeed11b48e81c1728b8e69858c9e6fe5d7",
+      "bytes": 9456
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-070656.json",
+      "sha256": "dc2b0a806487043d334e8f5e9cf01adbc25b60ff156b754e05abd7c68290c224",
+      "bytes": 9418
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-071680.json",
+      "sha256": "33f273015ee04436f9445df1aa10abcf6bf8c03221e8375cda5bd455c674acbe",
+      "bytes": 9389
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-072704.json",
+      "sha256": "c713418d6c428e7f0182d3a7ee5d1eecaf4d70bcd134fd918ad493746cfb8d65",
+      "bytes": 9427
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-073728.json",
+      "sha256": "39f284bced5d0b33f23ae0c0bcdb94fcdecdf3606d5a9b02dedae4b710127b82",
+      "bytes": 9387
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-074752.json",
+      "sha256": "1e5b90f1619fac490ecc3c4c9b5c2beaa5fdb4c8c5ff9f8c294f6ac9e9a4e1aa",
+      "bytes": 9441
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-075776.json",
+      "sha256": "7307e80ffb3cb7ca6842e88eb0f92800adf9c95859fba6538469e2da4355506f",
+      "bytes": 9428
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-076800.json",
+      "sha256": "e696130e8327b5ffeea4590ab7f8ecbe2b6cab61fa0d75b3e7cc4daa6fe2030d",
+      "bytes": 9375
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-077824.json",
+      "sha256": "c43da125997efa38c692d5c69a0e2333c10200295791ac4952872406a41f4261",
+      "bytes": 9468
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-078848.json",
+      "sha256": "31463aa2b717b16ccf173bce9f7bb5fa9f228b7acd1170b28202ab2b70c16d11",
+      "bytes": 9401
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-079872.json",
+      "sha256": "8932d7d6c9e8af225e1f228f86e5fb48a75dc80bdec4f3ca8411ef231e67c267",
+      "bytes": 9364
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-080896.json",
+      "sha256": "58ea6aa2286184f7d5cff4355224aeec9b4246c1e1a2e1b0a6b435c4769c645d",
+      "bytes": 9378
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-081920.json",
+      "sha256": "e4b89e3f45d87d521af0437a4e11c3a14d1946ad6bcabe4afa699ad75d4bd572",
+      "bytes": 9365
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-082944.json",
+      "sha256": "4becda5539c782968fe7cb2db604acbf65fb79f6d3c73d0a3eac6ecce878bc10",
+      "bytes": 9398
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-083968.json",
+      "sha256": "fc6e22714af09eb98cbda8fda62005a2380b1dd4b1c310713d26f782367959a2",
+      "bytes": 9367
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-084992.json",
+      "sha256": "30da7bb958663051f9c45f5f5d85d6245af7942cee74dc493d5e0595ce20f948",
+      "bytes": 9444
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-086016.json",
+      "sha256": "7ada062ff007fa310fbad0c9f8b4431056aff333683739879e3fa9458856dd6f",
+      "bytes": 9343
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-087040.json",
+      "sha256": "a18b543099a11f9670b5ed1e69fb442247701bf6da6004f24d8f8cde6f9576e0",
+      "bytes": 9412
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-088064.json",
+      "sha256": "8645dae3c6988ef471e314fad227d23534ba576e2d512028f18c00a42c51b252",
+      "bytes": 9428
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-089088.json",
+      "sha256": "99cec3e516a4c9d3449ff7825544de4ba8b49f6246b4dfcfce51dc7cc031ca98",
+      "bytes": 9334
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-090112.json",
+      "sha256": "12573092a263f71466ae4e0313f1107818a232ac59a9320790279873069f55ba",
+      "bytes": 9455
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-091136.json",
+      "sha256": "8622d966a5766f58b04ffa4ac368195f8ab6565323850d3419857f2af61e0a00",
+      "bytes": 9331
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-092160.json",
+      "sha256": "ce1c52ee20d1564a77774646df900bc38cfba0575cee6274bb8f5657746f6e28",
+      "bytes": 9449
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-093184.json",
+      "sha256": "c28a228bf7a8bdb8242920f8db09607d3878f6fb5b8c0c190705b41917fc9b07",
+      "bytes": 9402
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-094208.json",
+      "sha256": "586ca681d6b4f02b80a9bf7dd9607ee1183fce84889330a58e66f234263e186a",
+      "bytes": 9342
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-095232.json",
+      "sha256": "4c6eeceeaedaa1cbcd197ca6784fd4f1dc8139deb35a26328e3260fd146c4354",
+      "bytes": 9449
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-096256.json",
+      "sha256": "11f1c940affbae117dda50db52c809c5035b45025ec055f50864350d8915aee7",
+      "bytes": 9320
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-097280.json",
+      "sha256": "3a804da55040a13077119cd602991976b64a6823c64087870024a477f0adcc1b",
+      "bytes": 9458
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-098304.json",
+      "sha256": "f4641cefaa964e14041bd0610ad4b0d1b5e2dd0d41f9b42b629115d502867bb0",
+      "bytes": 9401
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-099328.json",
+      "sha256": "13f721e3c2b0314bd8d34a82e8b0f788e7ddbd2eb5ba5e09fe12294bf8791b6d",
+      "bytes": 9369
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-100352.json",
+      "sha256": "ef73ee836cb6a7418b40e0e272c1d9ce698c18aa60aaacb741389b8af466b8b3",
+      "bytes": 9440
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-101376.json",
+      "sha256": "ca7c758c427f8b38336934d1338a76e877717f3268580b0c23d420d094e9e189",
+      "bytes": 9345
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-102400.json",
+      "sha256": "2b1d7359141cab220fb34b9c2cfd0cd4f11f2c8e123cd6db37259547a2c1b9a4",
+      "bytes": 9451
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-103424.json",
+      "sha256": "5e49aab890d0cd5dd46ed5bf5af75788f062aa4db3fef412ea78692ee41e95a8",
+      "bytes": 9393
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-104448.json",
+      "sha256": "788646c6a38ca02524e9917faf38be85a774d10c25b843302c188a8a81c22572",
+      "bytes": 9379
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-105472.json",
+      "sha256": "bf060bff1c0452bec022ecca8577e2dcf6ea9502b6547ca4a4bdad0cea9e353f",
+      "bytes": 9414
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-106496.json",
+      "sha256": "aaec2508ac36f5c84e10d1ce3059310da18909ec9e4da46979f811c247b2464c",
+      "bytes": 9353
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-107520.json",
+      "sha256": "9ce9c70b4e0946aba0e322a3f2eee1b1ce66b42b9ea8f67cda2fcc8a858f6ff6",
+      "bytes": 9451
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-108544.json",
+      "sha256": "a3acd055b2a356d3ce6859ee6b57f03f4384f4d6fa1f044cc2734cd117ae2d9a",
+      "bytes": 9408
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-109568.json",
+      "sha256": "eaea9ce3b46b3b825be32bd9a12db80d4a563e0527ed8ca534dbccf3881cbc18",
+      "bytes": 9363
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-110592.json",
+      "sha256": "a39da747cea7754d3aa0f7601c98bec80517a34774ba3974b788e10b21d57086",
+      "bytes": 9414
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-111616.json",
+      "sha256": "243b25b0c300b155a3c03001c9ba1e7bc8c0e0cb384e22185e626691a1f480f0",
+      "bytes": 9355
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-112640.json",
+      "sha256": "c326fc673053a10ea07fc17aa1bca586107bfeccc8feb139466d05dfb209cdaa",
+      "bytes": 9449
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-113664.json",
+      "sha256": "0f339574ad0696cbfb93020eb66808c10663702f3d33cc9d193d922f67fceac4",
+      "bytes": 9396
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-114688.json",
+      "sha256": "7be3f027b48ec4f59a6cab854c2772380bcbe84fd21f575056ea5b3579aa92d8",
+      "bytes": 9387
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-115712.json",
+      "sha256": "0301da01dd900f87a2471954effd0add34d88147dfba37cef035991ca81e8687",
+      "bytes": 9402
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-116736.json",
+      "sha256": "f795c1b9984cf4f6116793b87f4ddb873a93ca20e238df82a49c80771631e794",
+      "bytes": 9370
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-117760.json",
+      "sha256": "840335e24c6dce7c72fadc8736feb313ac2dbb448f26360a6362f9c9c8f2467c",
+      "bytes": 9469
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-118784.json",
+      "sha256": "fb5fde97b1a21f0b5a98225f74f5a66759d1a3586044958bbfb4811633c1690f",
+      "bytes": 9388
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T220853Z/downloaded/payload/long-context/tokens-119808.json",
+      "sha256": "e6df2cfc68e0776231899220834d31e5e7c5e5fbb5c39244c87a2cb18d38f7c0",
+      "bytes": 1690
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/analysis.json",
+      "sha256": "3d4e0a706bba1ed03a9c2309c05e2a38d61382a03feb182ca31980c8e11a33e0",
+      "bytes": 38982
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/app-after-refresh.json",
+      "sha256": "7bbf912f74236797d4117e0346cc18d00ab634b8ef0a3629f4caf20ea0bde377",
+      "bytes": 1143
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/container-after-refresh.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/ar-gates.json",
+      "sha256": "bb115974d26994fba8225d53c1f0c08c2faa6fdbe5a6048ef98f573f4fb402fc",
+      "bytes": 1100
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/contract.json",
+      "sha256": "36be2f7e922b6d16d9968b06766894abe9c68fb4fb77f51bd524148f61655189",
+      "bytes": 484
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/hardware.json",
+      "sha256": "3583e37e44b19c5131081d2443b6c27668b0c351a7273e1e50e0b22a567cee80",
+      "bytes": 636
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/long-attention-gates.json",
+      "sha256": "7e271cd8d71a6020c8faee743d369b670be3a0412deec96c588226d931c09d79",
+      "bytes": 718
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/precision.json",
+      "sha256": "d15b9e70c79c74a2be838809c7531628f5e539d4d6b78afd0b4e17963cdd904a",
+      "bytes": 51494
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/progress.json",
+      "sha256": "baf2383929c699af066c84888750fd61183483d56e5e78a51ef07438f6b79278",
+      "bytes": 33028
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/prompt.json",
+      "sha256": "0c8356a45e687a03fcfadf3309786d873d64f421d1097be976a1a56f1a770706",
+      "bytes": 996
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/resolved-config.json",
+      "sha256": "5a1c64e9ece2c6b11a1eee58f317f8522841b18a205266a534562e33acf66c3c",
+      "bytes": 1410
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/result.json",
+      "sha256": "c0944b4b2c22b6c7990f7bbe36bc89d6feefdd8ead16452b99442c50bf58d8ed",
+      "bytes": 808
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/rope-gate.json",
+      "sha256": "8565983643c9c22eae032e720a196182fce6d715387f00d96b20857d103f2060",
+      "bytes": 163
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/source-manifest.json",
+      "sha256": "f1e4f9bcc5ca4b42ed60708fd8558cff9928cb9842b84a66a5443ee96bcf2e7b",
+      "bytes": 22628
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-000000.json",
+      "sha256": "a0e872739184190f8010cb174c4df2acb06385923e5a126bed48a2660a6ad1e0",
+      "bytes": 9946
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-001024.json",
+      "sha256": "00e1c86919ac26b40866b1a67999a0d87aa80b002b0cfdb2c7f669d98d86fee2",
+      "bytes": 9829
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-002048.json",
+      "sha256": "0ad6a956cd641ed83976ed6aec05aeb50ff04c241df17cb23777a5c710b17b97",
+      "bytes": 9456
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-003072.json",
+      "sha256": "541b3552a1c3ebab86ea2df737ea3fa2b3013f8a1bbdb0180a3b4828e8b11760",
+      "bytes": 9573
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-004096.json",
+      "sha256": "9165fdd19c2b34cd986833656f7aba05fc60caf139337b156e4fb563c874767d",
+      "bytes": 9357
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-005120.json",
+      "sha256": "b15e089779b77a810f569149b6c606dc3e320ebc4e86801ea50ef32e773d013a",
+      "bytes": 9388
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-006144.json",
+      "sha256": "1fc1106b6101595e34ce8b671ed68ac1e32199968af0cea95d5116eff12ba950",
+      "bytes": 9696
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-007168.json",
+      "sha256": "824a11fd6b089cd91e0f03a000ea715f3e2db8d4df645ccf8460f75c7c849148",
+      "bytes": 9728
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-008192.json",
+      "sha256": "90f4f978942cc9941289ad8b59119b270c44061dbdb4a98f2c84d8d8207afea9",
+      "bytes": 9654
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-009216.json",
+      "sha256": "4bd3bac4f13b4c718e711da4a6d3dd89e148cb36388aeaaa79bdf1ce1c0ef163",
+      "bytes": 9602
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-010240.json",
+      "sha256": "cf92218fa2c8d36a2f4ce585c433303abc423764baf20c11df48bb5b50f399de",
+      "bytes": 9404
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-011264.json",
+      "sha256": "8b5642aa3ec0bfe977c21c607387cea324cf038aded46682af7910e96d48e1db",
+      "bytes": 9840
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-012288.json",
+      "sha256": "00b4aaf4f6890baac3ca0c90af2c988373476a6ce70f14243585c5e6fabc3e13",
+      "bytes": 9545
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-013312.json",
+      "sha256": "4a8c96b02839ab6f3cf07653644c19c802ae7632a3a82a38f6aac1845638e0d5",
+      "bytes": 9561
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-014336.json",
+      "sha256": "386cf55415a2289f70c132a2bfeb9013b659dbd7bb18be79d1fefe5a87e91b9f",
+      "bytes": 9464
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-015360.json",
+      "sha256": "034cef85b5bd1c71f93dfd87dd564918f56ce5bd40310a9ef8e20f40bf2cbf4f",
+      "bytes": 9400
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-016384.json",
+      "sha256": "e5ecfebc992ea3658aaebb9e9b84ebd5a1fdba1fdeb5cbf7826fba9b4ec98eda",
+      "bytes": 9610
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-017408.json",
+      "sha256": "fd0234c92ccf3eacb3076a67d958b0ab2fd67d09e2f230ebb2fa2463f839bcb8",
+      "bytes": 9580
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-018432.json",
+      "sha256": "615a073a7f75be12d2ca3b425dd85b1f4e4e4b943f3572a40b4aa78ac070cc80",
+      "bytes": 9476
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-019456.json",
+      "sha256": "1c3dc7ce7801dfe8f7b916f8b229355d186dcc6412b4e5fd5a384f8d5c3f0761",
+      "bytes": 9511
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-020480.json",
+      "sha256": "85c35c5f9fdb2f2fca3c1a94db34ffa5430a73ab248796101d1ab54b605d2bb3",
+      "bytes": 9483
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-021504.json",
+      "sha256": "c4862640f1ddd63639758f96635ec83203d64c744f73633f4444f55d394dc4be",
+      "bytes": 9505
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-022528.json",
+      "sha256": "180b2d6c3933544ec832d66a4f956bc14cdc403f2df6e5ec7010274e250e3b63",
+      "bytes": 9433
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-023552.json",
+      "sha256": "c0cd176fd51dbe07b564b526196372b95b92761e66d6256a98155a31f3f1e1e9",
+      "bytes": 9464
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-024576.json",
+      "sha256": "d4a4b15cffc3dee2c04be9118d317ba85b6f8b00c8a60da15289ffb4260131ae",
+      "bytes": 9432
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-025600.json",
+      "sha256": "6e0dc0e51cd03b6ede96ae40a04cc0a03acaa08ade9c2535a9b55ecfd35ab10a",
+      "bytes": 9430
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-026624.json",
+      "sha256": "4167faa6aadc12408f4e5143537976eac68e0276b313b85ffa7072f3de086ada",
+      "bytes": 9477
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-027648.json",
+      "sha256": "c0ec6356751babd299afd1caba99cc91953f10a72b73ff0877ac1c86dc56d290",
+      "bytes": 9356
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-028672.json",
+      "sha256": "b139d796651b7400d811ea3dd05e3a563eecdb1e9c827ea9acc4e5aba7152229",
+      "bytes": 9408
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-029696.json",
+      "sha256": "2dfa12616fc2a1a11251c8e9308daab14fca028d3befaf40609b6fbb612c3a92",
+      "bytes": 9400
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-030720.json",
+      "sha256": "8ff0771721ccb96b81403d055bc180b055c30646e8279a1771d3def60b51eaad",
+      "bytes": 9448
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-031744.json",
+      "sha256": "11bb8bc2c4d1c7e8bbaca041c5c161ed83bb49045cbfaa43bd8cdc14373973e0",
+      "bytes": 9435
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-032768.json",
+      "sha256": "43e14213d28283f0cc9b290fbd62463967286b721ec2a074ae6ef0ef0cab9298",
+      "bytes": 9342
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-033792.json",
+      "sha256": "35752b394760ef13a7dd3619d27bf96184c35b8610d2f4dfe6b7f98ffd0b7b45",
+      "bytes": 9435
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-034816.json",
+      "sha256": "10d576185dc64cdfa46b996108dc6eaf976b4b9a418db542687d5a8c36b1700a",
+      "bytes": 9400
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-035840.json",
+      "sha256": "0c2d906cdbf93ff5387dfdb3a7503aacdb26a56bd0d6436b2e42ed7a966361ba",
+      "bytes": 9372
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-036864.json",
+      "sha256": "d1e099acd97028cf2365229e8e944ed603501e0a3a995da5d1216deac56bbdb9",
+      "bytes": 9431
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-037888.json",
+      "sha256": "e741be87cc9d2abf2cd02d55b4f212356fd25cc1bdf2941b66eaea83d4162500",
+      "bytes": 9387
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-038912.json",
+      "sha256": "14f61b1592dd8afeed6245563ccf9413e76af26d99be0dde5eb2000189171525",
+      "bytes": 9427
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-039936.json",
+      "sha256": "d3ee609f3b3b6c557f837baaa8f7a262ec8e3e824a2f67a5b5bcc665297d59d7",
+      "bytes": 9425
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-040960.json",
+      "sha256": "5745cab09ad51bf7c6231d1dd56cb22fbb9f99a95b0368a21ebc859a2fb156d0",
+      "bytes": 9377
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-041984.json",
+      "sha256": "b95246bdc89ddaa39dcb5776ccb0a9393dcdf3db56902e6a29217db3135d3417",
+      "bytes": 9470
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-043008.json",
+      "sha256": "b5a368299d9651c254d15e3cc7099ac2d997879b2e54c8db4c5033be459b368e",
+      "bytes": 9411
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-044032.json",
+      "sha256": "a2a7a447a3fc0536bbc2a9a86514102baa8ae0e011bfd1e9bbfa6182a06f060e",
+      "bytes": 9394
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-045056.json",
+      "sha256": "d702d297ef5720d501ecb6b24e8944f10c6b3f82df4a5dcb1ee44bdc5b039b9d",
+      "bytes": 9452
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-046080.json",
+      "sha256": "2736897e9240d1694588a49d69911bf2c1e0e7f946c38a004f34ff48e1278cea",
+      "bytes": 9384
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-047104.json",
+      "sha256": "05cc51fc882f471ade2cbb73bb221b993a7cf179b186befeeac665f8afec2a6c",
+      "bytes": 9428
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-048128.json",
+      "sha256": "ac16f17f74efe959121a7d6de3db2fa43116b26008ed0af6044fccb5925823f6",
+      "bytes": 9416
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-049152.json",
+      "sha256": "b056a2bafc80ebca241674577a38887e448d18bf796a222700fcaf268d619e9d",
+      "bytes": 9383
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-050176.json",
+      "sha256": "bc8b803fdbbe268a58a08e86039b89e42b86b0ca870c0a343f3920d7fa197be6",
+      "bytes": 9467
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-051200.json",
+      "sha256": "0ef04adb7bcc672c4d7c470fbfb1efdbf36f0f43245e4588fc03d8ca0602f293",
+      "bytes": 9421
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-052224.json",
+      "sha256": "3693a6c1669ee5c544d2183285a3c0b99ffaca5378783497f4897aadd0f50977",
+      "bytes": 9382
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-053248.json",
+      "sha256": "52e3935535355f44b0781024e389aaa725d17f4e6a4f956f15c3c3264a4cacd8",
+      "bytes": 9453
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-054272.json",
+      "sha256": "3e5f5a742b614741cc34e246a0c30e1da85c3ef683e4aefd647c94a0eb105110",
+      "bytes": 9413
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-055296.json",
+      "sha256": "07189c55913bdbe2c741f9fb491ab2cbaddc409f511d1f54c439286f2e2a7001",
+      "bytes": 9395
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-056320.json",
+      "sha256": "a7e76c2c8d333aa0ad5f489fb5038b58ed479a6de2508dad48cae0e21f79bdfd",
+      "bytes": 9414
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-057344.json",
+      "sha256": "3f6b1a97c1c5acf953c76bb4f38a0871af67b07958cc16ec60f43111b2e1f6ce",
+      "bytes": 9386
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-058368.json",
+      "sha256": "b85899ae56e9520fa64626589edd76b3e7ccd3c3f88e6be7155268deef96368e",
+      "bytes": 9463
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-059392.json",
+      "sha256": "db7b57be5aa8a99d18b874fcd3565904994e69eeca83fd959a2b0ae978bd4f8a",
+      "bytes": 9430
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-060416.json",
+      "sha256": "38d0f77c64e4204f93eb94dc6398656c3dd61f166cf1a4b09385f917734c127d",
+      "bytes": 9374
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-061440.json",
+      "sha256": "566c952e8416d5cae062572bec853321afc783743c7c27379787b6ddf724cf23",
+      "bytes": 9464
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-062464.json",
+      "sha256": "aafeaaa26158560cd3ad079e17e8283bdbbe14586558de6827124ee8bdde9bee",
+      "bytes": 9414
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-063488.json",
+      "sha256": "dc940e119ba0a7a8665f69fc6adeb3f899d3fa4d918c5811c74fa982030e151a",
+      "bytes": 9383
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-064512.json",
+      "sha256": "eb8d2bff11beee7bbc6ed8bc5092a24c11f48155e439bb42363870cf76338fc3",
+      "bytes": 9405
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-065536.json",
+      "sha256": "92405af3cd4ae9f1cfea7a78e18fe32cb3df4174e2f70dc5bd8950ca388e4511",
+      "bytes": 9378
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-066560.json",
+      "sha256": "012aa83ad5992d55ca2da10ffe465c4cacead80e9a495753e7ae0e76bfa65d67",
+      "bytes": 9473
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-067584.json",
+      "sha256": "76a6a5d34d3d015e8ba528c0e24aecf1f2f0950a4be028f53ad601322060cec4",
+      "bytes": 9425
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-068608.json",
+      "sha256": "cb6fae03153b2f12aead2be5041f0b78fa10b7fe5322152f16640e9f93157dd2",
+      "bytes": 9369
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-069632.json",
+      "sha256": "867a6a6ca985913d0eea087c341bc38280506bca91fa6ba5787975fd0a829ea0",
+      "bytes": 9456
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-070656.json",
+      "sha256": "337367499b7e921245efe881189020d0fa196eada5a636682b78ea9e02340edd",
+      "bytes": 9418
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-071680.json",
+      "sha256": "e40941cae5aefd4fc167f991eb01197fb7dbd568b340886ea02777fce9855171",
+      "bytes": 9394
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-072704.json",
+      "sha256": "91d717c9fe50a4d942c69ca60d7df46610d10bf690a02cdf6c0305f1c202f5e7",
+      "bytes": 9427
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-073728.json",
+      "sha256": "47dbd938abdd6b6b17f48a4e5c4a6697b750511c30316e2435c64431fee2bee7",
+      "bytes": 9383
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-074752.json",
+      "sha256": "b2cd0bad035b3cf7d9910928f3936858cd514aebe31976641ce8c45602642a64",
+      "bytes": 9436
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-075776.json",
+      "sha256": "89549a94626da98f855794d19e76aa81eda574f912a11774293156a063879381",
+      "bytes": 9427
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-076800.json",
+      "sha256": "07b02cf6199b027378811a14470c3f410896818d876f9b60f3441f1f361b67eb",
+      "bytes": 9375
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-077824.json",
+      "sha256": "c58c0bb85d9970827be95bef08cdc129254b65065283c5427037dd2660ec9292",
+      "bytes": 9468
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-078848.json",
+      "sha256": "a908416ee20fec96b6eb0e92d912cb9c38cd8e9a10e061c930fe82ad3f3ba1a3",
+      "bytes": 9396
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-079872.json",
+      "sha256": "d7df73b55c22766e213422c31a022255776c4b464e84dba88710b4779403d099",
+      "bytes": 9369
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-080896.json",
+      "sha256": "eccac9482c1f03c12a747a731f6f69375684fdc9337c7f5305617e958ddbc607",
+      "bytes": 9375
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-081920.json",
+      "sha256": "2edcbcb45c1e3b3a88b34590db9b4a6dbeb69d5477d3a6efa61e054db0582b6f",
+      "bytes": 9360
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-082944.json",
+      "sha256": "a4901226865378eb27b0abf30358f6c3b096024b24e8c303394af6b422cce9e7",
+      "bytes": 9403
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-083968.json",
+      "sha256": "7392989ec9bc46481bffb4ac55bde4987a715c9900f9d10965c5297ef9b80d06",
+      "bytes": 9372
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-084992.json",
+      "sha256": "ff44011b5ecba65051d3db2d4fe612120b7db9176be0ae8afa65f773562db0d6",
+      "bytes": 9440
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-086016.json",
+      "sha256": "a605224ae9770b7e7385a52c2d1d50c70f8123253588d110cd69cb3782b75f9b",
+      "bytes": 9341
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-087040.json",
+      "sha256": "b723b3c73b9b25eb59e00a7b7693989a4f0f406a741d283bd6fed20e99762576",
+      "bytes": 9408
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-088064.json",
+      "sha256": "170e511473824f261dea4ab4310c982eaac99be0b81f9e07cea3a7bcda3b11ed",
+      "bytes": 9433
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-089088.json",
+      "sha256": "4a3390c3db3849514bf579f2369b2895a582a429e5dc8e23e607d23ad31a8029",
+      "bytes": 9339
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-090112.json",
+      "sha256": "53c89ca948de01b67d705aa8595bf14bea1e29401491755772be1e34e75c156f",
+      "bytes": 9449
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-091136.json",
+      "sha256": "d9efa867dcbbfd700e02c6e89f208c907c3142c2aca354f4fe014c74ba17091f",
+      "bytes": 9331
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-092160.json",
+      "sha256": "a634c98b9da293b6c04f8202361bc1483688d2ebe3e0210ef8ce69e816091350",
+      "bytes": 9444
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-093184.json",
+      "sha256": "766df9e065d0bc5adfcfdd59ac20ca6049baa214937c930940094f8a822bb1ab",
+      "bytes": 9402
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-094208.json",
+      "sha256": "d3b0436f632dec069a207d75c15b20a92d96be316a94da9cd01257e8a25ef02b",
+      "bytes": 9345
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-095232.json",
+      "sha256": "b0792e6b3da55ae71546ebed686056f9307bd1aee1a26926f016e6cb37ea4b46",
+      "bytes": 9445
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-096256.json",
+      "sha256": "72c0c4b060498e47c4b6ff52836cece435ca5f571ea339b55710bede0b938439",
+      "bytes": 9315
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-097280.json",
+      "sha256": "450c062c641aac951ed164b1bfaf0109afbc11d44810348c3f3e77687f73c753",
+      "bytes": 9465
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-098304.json",
+      "sha256": "12c2a2f6ba2a8dd2b4c28f550594b0cbec1fde82ed3f460c44bddad5974ef973",
+      "bytes": 9401
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-099328.json",
+      "sha256": "78f76647838bc675356ffbe89bdd81f89ace6fe2c4f4d16ee679148af5c4433f",
+      "bytes": 9373
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-100352.json",
+      "sha256": "86ac66a42edce28d93a62071cd11d9a96dd5038d125a7406c2494540658ab377",
+      "bytes": 9447
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-101376.json",
+      "sha256": "e50b8c60cef7337ddd962d09a145596ab5b2890c9dee8f6784af84e1d5be2241",
+      "bytes": 9340
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-102400.json",
+      "sha256": "20361f1217edf443f9734170ad5988913d80bab9279287882178ea43daae944e",
+      "bytes": 9452
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-103424.json",
+      "sha256": "87df0f7ee027fd884e4e54c9b8664b586d704d0ce6cfa1bf6d511af377861917",
+      "bytes": 9388
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-104448.json",
+      "sha256": "a2690f2b7ef9f7096e9f424d5bca6ea278ab99192b29ba1acee9cf86e16c981f",
+      "bytes": 9384
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-105472.json",
+      "sha256": "788fded2ee788e8ae3cd6f6304c8693ddfafa4ddbeaeafc4994c5c61a4ed9671",
+      "bytes": 9415
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-106496.json",
+      "sha256": "6ea32f9e08c048252903b80623b8822d1593660b9cde61876d3e614f842bbd08",
+      "bytes": 9348
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-107520.json",
+      "sha256": "9459dd0c7bef254bab1536b6d9aaa51e177f2298c0b43815472d85a2a7e9017e",
+      "bytes": 9451
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-108544.json",
+      "sha256": "c650fe3e38e3356de6dc5ed745b9192b90199b38109ded19d7b99f4503d69490",
+      "bytes": 9404
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-109568.json",
+      "sha256": "7f0fa8dae957b98555ab8dc86c9561dd63f1a60152c2a71cafb27fa5f9554d57",
+      "bytes": 9359
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-110592.json",
+      "sha256": "3399df8973cc2929cfe5345515e13789bc50c3ed5ca033cd108910cedeffd478",
+      "bytes": 9409
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-111616.json",
+      "sha256": "50a8e71815b0b6aef644c322b1d2d53fa4c59b87dcee724056167ad69fa8bf76",
+      "bytes": 9351
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-112640.json",
+      "sha256": "217fb6bb60343e6514a468760ba48061aea18e74dbcc21f3aeee564f977f9560",
+      "bytes": 9446
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-113664.json",
+      "sha256": "af6a9020e30f2847d4b1297d5c26af18673de7b4a0d712e5d8804713ab60fd57",
+      "bytes": 9395
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-114688.json",
+      "sha256": "b6896f48cf27ce050b16f8585448e47488c9f663d61795c17be053ee65bd65a1",
+      "bytes": 9387
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-115712.json",
+      "sha256": "0805f23485373fdcfb25ca4d29408fee2112bffc895873dea87339502b012acd",
+      "bytes": 9402
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-116736.json",
+      "sha256": "39102f9034634aa09545a1d09975ad9f999c159f1ca5e9d2fb77d76713dea61d",
+      "bytes": 9370
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-117760.json",
+      "sha256": "39a58c12e23824e2f4789ae9be75c23cf675fdd65b7e669dab8585e6c14e7a7f",
+      "bytes": 9466
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-118784.json",
+      "sha256": "f976b66e438dff969ec0dcd47412ad07981dfda9e6ebdc6f24d4139c75fc7423",
+      "bytes": 9389
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-119808.json",
+      "sha256": "6cd581e0d9a4e49f675868066d43a6cb5172913eb112002ac3df61312a3b75af",
+      "bytes": 9433
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-120832.json",
+      "sha256": "e1617669473235b4b8b1603abfbaf7bc85ec06d69a8c194cb8c0a5afddd44d78",
+      "bytes": 9452
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-121856.json",
+      "sha256": "3b7e77a80c628d3c692ca6c99268f08a04e54c67a877490387f870a6d1ce0c61",
+      "bytes": 9364
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-122880.json",
+      "sha256": "9f27af7b0bb4f5e981859acafbcb2993574baede50ed5ce1677d0677c6cb085d",
+      "bytes": 9481
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-123904.json",
+      "sha256": "a9ace211ace22fc4ce98026fe25bc19ca3fc6122fd00e3635ccc3ea57395a92f",
+      "bytes": 9361
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-124928.json",
+      "sha256": "2248faa189badf04533016a09c03108dffa7c9dba281c699fe22d7733093d4c2",
+      "bytes": 9562
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-125952.json",
+      "sha256": "42e345894b083241903e9112ca8159bf54153d03ed05162beab758783d7bc571",
+      "bytes": 9509
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/downloaded/payload/long-context/tokens-126976.json",
+      "sha256": "0d1a7a2db2fdec53c2c41bdf03494b49f58bec8b5276116c8bc7061afea6445e",
+      "bytes": 9349
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-long-context-20261028T222504Z/full-common-prefix.json",
+      "sha256": "14056fc723f14b4e14acff529d96794527c978d16b1c2a964f2e13374d2003b5",
+      "bytes": 253
+    },
+    {
+      "path": "kernel_lab/history/registry/p017-long-context-index.json",
+      "sha256": "8b5841ccc8801526775d275fbf86f5c2ea94dfcf4e18dbc81c9889008f8ca34c",
+      "bytes": 630
+    },
+    {
+      "path": "kernel_lab/history/registry/p018-candidate-index.json",
+      "sha256": "ecaf103eb3b303e03f0172512b81658188254c555383c2b6370811b397838289",
+      "bytes": 778
+    },
+    {
+      "path": "kernel_lab/history/registry/p018-run-index.json",
+      "sha256": "0290c425ea196412d60df42e0f15675225a342f6daafac3b90ddbcaed2fb0bfd",
+      "bytes": 5874
+    },
+    {
+      "path": "kernel_lab/reports/P017_LONG_CONTEXT_STRESS.md",
+      "sha256": "e989a52a0915c12b147eece1420c71d8b5bfda56d0b8760087591294072bb25d",
+      "bytes": 8180
+    },
+    {
+      "path": "kernel_lab/reports/P018_ATTENTION_MERGE.md",
+      "sha256": "91b49de2e0a9906634d21ce7a7c16fdf6defa74534cb972b07bbd1155355595f",
+      "bytes": 5460
+    },
+    {
+      "path": "kernel_lab/reports/figures/p017-throughput.csv",
+      "sha256": "24faae32edd949852e8f194ee532dbf059a46945bb48b54a6806dbca33097968",
+      "bytes": 33603
+    }
+  ]
+}

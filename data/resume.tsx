@@ -1,4 +1,5 @@
 import { Icons } from "@/components/icons";
+import { JENS_SON_POST } from "@/data/blogs";
 import { NAV_ITEMS, SOCIAL_LINKS } from "@/data/navigation";
 
 export const DATA = {
@@ -11,7 +12,7 @@ export const DATA = {
     "ML systems and developer tools by Ishaan Goyal: on-device audio inference, compiler research, GPU kernels, and coding-agent workflows. Computer science at UIUC.",
   summary:
     "I build ML systems and developer tools. I've worked on audio models that run on iPhones, compilers for neural-network verification, and coding agents whose work developers can inspect and control.",
-  avatarUrl: "/pfp.webp",
+  avatarUrl: "/profile-x.webp",
 
   skillGroups: [
     {
@@ -159,6 +160,37 @@ export const DATA = {
   ],
 
   projects: [
+    {
+      title: "Jen's Son",
+      dates: "Nov 2026",
+      active: true,
+      featured: true,
+      featuredRank: 0,
+      category: "AI/ML",
+      filterGroup: "AI and ML",
+      summary:
+        "I designed a batch-1 inference chip for Qwen3.5-9B with custom matrix, vector, and Gated DeltaNet units.",
+      impact:
+        "A timing simulator calibrated with RTL measurements estimates 90.3 decode tokens/s at 32K context, assuming a 1 GHz clock.",
+      description:
+        "I designed Jen’s Son for running Qwen3.5-9B one request at a time. A four-slot VLIW core dispatches commands to custom matrix, vector, and Gated DeltaNet units, with a bit-exact reference model for checking the RTL. The timing simulator, calibrated with RTL measurements, estimates 90.3 decode tokens/s at 32K context assuming a 1 GHz clock.",
+      technologies: ["SystemVerilog", "Verilator", "Python", "VLIW", "GDDR7"],
+      links: [
+        {
+          type: "Blog",
+          href: `/blogs/${JENS_SON_POST.slug}`,
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/GoyalIshaan/jens-son",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "",
+      imageAlt: "",
+      video: "",
+    },
     {
       title: "JAX Transformer + MoE Kernel Optimization",
       dates: "Jun 2026",

@@ -30,7 +30,7 @@
 
 .heading a {
   text-decoration: underline;
-  text-decoration-color: #5b5b5b;
+  text-decoration-color: var(--light-rule, #5b5b5b);
 }
 
 .heading a:hover { text-decoration-color: currentColor; }
@@ -39,7 +39,7 @@
   margin-top: 9px;
   max-width: 510px;
   font-size: 14px;
-  color: #aeaeae;
+  color: var(--light-copy, #aeaeae);
   line-height: 1.75;
 }
 

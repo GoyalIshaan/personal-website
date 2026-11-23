@@ -1,3 +1,7 @@
+import nextConstants from 'next/constants.js'
+
+const { PHASE_DEVELOPMENT_SERVER } = nextConstants
+
 let userConfig = undefined
 try {
   userConfig = await import('./v0-user-next.config')
@@ -40,4 +44,9 @@ function mergeConfig(nextConfig, userConfig) {
   }
 }
 
-export default nextConfig
+export default function config(phase) {
+  // Keep production builds from overwriting files used by a running dev server.
+  return phase === PHASE_DEVELOPMENT_SERVER
+    ? { ...nextConfig, distDir: '.next-dev' }
+    : nextConfig
+}

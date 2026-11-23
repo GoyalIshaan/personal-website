@@ -1,0 +1,451 @@
+{
+  "commit": "6d887df71c2b3c68e90c99f69f2688dc12de2768",
+  "cutoff": "2026-10-28; through P016 and budget authorization only",
+  "files": [
+    {
+      "path": "analysis/REPORT.md",
+      "sha256": "0ccfa31eededbf498fa081ad574d42bc0848da643dd7fc04c84152e8f5c7036b",
+      "bytes": 10436
+    },
+    {
+      "path": "analysis/primary-summary.json",
+      "sha256": "85317d353e64b242bad12339f355657dbc32fd33632b017cb68a7cdf8e4e36f8",
+      "bytes": 65269
+    },
+    {
+      "path": "history/PROJECT_HISTORY.md",
+      "sha256": "e71f06cfbaae22333a73e9932cb747080233e9afec608cc74b3965b24b1288e7",
+      "bytes": 16239
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-trained-20261028T212626Z/downloaded/payload/trained-fp8-bf16/completion.json",
+      "sha256": "769851f23bda63ea83b65840bd215ec435bf6a76056c125f02dbc4a38d5ff82e",
+      "bytes": 416
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-trained-20261028T212626Z/downloaded/payload/trained-fp8-bf16/gates.json",
+      "sha256": "3579100718b80ccc4e5fec6287f70b9f9380d3caeeaec1d8bccab5d70bd20d3e",
+      "bytes": 17105
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-trained-20261028T212626Z/downloaded/payload/trained-fp8-bf16/inputs.json",
+      "sha256": "8218d5618555f71fcc51ae0f26a79194446debc669446f5cc422b58461f414e4",
+      "bytes": 8064
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-trained-20261028T212626Z/downloaded/payload/trained-fp8-bf16/metadata.json",
+      "sha256": "259aad431a7ceeb676f5a17baa48f619dbfb6f628900d4c586f58e4eabd2d2c4",
+      "bytes": 25129
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-trained-20261028T212626Z/downloaded/payload/trained-fp8-bf16/rows.jsonl",
+      "sha256": "93b56594d41e048bf0d45fcbbe208c7d6645ced6616718d4a3cac6dde31ffa8e",
+      "bytes": 149845
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-trained-20261028T212626Z/downloaded/payload/trained-fp8-bf16/separate-bf16-comparison.json",
+      "sha256": "49a8bed45bdd006ca58e47d0de6c8525953b111ccd8661a789b3dd32e135e18a",
+      "bytes": 2116
+    },
+    {
+      "path": "kernel_lab/evidence/modal-b300-trained-20261028T212626Z/paired-full-model-analysis.json",
+      "sha256": "5768a41dd6f549012e6c145d146ecbe0b68d93446da601652ce53720c292f7fc",
+      "bytes": 5262
+    },
+    {
+      "path": "kernel_lab/history/events.jsonl",
+      "sha256": "4f6ccc338de7ea22d4c40039fd2a2cb2c7cac512e672217f05013ec62558f3c9",
+      "bytes": 117240
+    },
+    {
+      "path": "kernel_lab/history/research.jsonl",
+      "sha256": "f512566b9306daf8097a2e3348c1cf2ee1e43a7d82f2c7cc08806bca468f732c",
+      "bytes": 39502
+    },
+    {
+      "path": "kernel_lab/reports/B300_PROVIDER_AND_TRAINED_RESULTS.md",
+      "sha256": "0236d811c5b247bf04956d411400bed8035c6577dbabe96dfd6ff37a49fa3847",
+      "bytes": 5790
+    },
+    {
+      "path": "kernel_lab/reports/BATCH_C.md",
+      "sha256": "c8be456c92fa1629ff8f80613a7b7cd380dd8e4ece45fdfae5b5bd1779386da9",
+      "bytes": 3546
+    },
+    {
+      "path": "kernel_lab/reports/BATCH_CONTEXT_TP2_J_PREPARATION.md",
+      "sha256": "20219e94a3a79a43312d6efdacd1769a0544a18059ac469c7e7fb3caf93f171f",
+      "bytes": 13499
+    },
+    {
+      "path": "kernel_lab/reports/BATCH_D.md",
+      "sha256": "74d823120281129e7c9351d9841cc0628c733ad33ae44be001ba300a44cde8f0",
+      "bytes": 2211
+    },
+    {
+      "path": "kernel_lab/reports/BATCH_E.md",
+      "sha256": "14ec2c7497567211cf07eb1419ae03a37e0523ae0bcb617e9535ab619bccf8bd",
+      "bytes": 2894
+    },
+    {
+      "path": "kernel_lab/reports/BATCH_F.md",
+      "sha256": "ae1789d1e1b7cae387f5e2264400fdad83c375522ffc6bd1bbcaa3e2f4ffe377",
+      "bytes": 3173
+    },
+    {
+      "path": "kernel_lab/reports/BATCH_G.md",
+      "sha256": "98734e0075e729302affa5fb1cf1c4240822ca8ac130c0b8292ccb15bed39e8c",
+      "bytes": 3295
+    },
+    {
+      "path": "kernel_lab/reports/BATCH_H.md",
+      "sha256": "c2f84b633e706ab91811c6ea8080c1c2a4e521784ab9523c68abeea03d0d714a",
+      "bytes": 3064
+    },
+    {
+      "path": "kernel_lab/reports/BEAM_QUICKSTART_SETUP.md",
+      "sha256": "c72a49ca59d83f511409ba01400e491851fb27434b65a2a93b893a99a6f9a517",
+      "bytes": 2060
+    },
+    {
+      "path": "kernel_lab/reports/DESIGN.md",
+      "sha256": "b2e6ec1f43a3bb97c7b422bb022a0647301a6df10e23656e12e495d8a975c4ff",
+      "bytes": 6387
+    },
+    {
+      "path": "kernel_lab/reports/DIRECT_E_PLAN.md",
+      "sha256": "6b3a85a6fb68af4e968aee8286dc03372349d066fb594e0ccd03351821080333",
+      "bytes": 4822
+    },
+    {
+      "path": "kernel_lab/reports/DIRECT_E_RESULTS.md",
+      "sha256": "3abb59c5fb8243abd30e00b4c134e8ac91adc11bf3d0d265378a2ed45bf1aaa9",
+      "bytes": 4647
+    },
+    {
+      "path": "kernel_lab/reports/EXACT_H_PLAN.md",
+      "sha256": "832d8ab7fc39026276b5d0860ef6084130951f2aa45753744cc8f23c813d3494",
+      "bytes": 2002
+    },
+    {
+      "path": "kernel_lab/reports/EXACT_H_RESULTS.md",
+      "sha256": "3eca2e5a5b8ba86682beeca63902c1c9d9f066df0282d3ae5bc228f5e9b93397",
+      "bytes": 6071
+    },
+    {
+      "path": "kernel_lab/reports/EXPERIMENT_COMPARISON.md",
+      "sha256": "d06552e03ff8a26208b3654f3ec7b6db4f173eb7e498770a7562797a3424aa30",
+      "bytes": 43029
+    },
+    {
+      "path": "kernel_lab/reports/FUSION_D_PLAN.md",
+      "sha256": "f19bb1296b559be6d4b6c712e35f1cf953e543b8d0349696c1d79a3037031d2d",
+      "bytes": 7190
+    },
+    {
+      "path": "kernel_lab/reports/FUSION_D_RESULTS.md",
+      "sha256": "b53d3db84c8d511fb849d2cc52c7bd80e1e356a65e178af72c08b769732c349a",
+      "bytes": 8566
+    },
+    {
+      "path": "kernel_lab/reports/GPU_RUN_PLAN.md",
+      "sha256": "9bb7e124d4a2f96972e83e06e02dbeae52bce193506c265885a9e2f7b585851e",
+      "bytes": 8247
+    },
+    {
+      "path": "kernel_lab/reports/INFERENCE_DEPENDENCIES.md",
+      "sha256": "e6e0b46e69c6064fdaf10363257651b165a879bdb07ef5be391f9b1ed864c205",
+      "bytes": 3737
+    },
+    {
+      "path": "kernel_lab/reports/J_CPU_STAGING_RECEIPT.md",
+      "sha256": "3142e8acd711ac4796d41e348cb68194d3ab0c8a17227be1eb36e43aec000a86",
+      "bytes": 2211
+    },
+    {
+      "path": "kernel_lab/reports/K_FUNDED_RUN_CONTROL_CHECKPOINT.md",
+      "sha256": "d68e0b147883f3dfdc08ae715faf7c1310f585d9b078305a8ebd385b7042bc6e",
+      "bytes": 4133
+    },
+    {
+      "path": "kernel_lab/reports/K_PACKAGE_RECEIPT.md",
+      "sha256": "19a66397231dd8e4e3bbf87b0659b2a19f187bff526e04f28538ae6b76e87c2e",
+      "bytes": 1700
+    },
+    {
+      "path": "kernel_lab/reports/L_LIFECYCLE_AND_MATCHED_CONTROLS.md",
+      "sha256": "135c802405328360a731f1fb78fc2d4990278a66e3f885b12be8359cde07c329",
+      "bytes": 6863
+    },
+    {
+      "path": "kernel_lab/reports/L_PACKAGE_RECEIPT.md",
+      "sha256": "e748018081d0b13d86268ef4536cdc048434ff4bddbafef583c12129d479fa2b",
+      "bytes": 1933
+    },
+    {
+      "path": "kernel_lab/reports/MODAL_QUALIFICATION_P005.md",
+      "sha256": "5dca0a15cf6bb57f9b471a2dc5d70b7864c6a50eccfe75297a41e2f6dde29771",
+      "bytes": 2786
+    },
+    {
+      "path": "kernel_lab/reports/MODAL_SETUP_BATCH_P002_P004.md",
+      "sha256": "1af335d1691e1b19341998bd1930e9c66e4d48398dff73f05ffcb1e73b2381ba",
+      "bytes": 3188
+    },
+    {
+      "path": "kernel_lab/reports/M_IMPLEMENTATION_AND_GPU_PLAN.md",
+      "sha256": "a845f00c2d348969a3ac3828e22a94c09d18eab4b45977b505c4d23062b8cdc1",
+      "bytes": 8983
+    },
+    {
+      "path": "kernel_lab/reports/M_PACKAGE_RECEIPT.md",
+      "sha256": "58e36ee3d7f421b407f3c9e1d48a3ada33b0d7f3e5a148b36631af3d94f7f3a9",
+      "bytes": 1632
+    },
+    {
+      "path": "kernel_lab/reports/M_PARALLEL_SCOUTS_AND_PRECISION_PLAN.md",
+      "sha256": "62d4cdebedcceec51de0f80f76d971545c9a2aea651eb4bcba2a16d31cf95b40",
+      "bytes": 3640
+    },
+    {
+      "path": "kernel_lab/reports/N2_FUSED_NORMALIZATION_PLAN.md",
+      "sha256": "27ba3dcb8ccdd7a47e77d01584a938374c01b1f5fe35b2b85037e669d385586d",
+      "bytes": 2698
+    },
+    {
+      "path": "kernel_lab/reports/N2_IMPLEMENTATION.md",
+      "sha256": "677619a4d912bef5b50ef5021dbe7bfa8c62335cb9aea3c684b851d90597c6c4",
+      "bytes": 3758
+    },
+    {
+      "path": "kernel_lab/reports/N3_OFFLINE_COMPILE_FIXES.md",
+      "sha256": "1aec3c306e41fa45ca7b1824c53e85328c17e96d90262fee0a75fbe4eed1e3c2",
+      "bytes": 3734
+    },
+    {
+      "path": "kernel_lab/reports/N4_GPU_RESULTS.md",
+      "sha256": "a84eb8b93241cf55e1efaab5ab109298ab5890d9b6171005863be0c6f9b4e6d8",
+      "bytes": 4081
+    },
+    {
+      "path": "kernel_lab/reports/N4_PREPARATION.md",
+      "sha256": "85bcaa0b5c3a6f32d4aed8949704caeef14b2a5c37183f4c03163cb3e5874d1f",
+      "bytes": 2089
+    },
+    {
+      "path": "kernel_lab/reports/N4_REAL_SHAPE_STATIC_SWEEP_PLAN.md",
+      "sha256": "a93c3098789ec170caac5684787cfbef44c1637f379711cc27b42dd583b6e8ec",
+      "bytes": 1530
+    },
+    {
+      "path": "kernel_lab/reports/N5_TRAINED_EAGLE_BENCHMARK_PLAN.md",
+      "sha256": "533929148d6b00c14c2df8d14511e82221520941a4ab51a552360c88154318f2",
+      "bytes": 3388
+    },
+    {
+      "path": "kernel_lab/reports/N6_IMPLEMENTATION.md",
+      "sha256": "4833a4cefe27f6fbfcc6de53519c44623fb68cfc40d1eb657728471299105771",
+      "bytes": 2998
+    },
+    {
+      "path": "kernel_lab/reports/N6_PACKAGE_RECEIPT.md",
+      "sha256": "585a33b2d7faf89fd6510c033dfe28ab3d5d3647f6501c359e5a6b7e800d49f2",
+      "bytes": 2395
+    },
+    {
+      "path": "kernel_lab/reports/N6_PROJECTION_PIPELINE_PLAN.md",
+      "sha256": "97d29c23983e22b32d0b0b222f00fa9c263281f42018fbcafbb3f68e7e2074a8",
+      "bytes": 2308
+    },
+    {
+      "path": "kernel_lab/reports/NATIONAL_COMPUTE_ACCESS_OPTIONS.md",
+      "sha256": "b609b4a42e04968145583b56642764db5af9733d862db3d6fca1e250d20b8c2b",
+      "bytes": 2345
+    },
+    {
+      "path": "kernel_lab/reports/NEXT_PERFORMANCE_PLAN.md",
+      "sha256": "17c535dfa0c44ea3179ed4960b8c524350df2e6b4050cd0079f7eab83940894f",
+      "bytes": 4518
+    },
+    {
+      "path": "kernel_lab/reports/NSIGHT_ATTEMPT_A.md",
+      "sha256": "ddef2740c5e560ebe4b8973e8a20df9e9153152bd1276e3a7f7f53c566cda83b",
+      "bytes": 3763
+    },
+    {
+      "path": "kernel_lab/reports/NSIGHT_BATCH_B.md",
+      "sha256": "9f58e588b9c9ebd0917c581f91fb4714d22c11c3c1c90729f88dd620f8477888",
+      "bytes": 4507
+    },
+    {
+      "path": "kernel_lab/reports/NSIGHT_PLAN.md",
+      "sha256": "390378789e90263594732a98c11e9c90aded2fb7acf2322148b32831f25e9b63",
+      "bytes": 5982
+    },
+    {
+      "path": "kernel_lab/reports/NUMERICS.md",
+      "sha256": "f2af4e74eb493b346f2d90e923dc36a5506bf5f52c6c902882f5aa20811dd2d5",
+      "bytes": 7244
+    },
+    {
+      "path": "kernel_lab/reports/N_GPU_ATTEMPT_1.md",
+      "sha256": "1efa97a53cefc09a42d0978f22e9e9382d9fbe2b5be3646d54d94a83030ae01f",
+      "bytes": 2144
+    },
+    {
+      "path": "kernel_lab/reports/N_NATIVE_PRECISION_AND_EAGLE_IMPLEMENTATION.md",
+      "sha256": "6e3dc2bb742d2ee97fc08cb8f5873bc607c1ee2eadca1c8ec925d8b78a7894e2",
+      "bytes": 12407
+    },
+    {
+      "path": "kernel_lab/reports/N_NATIVE_PRECISION_AND_EAGLE_PLAN.md",
+      "sha256": "8fecc39f23dde8b16af2af8dea99d83c43763c0cfccc508a66553f272f662f43",
+      "bytes": 2460
+    },
+    {
+      "path": "kernel_lab/reports/N_OFFLINE_COMPILE_PLAN.md",
+      "sha256": "2f12159972bd5a06b5d0b1d0aba2a56868afc4065d3c69385b32ca5c20060b73",
+      "bytes": 1422
+    },
+    {
+      "path": "kernel_lab/reports/N_PACKAGE_RECEIPT.md",
+      "sha256": "f97b7029c6d7a00ec51712a888b160bee87858edd38112f508e4f4b5b7bb38af",
+      "bytes": 1826
+    },
+    {
+      "path": "kernel_lab/reports/P011_TRAINED_BASELINE.md",
+      "sha256": "11ca29f09f0974b5c5aa5f8b077eb1c97dfcc2bdb6b0748ec69964f91b2441d9",
+      "bytes": 3086
+    },
+    {
+      "path": "kernel_lab/reports/P012_FIXED_LENGTH_QUEUE.md",
+      "sha256": "a733b82728d0dadca8c3e4c95846c6ddc7b86d9c9621bc2a2a8801806e34d922",
+      "bytes": 1466
+    },
+    {
+      "path": "kernel_lab/reports/P013_PAIRED_OPTIMIZATION_RESULTS.md",
+      "sha256": "b38c55d064aab80dac54a9dfcdcb6641ad7b1f55a2eaf810370f077e71a2c237",
+      "bytes": 2096
+    },
+    {
+      "path": "kernel_lab/reports/P015_PIPELINE_AND_DEPTH_RESULTS.md",
+      "sha256": "6b04325144c474cbf21d8987c1a59bdd3f63b41893352b434353483b8937bfb5",
+      "bytes": 2111
+    },
+    {
+      "path": "kernel_lab/reports/P016_FULL_MODEL_RESULTS.md",
+      "sha256": "dbfa91b159a1ae53d99ebe736bf5d53dc011b3058ebed1bb81cf39728594aeb9",
+      "bytes": 5757
+    },
+    {
+      "path": "kernel_lab/reports/PACKED_ADAPTIVE_NATIVE_I_PLAN.md",
+      "sha256": "be3b02f93185f72bbd3c0345f24cc7e9a98918c4891db14eb5ef6125cc3e2059",
+      "bytes": 4017
+    },
+    {
+      "path": "kernel_lab/reports/PACKED_ADAPTIVE_NATIVE_I_PREPARATION.md",
+      "sha256": "21c06a8d4adb8465a2d143aa1cfd22a4f3df0b7936d1cc19ad2951df0b2789de",
+      "bytes": 10928
+    },
+    {
+      "path": "kernel_lab/reports/PACKED_ADAPTIVE_NATIVE_I_RESULTS.md",
+      "sha256": "a20d588dc3409eb799a4742826600b93db1c4ecca7e5b99b3b57e9b00b65c279",
+      "bytes": 9605
+    },
+    {
+      "path": "kernel_lab/reports/PROVIDER_MIGRATION_IMPLEMENTATION.md",
+      "sha256": "306b3afb59b8e21201b3b1cd70395401c49e0b2aa88584a8660f14eb5dcbea8d",
+      "bytes": 5565
+    },
+    {
+      "path": "kernel_lab/reports/READING_LOG.md",
+      "sha256": "d221ed6e798156160c09dbfa25c9b4d6084cda01ab4fa2615c56fe855d223383",
+      "bytes": 32158
+    },
+    {
+      "path": "kernel_lab/reports/RESEARCH_BATCH_C.md",
+      "sha256": "c432bb743871ae38f03dc4f0484bd5771eaeafd4cd9d3e318bdb06f7ff90f8b3",
+      "bytes": 8992
+    },
+    {
+      "path": "kernel_lab/reports/RESEARCH_C_PLAN.md",
+      "sha256": "723bcebedae098b13df6cabdd24449d4686a116ca9d8259c98150b5de1005489",
+      "bytes": 3401
+    },
+    {
+      "path": "kernel_lab/reports/ROLE_G_PLAN.md",
+      "sha256": "e6387cce5995edd55f1a2a952e6ade677dfd17a57b7df32bb17c347c656e8672",
+      "bytes": 3478
+    },
+    {
+      "path": "kernel_lab/reports/ROLE_G_RESULTS.md",
+      "sha256": "b9e1e94cc3c1e153e5b0a6ed87c2b23222d037d14a51a37ac8ccd44cb62dc984",
+      "bytes": 3518
+    },
+    {
+      "path": "kernel_lab/reports/SINGLE_K_RESULTS.md",
+      "sha256": "e450fc95988c0d07e7c639fe317f8a17e0e4c47dc6f88c8fdec03c0f62b8ca02",
+      "bytes": 7517
+    },
+    {
+      "path": "kernel_lab/reports/SINGLE_REQUEST_FOCUS_K_PLAN.md",
+      "sha256": "557041eef9ef2fc342bb2d5d1930ca4c6aa92c4568957139da7a87ba03704bba",
+      "bytes": 2340
+    },
+    {
+      "path": "kernel_lab/reports/SINGLE_REQUEST_FOCUS_K_PREPARATION.md",
+      "sha256": "fdd7483cc721c1854ae6190874c12995ff71796a9567b305582fe9632937dde2",
+      "bytes": 8112
+    },
+    {
+      "path": "kernel_lab/reports/SINGLE_REQUEST_TP2_AND_SWEEPS_J_PLAN.md",
+      "sha256": "0b31b597388f2532dc985047a004eba94e05c88bd981cbd2098afb2564f368c2",
+      "bytes": 5253
+    },
+    {
+      "path": "kernel_lab/reports/SYSTEMS_I_LIVE_INCIDENT.md",
+      "sha256": "a8d83ac0f203bcbaf60362278af155484fb0e325e39a30ac14ebd774807732bd",
+      "bytes": 3101
+    },
+    {
+      "path": "kernel_lab/reports/THOUSAND_TPS_STRATEGY.md",
+      "sha256": "82324e272c44cc712a6f985ebc799664a3e2be25568c013a35d02ed812ac2f86",
+      "bytes": 8806
+    },
+    {
+      "path": "kernel_lab/reports/TWO_GPU_DEVELOPMENT_OPTIONS.md",
+      "sha256": "3fe41f71c6e429fd8cf91d2f9719e062cd80543dbaa6371258dfd02d798f4db2",
+      "bytes": 5271
+    },
+    {
+      "path": "kernel_lab/reports/WARP_F_PLAN.md",
+      "sha256": "e787cbf390ec16a2dc8ca745a5e7ab8be47f81c3063ffb0365cb29fa51dd5850",
+      "bytes": 4295
+    },
+    {
+      "path": "kernel_lab/reports/WARP_F_RESULTS.md",
+      "sha256": "9af284d2672ba97001752fcff41ed51501e33d98e67a9c3d9b5f76dfdc5c228a",
+      "bytes": 7184
+    },
+    {
+      "path": "kernel_lab/reports/WORK_REPORT.md",
+      "sha256": "0f86c06b930df42cce0bbc29705cef972949d3a3d70d7c63fc28e227b4e61285",
+      "bytes": 73631
+    },
+    {
+      "path": "kernel_lab/reports/directE-attention-pairs.csv",
+      "sha256": "2bece3eb3b7f4f70316b3af9ea8939af0ce0c1ed97a3a5d5cccb05cbe6310c52",
+      "bytes": 1705
+    },
+    {
+      "path": "kernel_lab/reports/fusionD-attention-pairs.csv",
+      "sha256": "21361e3fb8e9c4e841fea90123f02c29eb7e9f44e5c881bc739bad4abf2e16f0",
+      "bytes": 1707
+    },
+    {
+      "path": "research/NUMERICS_AND_RUNTIME.md",
+      "sha256": "26c79728c11344143499b752d9e96d402c0b03173c0e23246885d95730ee3ff4",
+      "bytes": 3201
+    }
+  ]
+}
