@@ -288,35 +288,6 @@ export const DATA = {
       video: "",
     },
     {
-      title: "Hephaestus AI Platform",
-      dates: "Feb 2025",
-      active: true,
-      featured: false,
-      featuredRank: null,
-      category: "Web Dev",
-      filterGroup: "Developer Tools and Web",
-      summary:
-        "I built a visual workspace for composing agents and workflows, with reusable tools, persistent context, and responses streamed as a run progresses.",
-      impact:
-        "Brought workflow composition, tools, session state, and streaming into one interface.",
-      description:
-        "I built a full-stack workspace that turns text prompts into agent workflows users can work with in a visual editor. Reusable tools provide actions, while persistent memory and session management carry context between interactions. WebSocket streaming exposes responses as they arrive, connecting the workflow-building interface to what happens during execution.",
-      technologies: [
-        "Next.js",
-        "TypeScript",
-        "LangChain",
-        "OpenAPI",
-        "WebSockets",
-        "shadcn/ui",
-        "AWS",
-      ],
-      links: [],
-      image: "/projects/hephaestus.webp",
-      imageAlt:
-        "Hephaestus interface for composing an AI workflow with connected visual nodes.",
-      video: "",
-    },
-    {
       title: "VidSmith",
       href: "https://github.com/GoyalIshaan/vidSmith",
       dates: "Jul 2025",
@@ -366,7 +337,7 @@ export const DATA = {
       impact:
         "Connected binary decoding, structured storage, processing metadata, and job orchestration.",
       description:
-        "I built a C++ parser for IEX packet captures and connected it to a market-data pipeline with Parquet storage, SQLite bookkeeping, and multithreaded ingestion. Airflow coordinates the jobs around that data path. The project links low-level decoding to the storage and processing metadata needed to make captured market activity useful for later analysis.",
+        "I built a C++ parser for IEX packet captures and connected it to a market-data pipeline with Parquet storage, SQLite bookkeeping, and multithreaded ingestion. Airflow coordinates the jobs around that data path. In related earlier work, I built a C++ decoder that memory-mapped Nasdaq ITCH 5.0 files and used a dispatch table and compile-time layout checks to turn binary messages into CSV records.",
       technologies: [
         "C++",
         "Python",
@@ -409,130 +380,6 @@ export const DATA = {
       image: "/projects/docnest.webp",
       imageAlt:
         "Docnest collaborative document editor with a document list and editing workspace.",
-      video: "",
-    },
-    {
-      title: "QuickMark",
-      href: "https://quickmark-one.vercel.app/",
-      dates: "2024",
-      active: true,
-      featured: false,
-      featuredRank: null,
-      category: "Web Dev",
-      filterGroup: "Developer Tools and Web",
-      summary:
-        "I built a publishing app that helps writers recover unfinished drafts, publish rich-text posts, and connect with readers through comments, saves, likes, and follows.",
-      impact:
-        "Connected draft recovery, publication, and reader interaction.",
-      description:
-        "I built QuickMark around the path from an unfinished draft to a published post. The rich-text editor saves drafts locally and lets writers restore them when they return. A TypeScript API built with Hono, shared Zod schemas, and Prisma connects publishing to PostgreSQL-backed profiles, comments, saves, likes, and follows. The result brings writing recovery and reader interaction into the same application.",
-      technologies: ["TypeScript", "React", "Hono", "Prisma", "PostgreSQL", "Zod", "Cloudflare Workers"],
-      links: [
-        {
-          type: "Source",
-          href: "https://github.com/GoyalIshaan/quickmark",
-          icon: <Icons.github className="size-3" />,
-        },
-        {
-          type: "Demo",
-          href: "https://quickmark-one.vercel.app/",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "/projects/quickmark.webp",
-      imageAlt:
-        "QuickMark publishing interface with a rich-text editor and posts.",
-      video: "",
-    },
-    {
-      title: "Aether - AI Email Client",
-      dates: "Mar 2025",
-      active: true,
-      featured: false,
-      featuredRank: null,
-      category: "Web Dev",
-      filterGroup: "Developer Tools and Web",
-      summary:
-        "I contributed database IPC handlers and read/unread inbox interactions to a team-built desktop email client with local AI summaries and reply drafts.",
-      impact:
-        "Contributed data access and inbox state interactions around a team-built local-AI email client.",
-      description:
-        "I contributed to Aether, a desktop email client built with Electron and React, with a local Flask and Ollama service for summaries and reply drafts. My work focused on database IPC handlers and read/unread inbox interactions: translating stored email records for the interface and connecting message selection to read-state updates. These contributions sit between the desktop process, application data, and everyday inbox behavior.",
-      technologies: ["Electron", "React", "TypeScript", "Flask", "Ollama", "SQLite"],
-      links: [{ type: "Source", href: "https://github.com/AdvaitTahilyani/Aether", icon: <Icons.github className="size-3" /> }],
-      image: "/projects/aether.webp",
-      imageAlt:
-        "Aether email client interface with an inbox and AI-assisted email controls.",
-      video: "",
-    },
-    {
-      title: "Custom Unix Shell",
-      dates: "2023",
-      active: false,
-      featured: false,
-      featuredRank: null,
-      category: "Low Level",
-      filterGroup: "Systems, HFT, and Data",
-      summary:
-        "I built a shell in C to explore how pipes, redirection, background execution, and built-in commands turn a command line into coordinated process work.",
-      impact:
-        "Connected command composition, process management, and interactive shell behavior.",
-      description:
-        "I built a Unix shell in C with pipes, input/output redirection, background execution, and custom built-in commands. The project explores how commands connect and how the shell manages the processes behind them. It gave me a way to work directly with the process lifecycles and data flow that higher-level applications usually hide.",
-      technologies: ["C", "Unix", "Systems Programming"],
-      links: [],
-      image: "/projects/unix-shell.webp",
-      imageAlt:
-        "Diagram of a Unix shell connecting commands through pipes, redirection, and background jobs.",
-      video: "",
-    },
-    {
-      title: "Memory Allocator in C",
-      dates: "2023",
-      active: false,
-      featured: false,
-      featuredRank: null,
-      category: "Low Level",
-      filterGroup: "Systems, HFT, and Data",
-      summary:
-        "I implemented malloc and free in C to explore the trade-offs between allocation overhead, fragmentation, and memory utilization.",
-      impact:
-        "Explored allocation behavior through a custom implementation of malloc and free.",
-      description:
-        "I implemented custom malloc and free primitives in C, working directly with how requests receive memory and how released space becomes available again. The project explores the tension between allocation overhead, fragmentation, and utilization. It made those competing goals concrete in a component most application code delegates to a library.",
-      technologies: ["C", "Memory Management", "Performance Optimization"],
-      links: [],
-      image: "/projects/memory-manager.webp",
-      imageAlt:
-        "Diagram of a custom memory allocator splitting, allocating, and merging heap blocks.",
-      video: "",
-    },
-    {
-      title: "Nasdaq ITCH Market Data Decoder",
-      href: "https://github.com/GoyalIshaan/itch-decoder",
-      dates: "2024",
-      active: true,
-      featured: false,
-      featuredRank: null,
-      category: "HFT",
-      filterGroup: "Systems, HFT, and Data",
-      summary:
-        "I built a C++ decoder that turns memory-mapped Nasdaq ITCH data into CSV records, using explicit binary layouts and message-specific handlers.",
-      impact:
-        "Connected binary protocol layouts, message dispatch, and CSV export.",
-      description:
-        "I built a C++ decoder for Nasdaq ITCH 5.0 files, connecting memory-mapped input to inspectable CSV output. A dispatch table routes records to message-specific handlers, while packed layouts and compile-time checks keep the protocol representation explicit. The implementation also tracks processing statistics and handles interruption, making the binary-to-record conversion path easier to inspect and measure.",
-      technologies: ["C++", "mmap", "Binary Protocols", "Makefile", "CSV"],
-      links: [
-        {
-          type: "Source",
-          href: "https://github.com/GoyalIshaan/itch-decoder",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "/projects/itch-decoder.webp",
-      imageAlt:
-        "Diagram of memory-mapped Nasdaq ITCH input moving through message handlers into CSV records.",
       video: "",
     },
   ],
