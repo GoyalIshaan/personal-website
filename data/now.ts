@@ -16,15 +16,10 @@ export const CURRENTLY = {
     },
     {
       title: "Jen's Son",
-      note: "Tightening RTL verification and area models for my batch-1 Qwen3.5-9B inference chip.",
-      mailSubject: "Jen's Son inference chip",
+      note: "RLing a model on Jen's Son's ISA to write custom kernels for the chip.",
+      mailSubject: "Jen's Son ISA & RL kernels",
       href: "/blogs/jens-son",
       hrefLabel: "essay",
-    },
-    {
-      title: "Per-token attention vs. MLP routing",
-      note: "Testing on proof generation whether fresh per-token routing helps multi-step deduction generalize.",
-      mailSubject: "Attention vs. MLP routing",
     },
   ] satisfies CurrentWorkItem[],
 } as const;

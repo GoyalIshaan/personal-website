@@ -76,8 +76,8 @@ export function HomePage() {
 
         <div className={styles.bio}>
           <p className={styles.stagger} style={{ animationDelay: "0.06s" }}>
-            Computer science student at UIUC (graduating Dec 2026 or May 2027). I work on ML
-            systems, compilers, and developer tools.
+            Computer science student at UIUC (graduating May 2027). I work on ML systems,
+            compilers, and developer tools.
           </p>
 
           <p className={styles.stagger} style={{ animationDelay: "0.11s" }}>
