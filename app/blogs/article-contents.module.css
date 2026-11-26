@@ -17,20 +17,20 @@
 .sidebar {
   display: none;
   position: sticky;
-  top: 24px;
+  top: 40px;
   align-self: start;
   overflow-y: auto;
-  max-height: calc(100dvh - 48px);
+  max-height: calc(100dvh - 80px);
   margin: 0;
-  padding: 4px 0 4px 2px;
+  padding: 2px 0;
   scrollbar-width: thin;
 }
 
 .label {
-  margin: 0 0 12px 10px;
-  color: var(--ink);
-  font-size: 13px;
-  font-weight: 550;
+  margin: 0 0 10px 10px;
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 450;
 }
 
 .links {
@@ -41,36 +41,45 @@
 
 .links a {
   display: block;
-  padding: 7px 6px 7px 10px;
+  padding: 5px 6px 5px 10px;
   border: 0;
-  border-inline-start: 2px solid var(--line);
+  border-inline-start: 1px solid var(--line);
   color: var(--muted);
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 1.45;
   overflow-wrap: anywhere;
+  transition: color 0.14s ease, border-color 0.14s ease;
 }
 
 .links a:hover,
 .links a[aria-current="location"] {
-  border-inline-start-color: var(--light-focus, #a9bda9);
+  border-inline-start-color: var(--ink);
   color: var(--ink);
+  text-decoration: none;
 }
-.links a[aria-current="location"] { font-weight: 600; }
-.links a:focus-visible { outline-offset: -2px; }
+
+.links a[aria-current="location"] {
+  font-weight: 500;
+}
+
+.links a:focus-visible {
+  outline-offset: -2px;
+}
 
 .disclosure {
   width: 100%;
-  max-width: 760px;
+  max-width: 640px;
   margin: 0 auto 24px;
   border-block: 1px solid var(--line);
 }
 
 .disclosure summary {
-  min-height: 44px;
-  padding: 10px 0;
+  min-height: 40px;
+  padding: 9px 0;
   color: var(--ink);
   cursor: pointer;
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 500;
 }
 
 .currentTitle {
@@ -79,20 +88,21 @@
   margin-inline-start: 10px;
   overflow: hidden;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 12.5px;
+  font-weight: 450;
   text-overflow: ellipsis;
   white-space: nowrap;
   vertical-align: bottom;
 }
 
 .mobileNav { display: block; margin: 0 0 12px; }
-.mobileNav .links a { padding-block: 12px; }
+.mobileNav .links a { padding-block: 9px; }
 
 @media (min-width: 1080px) {
   .layout:not(.hbm) {
     grid-template-areas: "contents header" "contents body" "contents footer";
-    grid-template-columns: 184px minmax(0, 1fr);
-    column-gap: 28px;
+    grid-template-columns: 180px minmax(0, 1fr);
+    column-gap: 40px;
   }
   .layout:not(.hbm) > .sidebar { display: block; }
   .layout:not(.hbm) > .disclosure { display: none; }

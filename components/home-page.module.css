@@ -10,7 +10,7 @@
   background: var(--b-bg);
   color: var(--b-ink);
   min-height: 100vh;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }
 

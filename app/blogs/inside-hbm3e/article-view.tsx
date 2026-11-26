@@ -36,7 +36,7 @@ export function ArticleView({ article, editable = false }: { article: ArticleDoc
   return <main className={styles.page}>
     <a className={styles.skip} href="#article-body">Skip to article</a>
     <nav className={styles.topNav} aria-label="Article navigation">
-      <div className={styles.breadcrumb}><a href="/">Ishaan Goyal</a><span aria-hidden="true">/</span><a href="/blogs">Blogs</a></div>
+      <div className={styles.breadcrumb}><a href="/">← Ishaan Goyal</a><span aria-hidden="true">/</span><a href="/blogs">Writing</a></div>
       <div className={styles.editNav}>
         {editable && <a href="/blogs/inside-hbm3e/edit">Edit</a>}
         <a href="#sources">Sources</a>

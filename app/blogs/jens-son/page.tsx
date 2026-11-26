@@ -90,7 +90,7 @@ export default async function JensSonPage() {
   return <main className={styles.page}>
     <a className={styles.skip} href="#article-body">Skip to article</a>
     <nav className={styles.topNav} aria-label="Article navigation">
-      <div className={styles.breadcrumb}><a href="/">Ishaan Goyal</a><span aria-hidden="true">/</span><a href="/blogs">Blogs</a></div>
+      <div className={styles.breadcrumb}><a href="/">← Ishaan Goyal</a><span aria-hidden="true">/</span><a href="/blogs">Writing</a></div>
       <ModeToggle className="blog-theme-toggle" />
     </nav>
     <div className={layout.layout}>
