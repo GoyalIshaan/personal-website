@@ -27,11 +27,11 @@ export const SPECULATIVE_DECODING_POST: BlogPost = {
 
 export const JENS_SON_POST: BlogPost = {
   slug: "jens-son",
-  title: "I made the best chip in the world for inference",
+  title: "I made the best inference chip in the world",
   date: "2026-11",
   dateLabel: "November 2026",
   description:
-    "A batch-1 inference chip for Qwen3.5-9B: 90 tokens/s at 32K context, about 240 with speculation, on a card that would cost about $150 to build.",
+    "I built a Qwen3.5-9B inference chip in SystemVerilog, designed its four-slot VLIW ISA, and wrote the assembler and simulators that run its programs.",
 };
 
 export const BLOG_POSTS: readonly BlogPost[] = [JENS_SON_POST, SPECULATIVE_DECODING_POST, HBM3E_POST];

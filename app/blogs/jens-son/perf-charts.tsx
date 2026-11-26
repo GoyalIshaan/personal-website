@@ -81,8 +81,11 @@ const VECTOR_OPS: Op[] = [
 
 function Breakdown({ title, sub, ops, unit, label }: { title: string; sub: string; ops: Op[]; unit: "matrix_ops" | "vector_ops"; label: string }) {
   const bars = [
-    { key: "prefill", name: "Prefill", d: data.prefill, per: "per chunk" },
-    { key: "decode", name: "Decode, 32K", d: data.decode, per: "per token" },
+    { key: "prefill", name: "Prefill at 16K", opsNs: data.prefill[unit], per: "/ 128 tokens" },
+    ...(unit === "matrix_ops" ? [
+      { key: "prefill-final-32k", name: "Final 32K chunk", opsNs: data.prefill_final_32k_matrix_ops, per: "/ 128 tokens" },
+    ] : []),
+    { key: "decode", name: "Decode at 32K", opsNs: data.decode[unit], per: "/ token" },
   ];
   const x0 = 140, w = 580, bh = 30;
   const legendTop = 72 + bars.length * 64 + 8;
@@ -92,7 +95,7 @@ function Breakdown({ title, sub, ops, unit, label }: { title: string; sub: strin
       <text x="24" y="28" fontSize="15" fontWeight="600" fill={ink}>{title}</text>
       <text x="24" y="48" fill={quiet}>{sub}</text>
       {bars.map((b, i) => {
-        const raw = b.d[unit] as Record<string, number>;
+        const raw: Record<string, number> = b.opsNs;
         const vals = ops.map((o) => o.parts.reduce((t, k) => t + (raw[k] ?? 0), 0));
         const total = vals.reduce((t, v) => t + v, 0);
         const y = 72 + i * 64;
@@ -130,7 +133,7 @@ function Breakdown({ title, sub, ops, unit, label }: { title: string; sub: strin
 }
 
 export function MatrixBreakdownChart() {
-  return <Breakdown unit="matrix_ops" ops={MATRIX_OPS} label="Matrix unit" title="Matrix unit: most of its time is the feed-forward layers" sub="Share of the matrix unit’s busy time by which part of the model it is computing" />;
+  return <Breakdown unit="matrix_ops" ops={MATRIX_OPS} label="Matrix unit" title="Matrix unit: attention takes a larger share as prefill progresses" sub="Share of matrix-unit busy time by operation; each prefill bar is one 128-token chunk" />;
 }
 
 export function VectorBreakdownChart() {

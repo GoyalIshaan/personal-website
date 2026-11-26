@@ -23,6 +23,14 @@
    "attn_core": 2129920
   }
  },
+ "prefill_final_32k_matrix_ops": {
+  "other": 29143,
+  "dn_proj": 3162166,
+  "dn_chunk": 884736,
+  "ffn": 9437184,
+  "attn_proj": 917504,
+  "attn_core": 4194304
+ },
  "decode": {
   "wall_ns": 11071542,
   "busy_ns": {

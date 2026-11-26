@@ -1,28 +1,28 @@
-# I made the best chip in the world for inference
+# I made the best inference chip in the world
 
-*A batch-1 inference chip for Qwen3.5-9B, designed for the most tokens per second per dollar.*
+*A Qwen3.5-9B inference chip built in RTL, with a custom instruction set, assembler, and simulators.*
 
-I've always loved chip design and have been wanting to get my hands dirty with it which is why I started this project. Also, I do wanted to give myself a north star goal and so this project started with one goal: **how can I design the cheapest piece of hardware that can generate tokens from a good open model as fast as possible?**
+I built **Jen’s Son**, a programmable inference chip for Qwen3.5-9B at batch 1. I implemented the whole chip in SystemVerilog, including the matrix and vector units, scalar core, SRAM interface, and DMA engines. I designed its **four-slot, 256-bit VLIW ISA** and wrote the assembler, weight packer, program generators, and functional and timing simulators.
 
-**I have named the chip Jen's Son(an ode to my loving and powerful GOAT, Jensen Huang).**
+I ran the prefill and decode programs in Verilator on a four-layer Qwen test model. **Every SRAM and DRAM byte matched** the functional simulator.
 
-(The whole chip now exists in RTL and runs the real model programs bit-exact in simulation.)
+I’ve always loved chip design and wanted to get my hands dirty. So I gave myself one goal: **how many tokens per second per dollar can I get from a good open model?** I named the chip Jen’s Son after Jensen Huang, my GOAT.
 
-The headline numbers:
+At a modeled **1 GHz**, the timing simulator projects these numbers for one user at 32K context:
 
-- **90.3 tokens/s** decode at batch 1 with a 32K-token context
-- **about 240 tokens/s with speculative decoding** at the acceptance rate I measured, and 300 when all three drafts are accepted
-- **a 32K token prompt prefill in about 7.4 s**
-- **\~0.30–0.33 tokens/s per dollar plain, and about 0.8–0.9 with speculation, on an 8 GB GDDR7 card that would cost about $135–150 to build (rough estimates, worked out in the last section**)
-- **4.5 bits per weight quant** with the model's maths, coding and reasoning scores within about 2 points of the full-precision model
+- **90.3 tokens/s** for plain decode
+- **About 240 tokens/s** with speculative decoding at the acceptance rates I measured, and about 300 if all three drafts are accepted
+- **7.4 s** to prefill a 32K-token prompt
 
-Here is how that compares with the best-value and the fastest accelerator from each brand:
+That works out to **0.30–0.33 tokens/s per dollar** for plain decode and **about 0.8–0.9** with speculation, using a $270–305 retail-equivalent price for an 8 GB GDDR7 card I estimate would cost $135–152 to build. At **4.5 bits per weight**, the model scored within about two percentage points of full precision on the benchmarks I ran.
 
-![](#chart=tokens-per-dollar)
+Here’s how that compares with selected GPUs and other accelerators:
+
+![Jen’s Son uses the low end of its projected range. The RTX 5090 with three drafts is a measured BF16 vLLM run (88.6 tok/s). The RTX 5060 (75.4 tok/s) and RX 9070 XT (90.5 tok/s) with three drafts are estimates using matched quantization, 78% of peak bandwidth, and the 5090 run’s 2.89 tokens per step and roughly 17 ms of extra time per step. Plain GPU bars use measured runs or a 78%-bandwidth estimate.](#chart=tokens-per-dollar)
 
 These numbers come from **co-designing the hardware, the software, and the model's numerics**.
 
-This post is the first post and will be followed by a detailed technical worklog of what I built and the numbers behind it. That version will come out in a few days.( btw during this project I found out that Astra is significantly worse than opus5.5 for RTL and hw design).
+This post is the first post and will be followed by a detailed technical worklog of what I built and the numbers behind it. That version will come out in a few days.
 
 All the code, design notes and data are on GitHub: [github.com/GoyalIshaan/jens-son](https://github.com/GoyalIshaan/jens-son).
 
@@ -76,48 +76,72 @@ The three biggest blocks, the matrix unit, the vector unit and the DeltaNet unit
 
 ### Inside the matrix unit
 
-Picture the matrix unit as a grid: 1,024 columns, one per **weight lane**, and 64 rows, one per **token**. Each row keeps its token's 1,024 activations parked in a buffer next to it. Every clock, the weight FIFO hands the grid a beat of 1,024 weights, a 1,024-input slice of one output, and that beat is broadcast down all 64 rows at once. So in a single clock the grid works out 64 partial dot products of length 1,024, which is 65,536 multiply-adds.
+The matrix unit is a **64 × 1,024 compute grid**—64 rows for 64 tokens, and 1,024 columns for 1,024 weights. Each row keeps its token’s activations parked right next to it. On every clock tick, the weight FIFO broadcasts 1,024 weights down all 64 rows at once, letting the grid compute **65,536 multiply-adds per cycle** (64 partial dot products of length 1,024).
 
 ![matrix unit pipeline · rtl/chip/chip_mxu.sv, design notes 24–26 and D-029](#chart=matrix-unit)
 
-There are two layers of pipelining here, and they solve different problems. The inner one is about the clock. A beat goes through 7 stages, cut so that no stage does more work than fits in one clock at 1 GHz:
+To keep this grid running at 1 GHz without stalling, it uses **two layers of pipelining**:
 
-1. **Decode.** Each lane turns its 4-bit code into an int8 weight with a 16-entry table that the program loads once per matrix.
-2. **Multiply.** Every cell does an int8 × int8 multiply.
-3. **Group adder trees.** Each run of 16 neighbouring lanes is summed into one exact 19-bit integer per row. The worst case, 16 × 128 × 127, still fits.
-4. **Scale step.** Each group sum is multiplied by its weight scale's small mantissa, and its exponents are added (the activation scale is a power of two). Still exact.
-5. **Beat reducer.** The 64 group results of a row are added in fixed point, exactly, then rounded to fp32 once.
-6. **Accumulate.** That fp32 value is added to the output's running total, in input order.
-7. **Epilogue and drain.** When an output's last beat lands, it is multiplied by the tensor's scale, then written as is, added to an existing value (a residual), or reduced to a running argmax (the LM head's next token). Results go to SRAM at 256 per clock: 16 rows × 16 outputs.
+#### 1. The Inner Pipeline (For Clock Speed)
 
-The outer layer is about data. Those 7 stages only help if a fresh beat and a full buffer of activations are ready every clock, and if finished results leave as fast as they're made. So three engines wrap around them and run at the same time:
+Doing a full dot product in a single 1-nanosecond clock cycle is too slow, so the math is split into a **7-stage assembly line**. A new slice of weights enters every clock tick and moves through:
 
-1. The **loader** fills one of two activation buffers (128 rows × 1,056 bytes each) while the beats read the other.
-2. The **beats** run the 7 stages above.
-3. The **drain** empties one of two accumulator halves (8,192 words each) while the next tile fills the other.
+1. **Decode:** Expand 4-bit compressed weights into `int8` using a small 16-entry lookup table.
+2. **Multiply:** Multiply every `int8` weight by its `int8` activation across the 64 × 1,024 grid.
+3. **Group Sum:** Add neighboring groups of 16 products together into exact 19-bit integers.
+4. **Scale:** Apply the group's weight and activation scales (still keeping the math exact).
+5. **Reduce:** Sum all 64 groups in a row using fixed-point math, then round to `fp32` once.
+6. **Accumulate:** Add that `fp32` result to the output’s running total.
+7. **Epilogue:** Once the final slice arrives, apply the tensor scale and either write the result out, add a residual connection, or update a running `argmax` (for picking the next token). Finished outputs stream to SRAM at 256 values per clock.
 
-With all three overlapped, the grid never waits on loading or draining. Adding that overlap took a 32K prefill from 32.6 s to 11.7 s.
+#### 2. The Outer Pipeline (To Hide Memory Latency)
 
-**Where its time goes.** In prefill the feed-forward layers take 57% of the matrix unit's time, DeltaNet's projections and chunk products 24%, and attention's q·K and P·V 13%. Decode at 32K looks much the same, with one addition: the LM head, which reads the whole 248K-token output table for every token, takes 11%.
+A fast compute pipeline is wasted if it has to stop and wait for data. To keep the math running nonstop, **three engines overlap in parallel** using double-buffering:
 
-![Timing simulator at RTL-measured rates, grouped by command](#chart=matrix-ops)
+- **Loader:** Fills one activation buffer while the compute grid reads from the other.
+- **Compute:** Runs the 7-stage pipeline above.
+- **Drain:** Empties one finished accumulator bank to SRAM while the next tile accumulates into the other.
+
+Overlapping these three stages eliminates wait time—cutting a 32K-token prefill from **32.6 seconds down to 11.7 seconds**.
+
+#### Where the Time Goes
+
+- **Prefill:** Feed-forward layers dominate at **57%** of matrix unit time, followed by DeltaNet projections/chunks (**24%**) and attention (**13%**).
+- **Decode (at 32K context):** The split is similar, except the **LM head**—which has to scan the entire 248K-token vocabulary for every generated token—shows up at **11%**.
+
+![Timing simulator, grouped by command. The final 32K chunk starts at position 32,640 and ends at 32,768.](#chart=matrix-ops)
 
 > **Code:** [chip\_mxu.sv](https://github.com/GoyalIshaan/jens-son/blob/main/rtl/chip/chip_mxu.sv) (controller, loader and drain) and [mxu\_row\_pipe.sv](https://github.com/GoyalIshaan/jens-son/blob/main/rtl/chip/mxu_row_pipe.sv) (the pipelined row). The group datapath, the [beat reducer](https://github.com/GoyalIshaan/jens-son/blob/main/rtl/mxu/beat_reducer.v) and their synthesis scripts are in [rtl/mxu/](https://github.com/GoyalIshaan/jens-son/tree/main/rtl/mxu).
 
 ### Inside the vector unit
 
-The vector unit handles everything that isn't a big matrix product: i.e norms, RoPE, activations, softmax, quantizing, the DeltaNet step. It is 512 lanes, each a single 8-stage fp32 FMA (a × b + c with one rounding). Around those lanes:
+The vector unit handles everything that isn't a giant matrix multiply—norms, RoPE, activations, softmax, quantization, and the DeltaNet state update.
+
+At its core is a single bank of **512 `fp32` FMA lanes** (each doing a × b + c with a single rounding). Like the matrix unit, it is deeply pipelined—**8 stages**—so it can accept a fresh 512-element “beat” from 64-bank SRAM every clock tick.
 
 ![vector unit · rtl/vec/, design note 32](#chart=vector-unit)
 
-- **Streaming beats.** Elementwise ops (add, multiply, FMA, RoPE, the 4-tap conv) read a 512-lane beat from SRAM each clock and write one back 8 clocks later. Rows narrower than 512 (most heads are 64–256 wide) are packed several to a beat.
-- **Special functions as FMA chains.** eˣ, sigmoid, SiLU, 1/x, 1/√x and softplus are a small table lookup plus a fixed chain of FMAs (Newton steps, each of which roughly doubles the correct bits of the table's first guess, or a short polynomial; [here is how Newton's method works](https://en.wikipedia.org/wiki/Newton%27s_method)). eˣ runs 128 per clock, SiLU and sigmoid 64.
-- **A reduction tree on the same lanes**. It serves the commands like the sum of squares inside RMSNorm and the sums inside softmax. A row accumulates a beat at a time, then add pairwise across lane slices (256 + 128 + … + 1 = 511 lanes) in one clock. Four rows stay in flight so the 8-clock FMA is always busy.
-- **An int8 quantizer** that finds each 32-value group's power-of-two scale and rounds the values, feeding the matrix unit.
-- **A softmax tile** that chains max, subtract, eˣ, sum and the int8 rounding of the probabilities on a fixed calendar: a 256-position row every 3 clocks.
-- **Tags, not a central controller.** A result leaves the pipeline long after its inputs went in (SiLU takes 126 clocks), and by then the reader has moved several rows ahead. So instead of one controller tracking which row is where, every beat carries a small tag (its row, its column, and any per-row value such as a scale) through delay lines that run alongside the data. The writer just reads the tag to know where each result belongs. On a stall, the whole pipeline freezes on a clock enable instead of buffering.
+#### How One Bank of Lanes Does Everything
 
-**Where its time goes.** In prefill, DeltaNet's chunked state update takes 39% of the vector unit's time and softmax 27%. Softmax was once the worst of these by far, at one row every 4,070 clocks, and now runs a 256-position row every 3. In decode the vector unit is busy only about half a millisecond per token, and softmax over the 32K-position cache is half of that.
+Instead of building separate hardware blocks for every math function, **five lightweight sequencers** take turns steering the same 512 FMA lanes depending on the command:
+
+- **Elementwise (“Box”) Ops:** Standard math like add, multiply, FMA, RoPE, and 4-tap convolutions stream straight through—reading a beat from SRAM every clock and writing the result back 8 clocks later.
+- **Special Functions (eˣ, SiLU, Sigmoid, 1/x, 1/√x, Softplus):** These use a tiny lookup table for a rough first guess, followed by a fixed chain of FMA steps (Newton’s method or short polynomials) to refine the answer. This delivers 128 eˣ results per clock, or 64 per clock for SiLU and sigmoid.
+- **Reductions (Norms & Sums):** To sum a row (like the sum of squares in RMSNorm), the unit accumulates a beat at a time and then folds the values pairwise across the lanes (256 + 128 + … + 1 = 511 additions) in a single clock. It keeps 4 rows in flight at once so the 8-stage pipeline stays busy.
+- **Softmax Tile:** Runs max, subtract, eˣ, sum, and `int8` rounding on a fixed schedule, producing a 256-position row every **3 clocks**.
+- **DeltaNet:** Interleaves 4 attention heads through the lanes to handle its chunked state updates.
+
+**On-the-Fly Quantization:** Right at the write port, a built-in quantizer groups every 32 outputs, picks a power-of-two scale, and rounds them to `int8` so they are immediately ready for the matrix unit.
+
+#### Two Clever Tricks That Keep It Simple
+
+- **Row Packing:** Most attention heads are narrower than 512 elements (typically 64–256 wide). Instead of leaving lanes empty, the read port packs multiple short rows into a single 512-lane beat.
+- **Tags Instead of a Central Controller:** Complex ops take a while to finish (SiLU takes 126 clocks), meaning the reader has moved several rows ahead by the time a result comes out. Rather than building a complex central tracker, each beat sends a small **tag** (its row, column, and any per-row scale) down parallel delay lines alongside the data. When a result reaches the write port, the writer just reads its tag to know where it belongs. If anything stalls, the whole pipeline freezes via a clock enable—no extra buffering required.
+
+#### Where the Time Goes
+
+- **Prefill:** DeltaNet’s chunked state updates take **39%** of vector unit time, and softmax takes **27%**. The early softmax implementation took 4,070 clocks per 1,024-position row. The fixed-schedule prefill tile produces a 256-position row every 3 clocks.
+- **Decode (at 32K context):** The vector unit is busy for about **0.5 ms per token**, with softmax over the 32K cache making up half of that time.
 
 ![Timing simulator at RTL-measured rates, grouped by command](#chart=vector-ops)
 
@@ -191,21 +215,19 @@ I measured every number format on real text and real tasks (GSM8K, HumanEval, MB
 - **Special functions** (exp, sigmoid, 1/√x) as table-plus-Newton algorithms, sized by measurement: `exp` turns out to be pretty sensitive and thus, gets 16 bits.
 - **Chunked DeltaNet for prefill** splits each operand into two int8 halves over 3 passes, which keeps quality where one pass lost it on code.
 
-These formats weren't one shotted though, the worklog will cover the tests I ran and the formats I passed over.
-
 ## Headline numbers
 
-Every number in this section comes from running the real Qwen3.5-9B program through the chip's timing simulator, with each command charged the clocks the RTL actually takes for it. The RTL itself is too slow to run a whole 9B token (that's tens of millions of clocks), so those per-command costs are measured on smaller models with the same shapes. How the chip was tested is [further down](#how-i-tested-it). Speeds assume a 1 GHz clock. Every block except the scalar core meets 1 ns in pre-layout synthesis, and the core is at 1.25 ns with that work still in progress.
+Every number in this section comes from running the real Qwen3.5-9B program through the chip's timing simulator, with each command charged the clocks the RTL actually takes for it. The RTL itself is too slow to run a whole 9B token (that's tens of millions of clocks), so those per-command costs are measured on smaller models with the same shapes. How the chip was tested is [further down](#how-i-tested-it). The simulator uses a 1 GHz clock. Every component meets that target in pre-layout synthesis, with the longest critical path just under 1 ns.
 
 | Qwen3.5-9B, batch 1 | Today |
 | --- | --- |
 | Decode at 32K context | **90.3 tok/s** |
 | Decode with speculation (3 drafts) at 32K | **about 240 tok/s**; 299.6 when all 3 drafts are accepted |
-| 32K-token prompt (prefill) | **7.4 s** (6.6 s if SRAM were free) |
+| 32K-token prompt (prefill) | **7.4 s** |
 | 20K-token prompt (prefill) | **4.2 s** |
 | Tokens/s per $ at 32K, plain | **0.30–0.33** |
 | Tokens/s per $ at 32K, with speculation | **0.79–0.89** |
-| Longest context | **1.06M tokens** (16 GB card, int4 KV) |
+| Design context | **32K tokens** |
 
 Tokens per dollar uses a retail-equivalent price of 2× the card's build cost ($135–152 for the 8 GB card, worked out in the last section), so it can be compared with retail GPUs. Speculation is nearly free on this chip, because the matrix unit is otherwise idle in decode.
 
@@ -262,8 +284,6 @@ Power and whole-die area are pre-layout estimates, worked out in the last sectio
 
 I tried to follow industry best practice and to be as rigorous about testing as I could. The standard parts I did as you would expect: a golden reference model, a performance model, an instruction-level simulator, RTL checked against all of them, and synthesis for area and timing. **Bit-exact at every level:** the golden model, the functional simulator and the RTL had to agree to the last bit. I did this so that any mismatch is a real bug, never rounding noise, and so that the quality I measured on the golden model carries over to the hardware exactly. I also compared every byte of SRAM and DRAM after each run, ran random and adversarial tests on top of real model data, had the assembler enforce a few safety rules, and treated a performance gap like a failing test. The timing simulator that every speed in this post comes from is checked against the RTL command by command.
 
-Each new level caught bugs the one before it couldn't.
-
 ## What it would cost
 
 With the main blocks synthesized, I could finally put rough numbers on the chip's size, power and price. Everything here is pre-layout. Logic areas come from ASAP7 synthesis scaled to a 6 nm-class node; the parts I can't synthesize (the GDDR7 and PCIe interfaces, the pads) are estimates from published figures or plain guesses, and the table says which.
@@ -304,16 +324,20 @@ To compare with GPUs sold at retail, I double that: a retail-equivalent price of
 
 > Code: the area, power and cost estimate is [design/calc/area\_power.py](https://github.com/GoyalIshaan/jens-son/blob/main/design/calc/area_power.py), built on the synthesis results in [rtl/results\_timing.json](https://github.com/GoyalIshaan/jens-son/blob/main/rtl/results_timing.json).
 
-### Against a GPU running perfectly
+### Competing Against Perfection
 
-The GPU numbers in this post are what the cards do today, with today's software. Better software could get more out of them, so I also worked out each card's ceiling, its *roofline*. A decode step can't finish faster than its bytes take to cross the memory bus, or than its arithmetic takes at peak compute. At batch 1 the bytes always win by a wide margin: a step does about 3–4 operations per byte, and the RTX 5060 only runs short of compute at about 171. So the ceiling is just bandwidth divided by bytes per step.
+To see how much better software could do, I compared each card against its theoretical ceiling, or **roofline**. At batch 1, decode does about **3–4 operations per byte**. The RTX 5060 would need about **171 operations per byte** before compute became the bottleneck. That makes this a memory-bandwidth comparison. Divide peak bandwidth by bytes per step to get steps per second, then multiply by the average tokens emitted per step.
 
-| At 32K context, 100% of bandwidth | Plain | Per $ | With 3 drafts | Per $ |
+**At 32K context and 100% of peak memory bandwidth:**
+
+This model gives all three cards 4.5-bit weights, including the output head, and the same INT8 KV storage per value. The GPU rows use a full draft vocabulary and a 32K draft window. Jen’s Son uses a 32K-token draft vocabulary and a 4K draft window.
+
+| Hardware | Plain | Tok/s per $ | With 3 drafts | Tok/s per $ |
 | --- | --- | --- | --- | --- |
-| RTX 5060 8GB, $300 | 76 tok/s | 0.25 | 161 tok/s | 0.54 |
-| RTX 5090 32GB, $1,999 | 303 tok/s | 0.15 | 643 tok/s | 0.32 |
-| Jen's Son, $270–305 | 100 tok/s | 0.33–0.37 | 281 tok/s | 0.92–1.04 |
+| RTX 5060 8GB, $300 | 87.7 tok/s | 0.29 | 199.2 tok/s | 0.66 |
+| RTX 5090 32GB, $1,999 | 350.6 tok/s | 0.18 | 796.7 tok/s | 0.40 |
+| Jen's Son, $270–305 | 100.2 tok/s | 0.33–0.37 | 281.1 tok/s | 0.92–1.04 |
 
-Even at 100% of its bandwidth, which no GPU I measured got past 86% of, the RTX 5060 tops out at 0.25 per dollar without speculation. That is below the 0.30–0.33 Jen's Son is projected to reach at 92%. Part of it is price per GB/s, and part is bytes: a Jen's Son step moves 5.1 GB plain against 5.9 GB on the GPU, and 5.8 GB with 3 drafts against 9.2 GB, because every GPU draft re-reads the full 248K-token output head. With speculation, a perfect RTX 5060 would reach 0.54 per dollar, a little over half of Jen's Son's ceiling.
+At 100% bandwidth, the RTX 5060 reaches **0.29 tok/s per dollar** for plain decode. Jen’s Son is projected to reach **0.30–0.33 tok/s per dollar** at 92% bandwidth utilization.
 
-> Code: the rooflines are [design/calc/roofline\_per\_dollar.py](https://github.com/GoyalIshaan/jens-son/blob/main/design/calc/roofline_per_dollar.py). Its GPU byte count lands within 3% of what llama.cpp actually read at 32K.
+I’ll post the technical worklog in a few days, with more on how I built and tested the chip. Thanks for reading.

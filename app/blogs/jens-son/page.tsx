@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     title: `${post.title} | Ishaan Goyal`, description: post.description,
     type: "article", authors: ["Ishaan Goyal"], publishedTime: post.date,
     url: `/blogs/${post.slug}`,
+    images: [{ url: "/blog-assets/jens-son/header.webp", width: 1600, height: 900, alt: "Jen's Son floorplan art" }],
   },
 };
 
@@ -94,11 +95,15 @@ export default async function JensSonPage() {
     </nav>
     <div className={layout.layout}>
       <header className={styles.header}>
-        <div className={styles.byline}>Ishaan Goyal <span aria-hidden="true">/</span><time dateTime={post.date}>{post.dateLabel}</time><span aria-hidden="true">/</span>{minutes} min read</div>
+        <div className={styles.byline}><time dateTime={post.date}>{post.dateLabel}</time><span aria-hidden="true">·</span>{minutes} min read</div>
         <h1>{post.title}</h1>
         <p className={styles.subtitle}>{subtitle}</p>
-        <p className={styles.note}>Chip design · Launch post</p>
-        <p className={styles.skim}>Skimming? The open sections tell the whole story. The folded ones hold the details, and each says what&rsquo;s inside.</p>
+        <figure className={styles.floorplan}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/blog-assets/jens-son/header.webp" width={1600} height={900}
+            alt="Colored compute blocks down the center, flanked by memory interfaces" />
+          <figcaption>Jen’s Son floorplan illustration</figcaption>
+        </figure>
       </header>
       <ArticleContents entries={contents} />
       <article id="article-body" className={`${layout.body} ${styles.prose}`}>
