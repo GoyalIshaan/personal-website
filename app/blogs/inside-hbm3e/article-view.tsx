@@ -63,7 +63,7 @@ export function ArticleView({ article, editable = false }: { article: ArticleDoc
           </div>
         </HbmExperience>
       </div>
-      <footer className={styles.footer}><a href="/blogs">← All blogs</a><a href="#">Back to the top ↑</a><button className="motion-toggle" type="button" aria-pressed="false">Pause background</button></footer>
+      <footer className={styles.footer}><a href="/blogs">← All blogs</a><a href="#">Back to the top ↑</a></footer>
     </div>
   </main>;
 }

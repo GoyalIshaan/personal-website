@@ -111,7 +111,6 @@ export default async function JensSonPage() {
       </article>
       <footer className={styles.footer}>
         <a href="/blogs">← All blogs</a><a href="#">Back to the top ↑</a>
-        <button className="motion-toggle" type="button" aria-pressed="false">Pause background</button>
       </footer>
     </div>
   </main>;
