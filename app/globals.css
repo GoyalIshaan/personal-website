@@ -46,6 +46,7 @@ body{isolation:isolate}.code-background{position:fixed;inset:0;z-index:-1;overfl
 }
 
 body:has(.blog-theme-toggle) > .site-theme-control { display: none; }
+body:has(.home-quiet-canvas) .code-background { display: none; }
 :root:not(.dark, .light) .mode-toggle { visibility: hidden; }
 nav.blog-breadcrumb { align-items: center; }
 .blog-theme-toggle { margin-inline-start: auto; flex: none; }

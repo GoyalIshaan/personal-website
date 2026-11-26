@@ -116,7 +116,7 @@ export const DATA = {
       href: "https://www.shibuyaaa.com/",
       badges: ["Python", "PyTorch", "MLX", "Quantization", "On-Device ML"],
       location: "Remote",
-      title: "Founding Engineer Intern, ML",
+      title: "Founding Engineer, ML",
       logoUrl: "/shibuya-logo.png", // Official brand mark: https://www.shibuyaaa.com/favicon.png
       start: "Feb 2026",
       end: "Aug 2026",

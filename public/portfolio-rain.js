@@ -4,15 +4,19 @@ let paused = false;
 try { paused = localStorage.getItem('portfolio-background-paused') === 'true'; } catch {}
 function render() {
  document.body.classList.toggle('background-paused', paused);
- toggle.setAttribute('aria-pressed', String(paused));
- toggle.textContent = paused ? 'Resume background' : 'Pause background';
+ if (toggle) {
+  toggle.setAttribute('aria-pressed', String(paused));
+  toggle.textContent = paused ? 'Resume background' : 'Pause background';
+ }
 }
 render();
-toggle.addEventListener('click', () => {
- paused = !paused;
- render();
- try { localStorage.setItem('portfolio-background-paused', String(paused)); } catch {}
-});
+if (toggle) {
+ toggle.addEventListener('click', () => {
+  paused = !paused;
+  render();
+  try { localStorage.setItem('portfolio-background-paused', String(paused)); } catch {}
+ });
+}
 
 const backdrop = document.querySelector('.code-background');
 const glyphs = '01{}[]<>/+=*;:abcdefxyz';
